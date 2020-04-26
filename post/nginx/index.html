@@ -31,7 +31,7 @@ sudo apt update sudo apt install nginx 安装完成后，请检查Nginx服务的
 sudo systemctl status nginx 显示active（running）说明正常工作。
 检查网络 如果您正在运行防火墙，则还需要打开端口80和443。
 检查防火墙是否开启
- sudo ufw status 如果开启则需要开通一下防火墙权限：
+sudo ufw status 如果开启则需要开通一下防火墙权限：
 sudo ufw allow &#39;Nginx Full&#39; 测试安装 在您选择的浏览器中打开http://YOUR_IP，您应该能够看到默认的Nginx登录页面，如下所示：
 使用systemctl管理Nginx服务 您可以像任何其他systemd单位一样管理Nginx服务。
 要停止Nginx服务，请运行：sudo systemctl stop nginx
@@ -49,7 +49,7 @@ sudo apt update sudo apt install nginx 安装完成后，请检查Nginx服务的
 sudo systemctl status nginx 显示active（running）说明正常工作。
 检查网络 如果您正在运行防火墙，则还需要打开端口80和443。
 检查防火墙是否开启
- sudo ufw status 如果开启则需要开通一下防火墙权限：
+sudo ufw status 如果开启则需要开通一下防火墙权限：
 sudo ufw allow &#39;Nginx Full&#39; 测试安装 在您选择的浏览器中打开http://YOUR_IP，您应该能够看到默认的Nginx登录页面，如下所示：
 使用systemctl管理Nginx服务 您可以像任何其他systemd单位一样管理Nginx服务。
 要停止Nginx服务，请运行：sudo systemctl stop nginx
@@ -74,7 +74,7 @@ sudo apt update sudo apt install nginx 安装完成后，请检查Nginx服务的
 sudo systemctl status nginx 显示active（running）说明正常工作。
 检查网络 如果您正在运行防火墙，则还需要打开端口80和443。
 检查防火墙是否开启
- sudo ufw status 如果开启则需要开通一下防火墙权限：
+sudo ufw status 如果开启则需要开通一下防火墙权限：
 sudo ufw allow &#39;Nginx Full&#39; 测试安装 在您选择的浏览器中打开http://YOUR_IP，您应该能够看到默认的Nginx登录页面，如下所示：
 使用systemctl管理Nginx服务 您可以像任何其他systemd单位一样管理Nginx服务。
 要停止Nginx服务，请运行：sudo systemctl stop nginx
@@ -320,19 +320,19 @@ CentOS 7 安装 Nginx 安装各种依赖 #gcc安装，nginx源码编译需要 yu
 <h2 id="ubuntu-1804-安装nginx">Ubuntu 18.04 安装Nginx</h2>
 <h3 id="安装-1">安装</h3>
 <p>Nginx的软件包在Ubuntu默认软件仓库中可用。 安装非常简单，只需键入以下命令:</p>
-<pre><code>sudo apt update
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
 
 sudo apt install nginx
-</code></pre><p>安装完成后，请检查Nginx服务的状态和版本：</p>
-<pre><code>sudo systemctl status nginx
-</code></pre><p>显示active（running）说明正常工作。</p>
+</code></pre></div><p>安装完成后，请检查Nginx服务的状态和版本：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl status nginx
+</code></pre></div><p>显示active（running）说明正常工作。</p>
 <h3 id="检查网络">检查网络</h3>
 <p>如果您正在运行防火墙，则还需要打开端口80和443。</p>
 <p>检查防火墙是否开启</p>
-<pre><code> sudo ufw status
-</code></pre><p>如果开启则需要开通一下防火墙权限：</p>
-<pre><code>sudo ufw allow 'Nginx Full'
-</code></pre><h3 id="测试安装">测试安装</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> sudo ufw status
+</code></pre></div><p>如果开启则需要开通一下防火墙权限：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo ufw allow <span style="color:#e6db74">&#39;Nginx Full&#39;</span>
+</code></pre></div><h3 id="测试安装">测试安装</h3>
 <p>在您选择的浏览器中打开http://YOUR_IP，您应该能够看到默认的Nginx登录页面，如下所示：</p>
 <p><!-- raw HTML omitted --></p>
 <h3 id="使用systemctl管理nginx服务">使用systemctl管理Nginx服务</h3>
@@ -345,84 +345,84 @@ sudo apt install nginx
 <p>并重新启用它：<code>$sudo systemctl enable nginx</code></p>
 <h1 id="centos-7-安装-nginx">CentOS 7 安装 Nginx</h1>
 <h2 id="安装各种依赖">安装各种依赖</h2>
-<pre><code>#gcc安装，nginx源码编译需要
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#gcc安装，nginx源码编译需要</span>
 yum install gcc-c++
 
-#PCRE pcre-devel 安装，nginx 的 http 模块使用 pcre 来解析正则表达式
+<span style="color:#75715e">#PCRE pcre-devel 安装，nginx 的 http 模块使用 pcre 来解析正则表达式</span>
 yum install -y pcre pcre-devel
 
-#zlib安装，nginx 使用zlib对http包的内容进行gzip
+<span style="color:#75715e">#zlib安装，nginx 使用zlib对http包的内容进行gzip</span>
 yum install -y zlib zlib-devel
 
-#OpenSSL 安装，强大的安全套接字层密码库，nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http）
+<span style="color:#75715e">#OpenSSL 安装，强大的安全套接字层密码库，nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http）</span>
 yum install -y openssl openssl-devel
-</code></pre><h2 id="下载">下载</h2>
+</code></pre></div><h2 id="下载">下载</h2>
 <p>推荐使用wget命令下载：</p>
-<pre><code>#下载版本号可根据目前官网最新稳定版自行调整
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#下载版本号可根据目前官网最新稳定版自行调整</span>
 wget -c https://nginx.org/download/nginx-1.16.1.tar.gz
-</code></pre><h2 id="安装-2">安装</h2>
-<pre><code>#根目录使用ls命令可以看到下载的nginx压缩包，然后解压
+</code></pre></div><h2 id="安装-2">安装</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#根目录使用ls命令可以看到下载的nginx压缩包，然后解压</span>
 tar -zxvf nginx-1.16.1.tar.gz
 
-#解压后进入目录
+<span style="color:#75715e">#解压后进入目录</span>
 cd nginx-1.16.1
 
-#使用默认配置
+<span style="color:#75715e">#使用默认配置</span>
 ./configure
 
-#编译安装
+<span style="color:#75715e">#编译安装</span>
 make
 make install
 
-#查找安装路径，默认都是这个路径
-[root@VM_0_12_centos ~]# whereis nginx
+<span style="color:#75715e">#查找安装路径，默认都是这个路径</span>
+<span style="color:#f92672">[</span>root@VM_0_12_centos ~<span style="color:#f92672">]</span><span style="color:#75715e"># whereis nginx</span>
 nginx: /usr/local/nginx
 
-#启动、停止nginx
+<span style="color:#75715e">#启动、停止nginx</span>
 cd /usr/local/nginx/sbin/
-./nginx     #启动
-./nginx -s stop  #停止，直接查找nginx进程id再使用kill命令强制杀掉进程
-./nginx -s quit  #退出停止，等待nginx进程处理完任务再进行停止
-./nginx -s reload  #重新加载配置文件，修改nginx.conf后使用该命令，新配置即可生效
+./nginx     <span style="color:#75715e">#启动</span>
+./nginx -s stop  <span style="color:#75715e">#停止，直接查找nginx进程id再使用kill命令强制杀掉进程</span>
+./nginx -s quit  <span style="color:#75715e">#退出停止，等待nginx进程处理完任务再进行停止</span>
+./nginx -s reload  <span style="color:#75715e">#重新加载配置文件，修改nginx.conf后使用该命令，新配置即可生效</span>
 
-#重启nginx，建议先停止，再启动
+<span style="color:#75715e">#重启nginx，建议先停止，再启动</span>
 ./nginx -s stop
 ./nginx
 
-#查看nginx进程，如下返回，即为成功
-[root@VM_0_12_centos ~]# ps aux|grep nginx
-root      5984  0.0  0.0 112708   976 pts/1    R+   14:41   0:00 grep --color=auto nginx
-root     18198  0.0  0.0  20552   612 ?        Ss   11:28   0:00 nginx: master process ./nginx
-nobody   18199  0.0  0.0  23088  1632 ?        S    11:28   0:00 nginx: worker process
-</code></pre><h2 id="开机自启动">开机自启动</h2>
-<pre><code>#在rc.local增加启动代码即可
+<span style="color:#75715e">#查看nginx进程，如下返回，即为成功</span>
+<span style="color:#f92672">[</span>root@VM_0_12_centos ~<span style="color:#f92672">]</span><span style="color:#75715e"># ps aux|grep nginx</span>
+root      <span style="color:#ae81ff">5984</span>  0.0  0.0 <span style="color:#ae81ff">112708</span>   <span style="color:#ae81ff">976</span> pts/1    R+   14:41   0:00 grep --color<span style="color:#f92672">=</span>auto nginx
+root     <span style="color:#ae81ff">18198</span>  0.0  0.0  <span style="color:#ae81ff">20552</span>   <span style="color:#ae81ff">612</span> ?        Ss   11:28   0:00 nginx: master process ./nginx
+nobody   <span style="color:#ae81ff">18199</span>  0.0  0.0  <span style="color:#ae81ff">23088</span>  <span style="color:#ae81ff">1632</span> ?        S    11:28   0:00 nginx: worker process
+</code></pre></div><h2 id="开机自启动">开机自启动</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#在rc.local增加启动代码即可</span>
 vi /etc/rc.local
-#增加一行 /usr/local/nginx/sbin/nginx，增加后保存
-#设置执行权限
+<span style="color:#75715e">#增加一行 /usr/local/nginx/sbin/nginx，增加后保存</span>
+<span style="color:#75715e">#设置执行权限</span>
 cd /etc
-chmod 755 rc.local
-</code></pre><p>浏览器输入服务器ip即可看到nginx欢迎界面.</p>
+chmod <span style="color:#ae81ff">755</span> rc.local
+</code></pre></div><p>浏览器输入服务器ip即可看到nginx欢迎界面.</p>
 <h2 id="配置域名映射">配置域名映射</h2>
-<pre><code>#进入nginx配置文件目录，找到nginx的配置文件nginx.conf
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#进入nginx配置文件目录，找到nginx的配置文件nginx.conf</span>
 cd /usr/local/nginx/conf/
 
-#直接修改
+<span style="color:#75715e">#直接修改</span>
 vi nginx.conf
-</code></pre><p>在文件中找到如图位置：</p>
-<p><img src="https://oscimg.oschina.net/oscnet/1923190cba23913f543cda119d62209fec6.jpg" alt="img"></p>
-<pre><code>#listen为监听的端口
+</code></pre></div><p>在文件中找到如图位置：</p>
+<p><!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#listen为监听的端口</span>
 listen       80;
-#server_name为域名
+<span style="color:#75715e">#server_name为域名</span>
 server_name  www.test.com;
-#location是访问地址的设置,locahost也可以用服务器ip代替
-location / {
+<span style="color:#75715e">#location是访问地址的设置,locahost也可以用服务器ip代替</span>
+location / <span style="color:#f92672">{</span>
 proxy_pass http://localhost:8080; 
-}
-</code></pre><p>如图，只需要修改server_name和location里面的内容即可。</p>
-<pre><code>#修改完成后，重新加载配置文件
+<span style="color:#f92672">}</span>
+</code></pre></div><p>如图，只需要修改server_name和location里面的内容即可。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#修改完成后，重新加载配置文件</span>
 cd /usr/local/nginx/sbin/
 ./nginx -s reload
-</code></pre><h2 id="解析域名">解析域名</h2>
+</code></pre></div><h2 id="解析域名">解析域名</h2>
 <p>进入域名控制台，添加或者修改解析地址，如果原来配置了解析，新解析需要一定时间（TTL默认为1h）才能生效。</p>
 
     </article>
