@@ -6,10 +6,34 @@
     <description>Recent content on JunhaoXue‘s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.xuejunhao.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nginx</title>
+      <link>http://www.xuejunhao.com/post/nginx/</link>
+      <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.xuejunhao.com/post/nginx/</guid>
+      <description>安装 日期：20200426
+Ubuntu 18.04 安装Nginx 安装 Nginx的软件包在Ubuntu默认软件仓库中可用。 安装非常简单，只需键入以下命令:
+sudo apt update sudo apt install nginx 安装完成后，请检查Nginx服务的状态和版本：
+sudo systemctl status nginx 显示active（running）说明正常工作。
+检查网络 如果您正在运行防火墙，则还需要打开端口80和443。
+检查防火墙是否开启
+ sudo ufw status 如果开启则需要开通一下防火墙权限：
+sudo ufw allow &#39;Nginx Full&#39; 测试安装 在您选择的浏览器中打开http://YOUR_IP，您应该能够看到默认的Nginx登录页面，如下所示：
+使用systemctl管理Nginx服务 您可以像任何其他systemd单位一样管理Nginx服务。
+要停止Nginx服务，请运行：sudo systemctl stop nginx
+要再次启动，请键入：sudo systemctl start nginx
+重新启动Nginx服务：sudo systemctl restart nginx
+在进行一些配置更改后重新加载Nginx服务：sudo systemctl reload nginx
+如果你想禁用Nginx服务在启动时启动：sudo systemctl disable nginx
+并重新启用它：$sudo systemctl enable nginx
+CentOS 7 安装 Nginx 安装各种依赖 #gcc安装，nginx源码编译需要 yum install gcc-c++ #PCRE pcre-devel 安装，nginx 的 http 模块使用 pcre 来解析正则表达式 yum install -y pcre pcre-devel #zlib安装，nginx 使用zlib对http包的内容进行gzip yum install -y zlib zlib-devel #OpenSSL 安装，强大的安全套接字层密码库，nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http） yum install -y openssl openssl-devel 下载 推荐使用wget命令下载：</description>
+    </item>
     
     <item>
       <title>Self-introduction</title>
@@ -74,29 +98,6 @@
       
       <guid>http://www.xuejunhao.com/post/mysql/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Nginx</title>
-      <link>http://www.xuejunhao.com/post/nginx/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.xuejunhao.com/post/nginx/</guid>
-      <description>安装 Ubuntu 18.04 安装Nginx 安装 Nginx的软件包在Ubuntu默认软件仓库中可用。 安装非常简单，只需键入以下命令:
-sudo apt update sudo apt install nginx 安装完成后，请检查Nginx服务的状态和版本：
-sudo systemctl status nginx 显示active（running）说明正常工作。
-检查网络 如果您正在运行防火墙，则还需要打开端口80和443。
-检查防火墙是否开启
- sudo ufw status 如果开启则需要开通一下防火墙权限：
-sudo ufw allow &#39;Nginx Full&#39; 测试安装 在您选择的浏览器中打开http://YOUR_IP，您应该能够看到默认的Nginx登录页面，如下所示：
-使用systemctl管理Nginx服务 您可以像任何其他systemd单位一样管理Nginx服务。
-要停止Nginx服务，请运行：sudo systemctl stop nginx
-要再次启动，请键入：sudo systemctl start nginx
-重新启动Nginx服务：sudo systemctl restart nginx
-在进行一些配置更改后重新加载Nginx服务：sudo systemctl reload nginx
-如果你想禁用Nginx服务在启动时启动：sudo systemctl disable nginx
-并重新启用它：$sudo systemctl enable nginx
-CentOS 7 安装 Nginx 安装各种依赖 #gcc安装，nginx源码编译需要 yum install gcc-c++ #PCRE pcre-devel 安装，nginx 的 http 模块使用 pcre 来解析正则表达式 yum install -y pcre pcre-devel #zlib安装，nginx 使用zlib对http包的内容进行gzip yum install -y zlib zlib-devel #OpenSSL 安装，强大的安全套接字层密码库，nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http） yum install -y openssl openssl-devel 下载 推荐使用wget命令下载：</description>
     </item>
     
     <item>
