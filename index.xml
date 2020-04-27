@@ -6,15 +6,62 @@
     <description>Recent content on JunhaoXue‘s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.xuejunhao.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Self-introduction</title>
+      <link>http://www.xuejunhao.com/post/self-introduction/</link>
+      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.xuejunhao.com/post/self-introduction/</guid>
+      <description>勇者无惧，智者无惑，诚者有信，仁者无敌。
+履历 学生经历  2017-2018 软件工程 17 级本科生 - 年级长 2019-2021 计算机学院大学生科学技术协会 – 主席  企业经历  2017年12月 - 2018年10月 烟台数方软件有限责任公司 - 总经理 2019年3月 - 至今 长沙海思辉通软件有限责任公司 - 法人、执行董事 2020年3月 - 至今 网易游戏 - 平台产品策划  事迹 2018 - 9月 走出象牙塔，初识人间烟火 – 产品体验、策划、营销 18年9月的秋季学期开学，又是新生开学军训。因为和朋友聊天谈到军训，我们开始吐槽新生军训时间长，胶底鞋硬，普通鞋垫根本没用，潜意识觉得这是一个很棒的用户痛点，于是和朋友一拍即合，决定做点卖鞋垫的小生意。
+我们选了一款加厚的运动鞋垫，踩上去很软，而且军训期间一双就够。于是我们顶着太阳在路边叫卖，效果超棒，当天就卖光了，我们不得不赶紧加订了一批。很多同学通过微信支付的留言方式给我们好评。期间我们被保安大叔赶了3次，在这里跟保安大叔说声对不起，并且感谢他们没有没收我们的小摊。
+期间我也做过电信运营商的校园代理，一天卖出了10张手机卡，虽然报酬还算不错，但楼上楼下跑一天真的累到话都不想说。后来我又做过家教，体会了不同阶级的教育观念，也更深刻地意识到我们为什么要学习，我们要学什么。最近在家天天洗碗，洗碗的水平应该可以找到一份洗碗工的工作了。
+2019 - 3月 创办海思辉通软件公司 创业实践国家级立项（6/1806） - 项目负责人 19年3月，我创办了海思辉通软件有限责任公司，起因是接到了一个软件外包的业务。
+很多人认为做生意首先要有产品，但是事实是，首先要找到买家。
+我在团队里负责用户需求调研与分析，产品规划，软件规模度量，估算成本报价，客户洽谈，管理开发进度。在项目管理过程中，面临过很严重的进度延迟，也算是尝到了人月神话里的各种教训。
+我们先后完成了广东某家具企业ERP、广东三维家互联网楼盘数据分析等一些项目。
+这段经历让我用一种更加不一样的眼光，去看待公司这种组织形式。
+2020 - 1月 肺癌影像大数据分析与用药决策系统 – 产品经理&amp;amp;本科生团队负责人 从大一开始，我每个学期都会参加3-5个比赛。19年底，我们团队开始做肺癌影像大数据与用药决策系统。起初因为软件需求课程认识了吴嘉老师，他非常年轻、有激情、治学严谨。我加入了他的研究团队，主要带领本科生做系统的开发工作。
+我们现在开发一款肺癌大数据诊疗服务，通过搜索大量的历史病历来匹配相似病情，集病人疾病分析、发展预测、参考治疗方案生成和疗效评估。因为家人都曾经遭受过这种疾病的折磨，所以我们都发自内心地想要改善现在的医疗状况，给病人一个最佳的治疗方案。
+2020 - 4月 网易游戏 – 平台产品经理实习生 20年春招，我通过三轮面试拿到了网易游戏的产品Offer，成为了网易游戏的平台产品经理，主要工作是围绕游戏做平台的策划与研发。</description>
+    </item>
+    
+    <item>
+      <title>Psychology</title>
+      <link>http://www.xuejunhao.com/post/psychology/</link>
+      <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.xuejunhao.com/post/psychology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Product Manager</title>
+      <link>http://www.xuejunhao.com/post/product-manager/</link>
+      <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.xuejunhao.com/post/product-manager/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Economics</title>
+      <link>http://www.xuejunhao.com/post/economics/</link>
+      <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.xuejunhao.com/post/economics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Nginx</title>
       <link>http://www.xuejunhao.com/post/nginx/</link>
-      <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>http://www.xuejunhao.com/post/nginx/</guid>
       <description>安装 日期：20200426
@@ -36,38 +83,29 @@ CentOS 7 安装 Nginx 安装各种依赖 #gcc安装，nginx源码编译需要 yu
     </item>
     
     <item>
-      <title>Self-introduction</title>
-      <link>http://www.xuejunhao.com/post/self-introduction/</link>
-      <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
+      <title>Vue</title>
+      <link>http://www.xuejunhao.com/post/vue/</link>
+      <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://www.xuejunhao.com/post/self-introduction/</guid>
-      <description>勇者无惧，智者无惑，诚者有信，仁者无敌。
-履历 学生经历  2017-2018 软件工程 17 级本科生 - 年级长 2019-2021 计算机学院大学生科学技术协会 – 主席  企业经历  2017年12月 - 2018年10月 烟台数方软件有限责任公司 - 总经理 2019年3月 - 至今 长沙海思辉通软件有限责任公司 - 法人、执行董事 2020年3月 - 至今 网易游戏 - 平台产品策划  事迹 2018 - 9月 走出象牙塔，初识人间烟火 – 产品体验、策划、营销 18年9月的秋季学期开学，又是新生开学军训。因为和朋友聊天谈到军训，我们开始吐槽新生军训时间长，胶底鞋硬，普通鞋垫根本没用，潜意识觉得这是一个很棒的用户痛点，于是和朋友一拍即合，决定做点卖鞋垫的小生意。
-我们选了一款加厚的运动鞋垫，踩上去很软，而且军训期间一双就够。于是我们顶着太阳在路边叫卖，效果超棒，当天就卖光了，我们不得不赶紧加订了一批。很多同学通过微信支付的留言方式给我们好评。期间我们被保安大叔赶了3次，在这里跟保安大叔说声对不起，并且感谢他们没有没收我们的小摊。
-期间我也做过电信运营商的校园代理，一天卖出了10张手机卡，虽然报酬还算不错，但楼上楼下跑一天真的累到话都不想说。后来我又做过家教，体会了不同阶级的教育观念，也更深刻地意识到我们为什么要学习，我们要学什么。最近在家天天洗碗，洗碗的水平应该可以找到一份洗碗工的工作了。
-2019 - 3月 创办海思辉通软件公司 创业实践国家级立项（6/1806） - 项目负责人 19年3月，我创办了海思辉通软件有限责任公司，起因是接到了一个软件外包的业务。
-很多人认为做生意首先要有产品，但是事实是，首先要找到买家。
-我在团队里负责用户需求调研与分析，产品规划，软件规模度量，估算成本报价，客户洽谈，管理开发进度。在项目管理过程中，面临过很严重的进度延迟，也算是尝到了人月神话里的各种教训。
-我们先后完成了广东某家具企业ERP、广东三维家互联网楼盘数据分析等一些项目。
-这段经历让我用一种更加不一样的眼光，去看待公司这种组织形式。
-2020 - 1月 肺癌影像大数据分析与用药决策系统 – 产品经理&amp;amp;本科生团队负责人 从大一开始，我每个学期都会参加3-5个比赛。19年底，我们团队开始做肺癌影像大数据与用药决策系统。起初因为软件需求课程认识了吴嘉老师，他非常年轻、有激情、治学严谨。我加入了他的研究团队，主要带领本科生做系统的开发工作。
-我们现在开发一款肺癌大数据诊疗服务，通过搜索大量的历史病历来匹配相似病情，集病人疾病分析、发展预测、参考治疗方案生成和疗效评估。因为家人都曾经遭受过这种疾病的折磨，所以我们都发自内心地想要改善现在的医疗状况，给病人一个最佳的治疗方案。
-2020 - 4月 网易游戏 – 平台产品经理实习生 20年春招，我通过三轮面试拿到了网易游戏的产品Offer，成为了网易游戏的平台产品经理，主要工作是围绕游戏做平台的策划与研发。</description>
+      <guid>http://www.xuejunhao.com/post/vue/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Product Manager</title>
-      <link>http://www.xuejunhao.com/post/product-manager/</link>
-      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      <title>Transaction Record</title>
+      <link>http://www.xuejunhao.com/post/transactionrecord/</link>
+      <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://www.xuejunhao.com/post/product-manager/</guid>
-      <description></description>
+      <guid>http://www.xuejunhao.com/post/transactionrecord/</guid>
+      <description>交割单 2020-04-27 中国电影 600977 19年年报和2020一季报公布，一季报亏损2.2亿元人民币。开盘竞价无异动，12.28元，涨幅0%。开盘价为12.33元。开盘后，异动拉升，大单持续吃进，每次突破后横盘3-5分钟。开盘20分钟，成交金额6600万，较往日成交量明显放大。10:00强势吃掉12.80元2500手大单，随后突破到12.86。随后横盘震荡，价格维持在12.65-12.75之间。下午略有回调，收盘价为12.54元，成交额1.82亿。
+分析：利空出尽。由于暂无利好消息支撑，因此估计市场价格仍会维持在12.60-13.70之间。
+持仓：不变。</description>
     </item>
     
     <item>
       <title>Finance</title>
       <link>http://www.xuejunhao.com/post/finance/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>http://www.xuejunhao.com/post/finance/</guid>
       <description></description>
@@ -76,7 +114,7 @@ CentOS 7 安装 Nginx 安装各种依赖 #gcc安装，nginx源码编译需要 yu
     <item>
       <title>History</title>
       <link>http://www.xuejunhao.com/post/history/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>http://www.xuejunhao.com/post/history/</guid>
       <description></description>
@@ -88,42 +126,6 @@ CentOS 7 安装 Nginx 安装各种依赖 #gcc安装，nginx源码编译需要 yu
       <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>http://www.xuejunhao.com/post/mathematics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MySQL</title>
-      <link>http://www.xuejunhao.com/post/mysql/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.xuejunhao.com/post/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Psychology</title>
-      <link>http://www.xuejunhao.com/post/psychology/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.xuejunhao.com/post/psychology/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vue</title>
-      <link>http://www.xuejunhao.com/post/vue/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.xuejunhao.com/post/vue/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Economics</title>
-      <link>http://www.xuejunhao.com/post/economics/</link>
-      <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.xuejunhao.com/post/economics/</guid>
       <description></description>
     </item>
     
