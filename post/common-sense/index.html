@@ -1,0 +1,1852 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="/images/favicon.svg">
+    
+    <link rel="stylesheet" href="/scss/global.min.fb4dd79813ef5075eb6e0a596ca103e09f51efc11a614d013d4d9049d60904b1.css">
+    
+    <link rel="stylesheet" href="/css/prism.css" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+    
+
+ 
+
+
+
+
+
+
+	
+
+
+
+
+<title>Common Sence | JunhaoXue‘s Blog</title>
+<meta name="description" content="计算机科学中具有特殊含义或易误解混淆的术语辨析 这是我以前收集整理的文档，参考了一些网上的公开资料。这次发到这里，是因为可以随时修改。不足之处，敬请指正，以便修正，以免误导他人。
+ 术语的统一需要一个过程。计算机科学中有些术语不具一致性，容易引起混淆。有几方面原因：一是计算机科学相对年轻发展活跃，不可能有周全单一的理论解释所有的方面，不同国家地区、不同组织在开发和技术发展的过程中，使用了各种不同的术语，或多词一意，或一词多义，甚至同一行业中不同人采用的术语也有如此现象。二是翻译差异更加剧此种现象，不论是汉语和英语，有些词本身语义宽泛，一词多义多词一义比较普遍，并且汉语词语和英语词语显然难以一一对应，这就造成有些术语在不同文档资料甚至同一文档资料中不一致。技术不会是静态的，而是不断发展变化着，术语混乱甚至矛盾难以避免。要切贴地理解术语的意义，需要根据专业范围、语境场合、作者的意图综合理解，而不要孤立的对待。我在学习的过程中，受其困惑颇深，故试着辨析总结。这次发到这里，希望对学习者特别是初学者提供有益的一点帮助。
+  ——目录——
+ program、subroutine、procedure和method
+process和procedure
+进程(process)和线程(thread)
+argument 和parameter
+interactive（交互式）
+form（窗体；表单）
+操作系统安装（The operating system installation）的方式
+兼容（compatibility、Compatible）
+Blog和Bloger
+主机(Host)和终端(Terminal)
+Local（局部的，本地的）
+client和server Internet（因特网）和internet（互连网）
+网络分层模型的各种层的数据格式的名称：packet、Message和Datagram
+节点（Node）和站点（site）
+Frequency(频率)和Clock cycle(时钟周期)
+基带（baseband）和宽[频]带（broadband）
+信噪比(Signal to Noise Ratio）
+射频(RF)
+carrier wave（载波）
+Synchronization (同步) 与asynchronization (异步)
+占位符（placeholder）
+接口（interface）和端口（port）
+透明的（transparent）
+Heap (堆)和stack ([堆]栈)
+Rights、permissions、Privileges
+Control (控件)和Component (组件)
+attribute 和property
+document和file
+Catalog 、Directory、contents 和folder
+backup、copy和 replication、replica
+point-to-point和end-to-end
+passive和active
+Connection、link和 join
+Field和Domain
+Relationship和relation
+引用（reference）、参照[引用]关系（Referencing Relation）、被参照[被引用]关系（Referenced Relation）
+pattern、mode、model和Schema
+实体(Entity)、实体集(Entity Set)、实体类型(Entity Type)和实体实例(Entity instance)">
+<meta property="og:title" content="Common Sence | JunhaoXue‘s Blog">
+<meta property="og:site_name" content="JunhaoXue‘s Blog">
+<meta property="og:description" content="计算机科学中具有特殊含义或易误解混淆的术语辨析 这是我以前收集整理的文档，参考了一些网上的公开资料。这次发到这里，是因为可以随时修改。不足之处，敬请指正，以便修正，以免误导他人。
+ 术语的统一需要一个过程。计算机科学中有些术语不具一致性，容易引起混淆。有几方面原因：一是计算机科学相对年轻发展活跃，不可能有周全单一的理论解释所有的方面，不同国家地区、不同组织在开发和技术发展的过程中，使用了各种不同的术语，或多词一意，或一词多义，甚至同一行业中不同人采用的术语也有如此现象。二是翻译差异更加剧此种现象，不论是汉语和英语，有些词本身语义宽泛，一词多义多词一义比较普遍，并且汉语词语和英语词语显然难以一一对应，这就造成有些术语在不同文档资料甚至同一文档资料中不一致。技术不会是静态的，而是不断发展变化着，术语混乱甚至矛盾难以避免。要切贴地理解术语的意义，需要根据专业范围、语境场合、作者的意图综合理解，而不要孤立的对待。我在学习的过程中，受其困惑颇深，故试着辨析总结。这次发到这里，希望对学习者特别是初学者提供有益的一点帮助。
+  ——目录——
+ program、subroutine、procedure和method
+process和procedure
+进程(process)和线程(thread)
+argument 和parameter
+interactive（交互式）
+form（窗体；表单）
+操作系统安装（The operating system installation）的方式
+兼容（compatibility、Compatible）
+Blog和Bloger
+主机(Host)和终端(Terminal)
+Local（局部的，本地的）
+client和server Internet（因特网）和internet（互连网）
+网络分层模型的各种层的数据格式的名称：packet、Message和Datagram
+节点（Node）和站点（site）
+Frequency(频率)和Clock cycle(时钟周期)
+基带（baseband）和宽[频]带（broadband）
+信噪比(Signal to Noise Ratio）
+射频(RF)
+carrier wave（载波）
+Synchronization (同步) 与asynchronization (异步)
+占位符（placeholder）
+接口（interface）和端口（port）
+透明的（transparent）
+Heap (堆)和stack ([堆]栈)
+Rights、permissions、Privileges
+Control (控件)和Component (组件)
+attribute 和property
+document和file
+Catalog 、Directory、contents 和folder
+backup、copy和 replication、replica
+point-to-point和end-to-end
+passive和active
+Connection、link和 join
+Field和Domain
+Relationship和relation
+引用（reference）、参照[引用]关系（Referencing Relation）、被参照[被引用]关系（Referenced Relation）
+pattern、mode、model和Schema
+实体(Entity)、实体集(Entity Set)、实体类型(Entity Type)和实体实例(Entity instance)">
+<meta property="og:url" content="http://www.xuejunhao.com/post/common-sense/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content='http://www.xuejunhao.com/images/hero-4.jpg'><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Common Sence | JunhaoXue‘s Blog">
+
+	<link rel="canonical" href="http://www.xuejunhao.com/post/common-sense/">
+
+
+	<meta name="twitter:description" content="计算机科学中具有特殊含义或易误解混淆的术语辨析 这是我以前收集整理的文档，参考了一些网上的公开资料。这次发到这里，是因为可以随时修改。不足之处，敬请指正，以便修正，以免误导他人。
+ 术语的统一需要一个过程。计算机科学中有些术语不具一致性，容易引起混淆。有几方面原因：一是计算机科学相对年轻发展活跃，不可能有周全单一的理论解释所有的方面，不同国家地区、不同组织在开发和技术发展的过程中，使用了各种不同的术语，或多词一意，或一词多义，甚至同一行业中不同人采用的术语也有如此现象。二是翻译差异更加剧此种现象，不论是汉语和英语，有些词本身语义宽泛，一词多义多词一义比较普遍，并且汉语词语和英语词语显然难以一一对应，这就造成有些术语在不同文档资料甚至同一文档资料中不一致。技术不会是静态的，而是不断发展变化着，术语混乱甚至矛盾难以避免。要切贴地理解术语的意义，需要根据专业范围、语境场合、作者的意图综合理解，而不要孤立的对待。我在学习的过程中，受其困惑颇深，故试着辨析总结。这次发到这里，希望对学习者特别是初学者提供有益的一点帮助。
+  ——目录——
+ program、subroutine、procedure和method
+process和procedure
+进程(process)和线程(thread)
+argument 和parameter
+interactive（交互式）
+form（窗体；表单）
+操作系统安装（The operating system installation）的方式
+兼容（compatibility、Compatible）
+Blog和Bloger
+主机(Host)和终端(Terminal)
+Local（局部的，本地的）
+client和server Internet（因特网）和internet（互连网）
+网络分层模型的各种层的数据格式的名称：packet、Message和Datagram
+节点（Node）和站点（site）
+Frequency(频率)和Clock cycle(时钟周期)
+基带（baseband）和宽[频]带（broadband）
+信噪比(Signal to Noise Ratio）
+射频(RF)
+carrier wave（载波）
+Synchronization (同步) 与asynchronization (异步)
+占位符（placeholder）
+接口（interface）和端口（port）
+透明的（transparent）
+Heap (堆)和stack ([堆]栈)
+Rights、permissions、Privileges
+Control (控件)和Component (组件)
+attribute 和property
+document和file
+Catalog 、Directory、contents 和folder
+backup、copy和 replication、replica
+point-to-point和end-to-end
+passive和active
+Connection、link和 join
+Field和Domain
+Relationship和relation
+引用（reference）、参照[引用]关系（Referencing Relation）、被参照[被引用]关系（Referenced Relation）
+pattern、mode、model和Schema
+实体(Entity)、实体集(Entity Set)、实体类型(Entity Type)和实体实例(Entity instance)">
+<meta name="twitter:image" content="http://www.xuejunhao.com/images/hero-4.jpg">
+<meta property="article:published_time" content="2020-04-20T00:00:00&#43;00:00">
+	<meta property="article:updated_time" content="2020-04-20T00:00:00&#43;00:00">
+
+
+
+    </head>
+
+
+<body class="line-numbers">
+
+    
+    <script src="/js/initColors.js"></script>
+
+    <div class="layout-styled">
+
+        <Section class="section">
+  <div class="nav-container">
+    <a class="logo-link" href="/">
+      <div id="logo-desktop">
+        <svg
+        width="192"
+        height="23"
+        viewBox="0 0 192 23"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="Logo__Desktop"
+      >
+        <g clipPath="url(#clip0)">
+          <path
+            d="M120.941 6.15477H122.453V2.83255L124.114 2.44922V6.15477H126.713V7.30477H124.114V16.377C124.114 17.314 124.54 17.7826 125.435 17.7826C125.925 17.7826 126.478 17.6335 126.904 17.4205L127.181 18.4214C126.606 18.7835 125.861 18.9964 124.86 18.9964C123.539 18.9964 122.432 18.3788 122.432 16.5261V7.30477H120.92V6.15477H120.941Z"
+            fill="#7A8085"
+          />
+          <path
+            d="M131.739 7.77334C132.825 6.70852 134.273 5.89926 135.764 5.89926C137.723 5.89926 138.937 6.94278 138.937 9.17889V17.6122L140.555 17.8465V18.7409H137.233V9.58352C137.233 7.9863 136.616 7.30482 135.338 7.30482C134.166 7.30482 132.74 8.0076 131.739 8.90204V17.5909L133.442 17.8039V18.7196H128.416V17.8039L130.078 17.5909V1.29926L128.374 1.04371V0.0214844H131.739V7.77334V7.77334Z"
+            fill="#7A8085"
+          />
+          <path
+            d="M141.854 12.4374C141.854 7.6883 143.92 5.89941 146.731 5.89941C149.648 5.89941 151.267 7.64571 151.267 11.9689V12.629H143.6C143.621 16.3772 144.686 17.8253 147.284 17.8253C148.605 17.8253 149.584 17.3994 150.5 16.7818L151.096 17.6124C150.01 18.5068 148.754 18.9966 147.008 18.9966C143.941 18.9753 141.854 17.2929 141.854 12.4374ZM143.621 11.5216H149.521C149.521 8.34849 148.754 6.98552 146.709 6.98552C144.857 6.98552 143.771 8.2633 143.621 11.5216Z"
+            fill="#7A8085"
+          />
+          <path
+            d="M162.682 7.85849C163.768 6.70849 165.024 5.87793 166.515 5.87793C168.474 5.87793 169.646 6.92145 169.646 9.15756V17.6335L171.286 17.8677V18.6983H167.963V9.68997C167.963 8.07145 167.388 7.32608 166.089 7.32608C164.918 7.32608 163.789 8.02886 162.81 8.9233V17.6122L164.449 17.8464V18.7409H161.127V9.68997C161.127 8.07145 160.552 7.32608 159.253 7.32608C158.082 7.32608 156.953 8.02886 155.973 8.9233V17.6122L157.677 17.8464V18.7409H152.651V17.8464L154.312 17.6122V7.47515L152.609 7.2196V6.15478H155.654L155.888 7.85849C156.974 6.72978 158.188 5.89923 159.679 5.89923C161.212 5.87793 162.277 6.51682 162.682 7.85849Z"
+            fill="#7A8085"
+          />
+          <path
+            d="M171.925 12.4374C171.925 7.6883 173.991 5.89941 176.802 5.89941C179.719 5.89941 181.338 7.64571 181.338 11.9689V12.629H173.671C173.692 16.3772 174.757 17.8253 177.355 17.8253C178.676 17.8253 179.655 17.3994 180.571 16.7818L181.167 17.6124C180.081 18.5068 178.825 18.9966 177.079 18.9966C174.012 18.9753 171.925 17.2929 171.925 12.4374ZM173.692 11.5216H179.591C179.591 8.34849 178.825 6.98552 176.78 6.98552C174.928 6.98552 173.863 8.2633 173.692 11.5216Z"
+            fill="#7A8085"
+          />
+          <path
+            d="M183.084 18.0383V15.504H184.234L184.618 17.442C185.278 17.7189 185.789 17.8892 186.811 17.8892C188.664 17.8892 189.558 17.0374 189.558 15.5466C189.558 14.0559 188.834 13.4809 186.79 12.8846C184.831 12.2883 183.382 11.4577 183.382 9.13645C183.382 7.39016 184.639 5.89941 187.195 5.89941C188.664 5.89941 189.835 6.17627 190.687 6.68738V9.15775H189.558L189.132 7.34756C188.579 7.09201 187.961 7.00682 187.258 7.00682C185.789 7.00682 184.852 7.7309 184.852 8.98738C184.852 10.3077 185.576 10.8189 187.365 11.3513C189.431 12.0115 191.156 12.7142 191.156 15.3976C191.156 17.7615 189.431 18.9753 186.79 18.9753C185.235 18.9753 183.957 18.6346 183.084 18.0383Z"
+            fill="#7A8085"
+          />
+          <path class="change-fill"
+            d="M38.3122 9.98811C38.3122 8.66774 37.9501 8.15663 36.9492 8.15663C36.1186 8.15663 35.0964 8.62515 34.3936 9.20015V16.9733L35.8418 17.165V18.6344H30.0918V17.165L31.5825 16.9733V8.24182L30.0918 7.92237V6.19737H33.9251L34.2446 7.64552C35.3733 6.55941 36.6298 5.87793 38.1418 5.87793C39.9946 5.87793 41.102 6.92145 41.102 9.07237V16.9733L42.5927 17.165V18.6344H38.3122V9.98811V9.98811Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M62.3982 17.1858V18.6553H56.0732V17.1858L57.564 16.9942V8.2627L56.0732 7.94326V6.21826H59.8427L60.226 8.17752C61.0779 6.85715 62.1427 5.94141 63.6973 5.94141C63.8677 5.94141 64.0594 5.9627 64.1871 6.0053L63.8251 8.94418C63.5483 8.81641 63.2501 8.77381 62.8668 8.77381C61.8871 8.77381 61.1418 9.05067 60.3751 9.71085V16.9516L62.3982 17.1858Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M76.7098 6.19733H78.0941V3.08807L80.5432 2.55566V6.21863H82.9709V8.0927H80.5432V15.6742C80.5432 16.5899 80.8839 16.9946 81.6293 16.9946C82.0978 16.9946 82.5876 16.8455 82.907 16.6751L83.3543 18.3575C82.758 18.6983 81.9061 18.9751 80.6709 18.9751C78.9672 18.9751 78.0941 18.1658 78.0941 16.0362V8.0927H76.7098V6.19733Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M90.4664 17.1648V18.6343H84.6738V17.1648L86.1646 16.9731V8.24167L84.6738 7.92222V6.19722H88.9757V16.9731L90.4664 17.1648ZM85.696 1.76759C85.696 0.787963 86.4627 0 87.4423 0C88.422 0 89.1886 0.766667 89.1886 1.76759C89.1886 2.72593 88.422 3.51389 87.421 3.51389C86.4627 3.51389 85.696 2.72593 85.696 1.76759Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M98.3251 7.90097V6.19727H103.053V7.92227L101.924 8.11393L98.3251 18.6556H95.663L92.064 8.09264L90.9991 7.92227V6.19727H96.2593V7.90097L95.0242 8.09264L96.7279 13.6084C97.0473 14.6519 97.1964 15.5037 97.3668 16.4834H97.388C97.5371 15.525 97.7714 14.5241 98.0482 13.5871L99.6668 8.07134L98.3251 7.90097Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M75.6867 17.1224C74.5793 17.1437 74.3664 16.952 74.3664 15.9724V9.79645C74.3664 6.96404 72.9821 5.87793 70.3201 5.87793C68.3821 5.87793 66.7423 6.45293 65.4219 7.28349L66.2312 9.02978C67.3599 8.45478 68.4673 8.09274 69.7238 8.09274C71.1932 8.09274 71.5552 8.88071 71.5552 10.265V11.0316V11.2233V12.7779V12.8844V16.1214C71.0867 16.6326 70.4052 17.0585 69.4469 17.0585C68.3821 17.0585 67.871 16.5261 67.871 15.0353C67.871 13.3103 68.5951 12.8205 70.4904 12.7779V11.2233C66.6358 11.2659 65.0386 12.4372 65.0386 15.2057C65.0386 17.8465 66.4867 18.9752 68.6589 18.9752C70.2136 18.9752 71.0654 18.315 71.7895 17.5696C72.0451 18.5705 72.833 18.9752 73.8978 18.9752C74.6645 18.9752 75.3886 18.7622 75.8571 18.5066L75.6867 17.1224Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M54.4968 17.1224C53.3894 17.1437 53.1764 16.952 53.1764 15.9724V9.79645C53.1764 6.96404 51.7922 5.87793 49.1301 5.87793C47.1922 5.87793 45.5523 6.45293 44.232 7.28349L45.0412 9.02978C46.1699 8.45478 47.2773 8.09274 48.5338 8.09274C50.0033 8.09274 50.3653 8.88071 50.3653 10.265V11.0316V11.2233V12.7779V12.8844V16.1214C49.8968 16.6326 49.2153 17.0585 48.257 17.0585C47.1922 17.0585 46.681 16.5261 46.681 15.0353C46.681 13.3103 47.4051 12.8205 49.3005 12.7779V11.2233C45.4459 11.2659 43.8486 12.4372 43.8486 15.2057C43.8486 17.8465 45.2968 18.9752 47.469 18.9752C49.0236 18.9752 49.8755 18.315 50.5996 17.5696C50.8551 18.5705 51.6431 18.9752 52.7079 18.9752C53.4746 18.9752 54.1986 18.7622 54.6672 18.5066L54.4968 17.1224Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M107.653 13.055H113.594V11.9476C113.594 7.47534 111.869 5.89941 108.803 5.89941C105.63 5.89941 103.628 7.79478 103.628 12.4161C103.628 17.1013 105.523 18.9966 109.058 18.9966C110.954 18.9966 112.231 18.5068 113.467 17.5272L112.657 16.0577C111.678 16.6753 110.868 17.0587 109.463 17.0587C107.546 17.0587 106.801 16.1855 106.63 14.0133C106.588 13.6939 106.567 13.0976 106.567 12.4587C106.567 12.054 106.567 11.6707 106.588 11.3726V11.3513C106.737 8.51886 107.397 7.60312 108.781 7.60312C110.4 7.60312 110.783 8.58275 110.783 11.3513H107.674V13.055H107.653Z"
+            fill="#000"
+          />
+          <path class="change-fill" d="M17.5907 20.2954H0V23H17.5907V20.2954Z" fill="#000" />
+          <path class="change-fill"
+            d="M0 7.96484V18.9537L5.38796 15.1843V11.7343L0 7.96484Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M17.5689 10.9463V0L12.1597 3.74815V7.13426L17.5689 10.9463Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M17.5907 18.975L17.5694 12.288L0 0V6.62315L17.5907 18.975Z"
+            fill="#000"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0">
+            <rect width="191.156" height="23" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+</div>
+<div id="logo-mobile" class="hidden">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+    width="23" height="23" viewBox="0 0 512.000000 512.000000"
+    preserveAspectRatio="xMidYMid meet">
+   <metadata>
+   Created by potrace 1.15, written by Peter Selinger 2001-2017
+   </metadata>
+   <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+   fill="" stroke="none">
+   <path d="M590 4383 l1 -738 756 -530 c698 -489 1151 -807 2618 -1837 l540
+   -380 3 748 c2 590 -1 751 -10 760 -7 7 -308 218 -668 470 -360 251 -1230 859
+   -1933 1351 -702 491 -1284 893 -1292 893 -13 0 -15 -92 -15 -737z"/>
+   <path d="M3887 4708 l-597 -412 0 -381 0 -381 597 -419 c328 -231 602 -421
+   610 -423 11 -3 13 204 13 1212 0 987 -2 1216 -13 1216 -7 0 -282 -186 -610
+   -412z"/>
+   <path d="M590 2135 c0 -910 3 -1225 11 -1225 10 0 343 231 1049 728 l155 109
+   0 389 0 388 -595 418 c-327 229 -601 417 -607 418 -10 0 -13 -251 -13 -1225z"/>
+   <path d="M590 320 l0 -310 1960 0 1960 0 0 310 0 310 -1960 0 -1960 0 0 -310z"/>
+   </g>
+   </svg>
+</div>
+      <span class="header-hidden">Navigate back to the homepage</span>
+    </a>
+    <div class="nav-controls">
+      <button id="copyButton" class="icon-wrapper">
+        <svg
+    class="icon-image"
+    width="24"
+    height="20"
+    viewBox="0 0 24 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M2 5C2 3.34328 3.34328 2 5 2H14C15.6567 2 17 3.34328 17 5V9C17 10.6567 15.6567 12 14 12H10C9.44771 12 9 12.4477 9 13C9 13.5523 9.44771 14 10 14H14C16.7613 14 19 11.7613 19 9V5C19 2.23872 16.7613 0 14 0H5C2.23872 0 0 2.23872 0 5V9C0 10.4938 0.656313 11.8361 1.6935 12.7509C2.10768 13.1163 2.73961 13.0767 3.10494 12.6625C3.47028 12.2483 3.43068 11.6164 3.0165 11.2511C2.39169 10.6999 2 9.89621 2 9V5ZM7 11C7 9.34328 8.34328 8 10 8H14C14.5523 8 15 7.55228 15 7C15 6.44772 14.5523 6 14 6H10C7.23872 6 5 8.23872 5 11V15C5 17.7613 7.23872 20 10 20H19C21.7613 20 24 17.7613 24 15V11C24 9.50621 23.3437 8.16393 22.3065 7.24906C21.8923 6.88372 21.2604 6.92332 20.8951 7.3375C20.5297 7.75168 20.5693 8.38361 20.9835 8.74894C21.6083 9.30007 22 10.1038 22 11V15C22 16.6567 20.6567 18 19 18H10C8.34328 18 7 16.6567 7 15V11Z"
+      fill="#000"
+    />
+</svg>
+        <div id="toolTip" class="tool-tip " >
+            copied
+        </div>
+        <input id="copyText" style="opacity: 0;" type="text" class="tool-tip " />
+      </button>
+
+      <button id="themeColorButton" class="icon-wrapper"> 
+        <div id="sunRays" class="sun-rays"></div>
+        <div id="moonOrSun" class="moon-or-sun"></div>
+        <div id="moonMask" class="moon-mask"></div>
+      </button>
+    </div>
+</div>
+</Section>
+
+
+<script src="/js/toggleLogos.js"></script>
+
+
+<script src="/js/toggleColors.js"></script>
+
+
+<script src="/js/copyUrl.js"></script>
+
+        
+
+<section class="section narrow">
+
+    <section id="articleHero" class="section narrow">
+    <div class="article-hero">
+        <header class="article-header">
+            <h1 class="article-hero-heading">Common Sence</h1>
+            <div class="article-hero-subtitle">
+                <div class="article-meta">
+                    
+
+
+    
+            <a href="/authors/hugo-authors/" class="article-author-link">
+                
+                    <div class="article-author-avatar">
+                        <img src="/images/photo.png" />
+                    </div>
+                
+                
+                <strong>薛俊皓</strong>
+                
+                <span class="hide-on-mobile">,&nbsp;</span>
+            </a>
+    
+
+
+
+<script src="/js/collapseAuthors.js"></script>
+                    April 20, 2020
+                    • 18 min read
+                </div>
+            </div>
+        </header>
+        
+        <div class="article-hero-image" id="ArticleImage__Hero">
+            <img src="/images/hero-4.jpg">
+        </div>
+        
+    </div>
+</section>
+
+
+    <aside id="progressBar" class="aside-container">
+    <div class="aside-align">
+      <div>
+        <div class="overlap-container">
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-container" tabIndex={-1}>
+        <div class="track-line" aria-hidden="true">
+            <div id="progressIndicator" class="progress-line"></div>
+        </div>
+    </div>
+</aside>
+
+
+    <article  id="articleContent" class="post-content" style="position:relative;">
+        <p>计算机科学中具有特殊含义或易误解混淆的术语辨析
+这是我以前收集整理的文档，参考了一些网上的公开资料。这次发到这里，是因为可以随时修改。不足之处，敬请指正，以便修正，以免误导他人。</p>
+<p> </p>
+<p>术语的统一需要一个过程。计算机科学中有些术语不具一致性，容易引起混淆。有几方面原因：一是计算机科学相对年轻发展活跃，不可能有周全单一的理论解释所有的方面，不同国家地区、不同组织在开发和技术发展的过程中，使用了各种不同的术语，或多词一意，或一词多义，甚至同一行业中不同人采用的术语也有如此现象。二是翻译差异更加剧此种现象，不论是汉语和英语，有些词本身语义宽泛，一词多义多词一义比较普遍，并且汉语词语和英语词语显然难以一一对应，这就造成有些术语在不同文档资料甚至同一文档资料中不一致。技术不会是静态的，而是不断发展变化着，术语混乱甚至矛盾难以避免。要切贴地理解术语的意义，需要根据专业范围、语境场合、作者的意图综合理解，而不要孤立的对待。我在学习的过程中，受其困惑颇深，故试着辨析总结。这次发到这里，希望对学习者特别是初学者提供有益的一点帮助。</p>
+<p> </p>
+<p> </p>
+<p>——目录——</p>
+<p> </p>
+<p>program、subroutine、procedure和method</p>
+<p>process和procedure</p>
+<p>进程(process)和线程(thread)</p>
+<p>argument 和parameter</p>
+<p>interactive（交互式）</p>
+<p>form（窗体；表单）</p>
+<p>操作系统安装（The operating system installation）的方式</p>
+<p>兼容（compatibility、Compatible）</p>
+<p>Blog和Bloger</p>
+<p>主机(Host)和终端(Terminal)</p>
+<p>Local（局部的，本地的）</p>
+<p>client和server                                                             </p>
+<p>Internet（因特网）和internet（互连网）</p>
+<p>网络分层模型的各种层的数据格式的名称：packet、Message和Datagram</p>
+<p>节点（Node）和站点（site）</p>
+<p>Frequency(频率)和Clock cycle(时钟周期)</p>
+<p>基带（baseband）和宽[频]带（broadband）</p>
+<p>信噪比(Signal to Noise Ratio）</p>
+<p>射频(RF)</p>
+<p>carrier wave（载波）</p>
+<p>Synchronization (同步) 与asynchronization (异步)</p>
+<p>占位符（placeholder）</p>
+<p>接口（interface）和端口（port）</p>
+<p>透明的（transparent）</p>
+<p>Heap (堆)和stack ([堆]栈)</p>
+<p>Rights、permissions、Privileges</p>
+<p>Control (控件)和Component (组件)</p>
+<p>attribute 和property</p>
+<p>document和file</p>
+<p>Catalog 、Directory、contents 和folder</p>
+<p>backup、copy和 replication、replica</p>
+<p>point-to-point和end-to-end</p>
+<p>passive和active</p>
+<p>Connection、link和 join</p>
+<p>Field和Domain</p>
+<p>Relationship和relation</p>
+<p>引用（reference）、参照[引用]关系（Referencing Relation）、被参照[被引用]关系（Referenced Relation）</p>
+<p>pattern、mode、model和Schema</p>
+<p>实体(Entity)、实体集(Entity Set)、实体类型(Entity Type)和实体实例(Entity instance)</p>
+<p>快照(Snapshot) 和动态集(Dynaset)</p>
+<p>类（Class）与类型（Type）</p>
+<p>Empty、null</p>
+<p>模式（modal）和无模式（modeless）</p>
+<p>早绑定（Early binding）和 晚绑定（Late Binding）</p>
+<p>焦点（Focus）和 插入点（Insertion point）</p>
+<p>半导体中名词“wafer”、“chip”、“die（dice）”</p>
+<p>超线程（Hyper-Threading）和多核（MultiCore）</p>
+<p>并发（concurrent）、并行（parallel）、分布(distributed)</p>
+<p>仿真 emulation 模拟 simulation</p>
+<p>Caption、title、Heading、Header</p>
+<p>Detail</p>
+<p>label和tab</p>
+<p>item和project</p>
+<p>standard 和criterion、Criteria</p>
+<p>Orthogonality（正交性）</p>
+<p>标量(scalar)和向［矢］量（vector）</p>
+<p>Literal（字面量）</p>
+<p>Graphics（图形）、image（图像）、Picture（图片、图画）</p>
+<p>别名（alias）</p>
+<p>斜杠/和反斜杠\</p>
+<p>人工智能（AI、Artificial Intelligence）、机器学习（machine learning）和深度学习（deep learning）</p>
+<p> </p>
+<p>——解释——</p>
+<p> </p>
+<p>program(me)、subroutine、procedure和method</p>
+<p>program，[电脑]程序</p>
+<p>subroutine（简写为sub）， [电脑]子程序，子例程</p>
+<p>routine，[电脑]例程（例行程序），子程序</p>
+<p>subprogram，[电脑]子程序</p>
+<p>function，[电脑]函数</p>
+<p>procedure，[电脑]过程，存储过程</p>
+<p>method，[电脑]方法</p>
+<p> </p>
+<p>program，指适宜计算机处理的一种指令序列，完成一个所需要的任务。</p>
+<p> </p>
+<p>subroutine，routine，subprogram，function，procedure都含有“具有通用性或经常使用的、为别的程序调用的程序或指令序列”意项，一般不必刻意区分，它们的规模通常比program小。</p>
+<p>在计算机编程（计算机程序设计）领域，通常认为，procedure、subroutine、routine 和subprogram含义相同，都是指由另一个程序调用的长度较小或是重要的小程序。subroutine 和sub 、routine，虽然从构词法上分析 subroutine = sub + routine，但三者的意思一样。</p>
+<p>Subroutine 在程序设计语言里用，它和 procedure 有相同的意思，但 procedure 这个词的限制更少。RPC （Remote Procedure Call）远程过程调用。</p>
+<p>Function 和 subroutine/procedure 含义也差不多，区别在于：前者一般需要指定返回值（C 语言里的过程都是 functions），而后者可能不具有返回值（BASIC 语言当中有两种过程，Sub 和 Function 过程（Procedures））。具体的区别主要取决于适用语言的上下文。</p>
+<p> </p>
+<p>method一般是指对象的成员函数（c++的member function在java叫method，以强调其面向对象属性）。</p>
+<p> </p>
+<p> </p>
+<p>Process和procedure</p>
+<p>process，进程，过程；加工; 处理</p>
+<p>procedure，过程；程序</p>
+<p> </p>
+<p>process，一般地，译为“过程”多与编程语言静态特性有关；译为“进程”多与CPU硬件动态运行有关。操作系统中“进程和线程”的进程是process。VB中的“过程”是procedure。都是名词。另外，process很多时候译为“处理“（动词），如data processing system；online analytical processing (OLAP) 联机分析处理(OLAP) (for database)； interprocess communication (IPC)进程间通讯(IPC)；online transaction processing (OLTP) 联机事务处理(OLTP) (for database)；还有，processor 处理器。</p>
+<p> </p>
+<p>procedure，一般译为“过程”，如RPC (remote procedure call)RPC(远程过程调用)，stored procedure 存储过程 (for database)。过程（procedure），命名的语句序列，在语法上为完全的单元，可表达一种动作、声明或定义。尽管可以用分号 (:) 使一行中包含多个语句，但语句通常要占据一行。也可用续行符 ( _) 在第二个物理行上继续一个逻辑行上的内容。过程可作为单元来执行。例如，Function、Property和 Sub 都是过程类型。总是在模块级别定义过程的名称(过程包含在模块中)，所有可执行的代码必须包含在过程内，过程不能套在其它过程中。</p>
+<p> </p>
+<p> </p>
+<p>进程(process)和线程(thread)</p>
+<p>线程是进程的可执行单元，是计算机分配CPU机时的基本单元，线程隶属于进程，是进程之内运行的一个单元，同一个进程的多个线程共享该进程的资源和操作系统分配给该进程的内存空间。每个多线程的进程中必有一个主线程，该进程中的其它线程都是由主线程创建的。</p>
+<p> </p>
+<p>进程和线程都是由操作系统所体会的程序运行的基本单元，系统利用该基本单元实现系统对应用的并发性。进程和线程的区别在于：</p>
+<p>简而言之，一个程序至少有一个进程，一个进程至少有一个线程。</p>
+<p>线程的划分尺度小于进程，使得多线程程序的并发性高。</p>
+<p>另外，进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率。</p>
+<p>线程在执行过程中与进程还是有区别的。每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口。但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。</p>
+<p>从逻辑角度来看，多线程的意义在于一个应用程序中，有多个执行部分可以同时执行。但操作系统并没有将多个线程看做多个独立的应用，来实现进程的调度和管理以及资源分配。这就是进程和线程的重要区别。</p>
+<p>进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动，进程是系统进行资源分配和调度的一个独立单位。</p>
+<p>线程是进程的一个实体，是CPU调度和分派的基本单位，它是比进程更小的能独立运行的基本单位.线程自己基本上不拥有系统资源，只拥有一点在运行中必不可少的资源(如程序计数器，一组寄存器和栈)，但是它可与同属一个进程的其他的线程共享进程所拥有的全部资源。</p>
+<p>一个线程可以创建和撤销另一个线程；同一个进程中的多个线程之间可以并发执行。</p>
+<p> </p>
+<p>进程和线程的主要差别在于它们是不同的操作系统资源管理方式。进程有独立的地址空间，一个进程崩溃后，在保护模式下不会对其它进程产生影响，而线程只是一个进程中的不同执行路径。线程有自己的堆栈和局部变量，但线程之间没有单独的地址空间，一个线程死掉就等于整个进程死掉，所以多进程的程序要比多线程的程序健壮，但在进程切换时，耗费资源较大，效率要差一些。但对于一些要求同时进行并且又要共享某些变量的并发操作，只能用线程，不能用进程。</p>
+<p> </p>
+<p> </p>
+<p>argument 和parameter</p>
+<p>  参数。通常可以互换，但有区别：一个是实参，一个是形参。调用时用Argument，声明时用Parameter 。</p>
+<p>argument是指调用函数时传入的数值—— 实参、 引数。 parameter指的是函数定义中括号里面的变量——形参。</p>
+<p>  比如：  </p>
+<p>  double   CalcArea(double   width,   double   height)    </p>
+<p>  {   </p>
+<p>    //   whatever  </p>
+<p>    return   whatever;  </p>
+<p>  }  </p>
+<p>  这里的width和height都是parameter  </p>
+<p>   </p>
+<p>  如果你在主程序中调用  </p>
+<p>  void   main()  </p>
+<p>  {  </p>
+<p>  &hellip;  </p>
+<p>    thisArea   =   CalcArea(2.4,   5.7);  </p>
+<p>   </p>
+<p>  }  </p>
+<p>  这里的2.4和5.7是argument </p>
+<p> </p>
+<p>parameter更强调声明/形式层面的东西，argument更强调实体层面的。</p>
+<p> </p>
+<p>前者翻译成引数，后者翻译成参数，这样的翻译才是精确的翻译，两者的区别如下文：</p>
+<p>What is the difference between an argument and a parameter?</p>
+<p>引数和参数有何区别？</p>
+<p>While defining method, variables passed in the method are called parameters.</p>
+<p>当定义方法时，传递到方法中的变量称为参数.</p>
+<p>While using those methods, values passed to those variables are called arguments.</p>
+<p>当使用方法时，传给变量的值称为引数.</p>
+<p> </p>
+<p> </p>
+<p>interactive（交互式）</p>
+<p>interactive（交互式），简单地说就是有来有往互相的行为，作为用户与计算机系统交换信息的术语，指使用者和程序或计算机系统之间的具有双向的信息传递功能（双向对话），也就是使用者通过按钮、键盘、鼠标等发出控制要求，程序或计算机系统作出相应的反应（比如给出结果）。用户与程序相互作用，这种作用也许简单到只击中一个按钮或键入字符，也许复杂到要操纵一辆汽车或漫游虚拟世界。</p>
+<p> </p>
+<p> </p>
+<p>Form</p>
+<p>窗体；表单</p>
+<p>当“窗体；表单”讲义项时，是指向用户显示信息的可视图界面。</p>
+<p>窗体也是对象，窗体类定义了生成窗体的模板，每实例化一个窗体类，就产生一个窗体。窗体都具有自己的特征，可以通过编程来设置。</p>
+<p>.NET框架类库的System.Windows.Forms命名控件中定义的Form类是所有窗体类的基类。编写窗体应用程序时，首先需要设计窗体的外观和在窗体中添加控件或组件。Visual Studio 2005提供了一个图形化的可视化窗体设计器，可以实现所见即所得的设计效果，可以快速开发窗体应用程序。虽然可以通过编写代码来实现，但是却不直观、也不方便，而且很难精确地控制界面。</p>
+<p> </p>
+<p>Access （它是微软OFFICE的一个成员，是微软把数据库引擎的图形用户界面和软件开发工具结合在一起的一个数据库管理系统）中翻译为窗体（form），一种 Access 数据库对象，可以在其上放置用于执行操作，或用于在字段中输入、显示和编辑数据的控件。Access中的窗体有多种形式，不同的窗体能够完成不同的功能。窗体有显示和操作数据、显示信息、打印信息、控制流程等作用。</p>
+<p> </p>
+<p>InfoPath 中翻译为表单 (form)</p>
+<p>InfoPath 中带有一组用户可输入信息的控件的文档。InfoPath 表单可包含一些功能，如格式文本框、日期选取器、可选节与重复节、数据验证及条件格式。</p>
+<p> </p>
+<p> </p>
+<p>操作系统安装（The operating system installation）的方式</p>
+<p>覆盖安装：主要就是对已有操作系统进行的修复安装，它会保持原有的配置信息，而且大多数已安装的软件不需要在重新安装，如果系统不是崩溃或者不是存在严重的问题，可选择覆盖安装，来修复系统存在的一些问题。注意的就是，最好用原系统相同版本的xp，否则会造成错误，重者导致进不去系统。简单地说，所谓覆盖安装就是不管原文件如何，再用这个安装程序安装一遍，地址路径要一致。这样系统还留有以前的东西。</p>
+<p>重新安装：指格式化后再安装，重装后的系统很干净，速度也比覆盖安装快。</p>
+<p>升级安装：指同一系列的软件从低版本更新到高级的版本。 如从windows XP升级到windows 7。</p>
+<p>全新安装：分两种，一种是指在未安装操作系统的电脑中安装操作系统，一种是在已安装操作系统的电脑中的另一个分区中安装另一个操作系统（双系统）。</p>
+<p> </p>
+<p> </p>
+<p>兼容（compatibility、Compatible）</p>
+<p>简单的说，兼容（Compatibility）是指几个硬件之间、几个软件之间或是几个软硬件之间的相互配合的程度，或者说能共存 相容的程度。</p>
+<p>简单说来，老的能够处理新的就称为 向前（forward）或向上（Upward ）兼容。新的能够处理老的就称为 向后（Backward）或向下（Downward ）兼容。</p>
+<p>向上兼容(Upward Compatibility)，又称作向前兼容（Forward Compatibility）。在计算机中指在较低档计算机上编写的程序，可以在同一系列的较高档计算机上运行，或者在某一平台的较低版本环境中编写的程序可以在较高版本的环境中运行，都称为向上兼容。</p>
+<p>向下兼容（Downward Compatibility），又称作向后兼容（Backward Compatibility）。在计算机中指较高档的计算机或较高版本的软件平台可以运行较为抵挡计算机或早期的软件平台所开发的程序。</p>
+<p> </p>
+<p> </p>
+<p>Blog和Bloger</p>
+<p>Blog是Web  Log的简称，指网络日志（网志）；Bloger指撰写Blog的人。许多时候，将它们都翻译为“博客”，换句话说 ，中文“博客”分别代表两种意思，Log（网络日志）和Bloger（撰写Blog的人），因此中文“博客”一词，需要留意在不同的场合分别代表不同含义。</p>
+<p> </p>
+<p> </p>
+<p>主机(Host)和终端(Terminal)</p>
+<p>最早的计算机网络是伴随着主机(Host)和终端(Terminal)这两个概念的出现而产生的。当时的主机通常指大型机或功能较强的小型机，而终端则是指一种哑终端（Dumb terminal），是一种由CRT显示器、控制器及键盘合为一体的设备，它与我们平常指的微型计算机的根本区别是没有自己的中央处理单元(CPU)，当然也没有自己的内存，其主要功能是将键盘输入的请求数据发往主机(或打印机)并将主机运算的结果显示出来。随着计算技术的发展，引入了新的含义主机是一般指服务器（提供应用程序，数据服务等等），终端一般指客户端（仅提供交互界面或输入输出设备）把以PC为代表的基于开放性工业标准架构、功能比较强大的设备叫做“胖客户端”，其他归入“瘦客户端”。</p>
+<p>对互联网而言，终端泛指一切可以接入直接供用户操作的设备，如个人电脑、网络电视、可上网手机、PDA等。</p>
+<p> </p>
+<p>微软从NT及2000后提供“终端服务”这一功能，终端服务起到的作用就是方便多用户一起操作网络中开启终端服务的服务器，所有用户对同一台服务器操作，所有操作和运算都放在该服务器上。允许多个客户端（终端）同时登录服务器。</p>
+<p> </p>
+<p>host一词在不同环境中有不同含义：在互联网协议中，host表示能够同其他机器互相访问的本地计算机 (主机或节点)。对于网站，host指的是网站的网络服务器。在大型机环境中，host指大型机，也称大型服务器。</p>
+<p>有时，host也指某种为其他软硬件提供服务的设备或者应用程序。</p>
+<p>Window系统中有个Hosts文件（没有后缀名），在Windows98系统下该文件在Windows目录，在Windows2000/XP系统中位于C:[Winnt|WINDOWS|]\System32\Drivers\Etc 目录中。该文件其实是一个纯文本的文件，用普通的文本编辑软件如记事本等都能打开。</p>
+<p>用记事本打开hosts文件，首先看见了微软对这个文件的说明。这个文件是根据TCP/IP for Windows的标准来工作的，它的作用是包含IP地址和Host name(主机名)的映射关系，是一个映射IP地址和Hostname(主机名)的规定，规定要求每段只能包括一个映射关系，IP地址要放在每段的最前面，空格后再写上映射的Host name(主机名)。对于这段的映射说明用“#”分割后用文字说明。</p>
+<p> </p>
+<p> </p>
+<p>local</p>
+<p>【修】局部的，本地的;［局部性的］</p>
+<p>local指与用户直接操作的计算机，或指处于用户直接控制之下的设备(如打印机)或进程。与远程主机(remote host)、设备、和进程相对。</p>
+<p>local </p>
+<p>adj. 1. In general, close at hand or restricted to a particular area. 2. In communications, a device that can be accessed directly rather than by means of a communications line. 3. In information processing, an operation performed by the computer at hand rather than by a remote computer. 4. In programming, a variable that is restricted in scope, that is, used in only one part (subprogram, procedure, or function) of a program. Compare remote.</p>
+<p>形容词。 1 、一般而言，就在眼前(在手边 )或仅限于某一特定区域。 2 、在通信中，可以直接访问的设备，而不是通过通信线路。 3 、在信息处理中，操作由手边的计算机而不是由远程计算机执行。 4 、在编程中，一个变量是受限制的范围，也就是只能用于程序的一部分（子程序，过程 ，或函数）。</p>
+<p> </p>
+<p>local variable(局部变量) 只能在一个函数或过程中访问的变量。其他过程或函数不能访问此变量的数据。</p>
+<p> </p>
+<p>local host</p>
+<p>用户当前登录进入的主机(host).任何用户的当前本地主机的回调地址(loop back address)总是127.0.0.1。</p>
+<p> </p>
+<p> </p>
+<p>client和server</p>
+<p>A hardware and software device designed to perform a specificfunction for many users.</p>
+<p>为多个用户实现某一特定功能而设计的一种硬件和软件设备。</p>
+<p>client</p>
+<p>客户[机]；客户程序</p>
+<p>client，发出请求的一方的硬件或软件。</p>
+<p>server</p>
+<p>服务器；服务程序</p>
+<p>server，提供服务的一方的硬件或软件。</p>
+<p>计算机网络的主要用途之一是允许共享资源。这种共享是通过相呼应的两个独立程序来完成的。每个程序在相应的计算机上运行。一个程序在服务器中，提供特定资源；另一个程序在客户机中，它使客户机能够使用服务器上的资源。</p>
+<p>在INTERNET上，通常看不到硬件，术语“客户机”和“服务器”一般指申请和提供服务的程序。</p>
+<p>客户机／服务器系统（Client／Server System）是计算机网络（尤其是Internet）中最重要的应用技术之一，其系统结构是指把一个大型的计算机应用系统变为多个能互为独立的子系统，而服务器便是整个应用系统资源的存储与管理中心，多台客户机则各自处理相应的功能，共同实现完整的应用。用户使用应用程序时，首先启动客户机通过有关命令告知服务器进行连接以完成各种操作，而服务器则按照此请示提供相应的服务。</p>
+<p>从硬件角度看，谁是client谁是server也不是绝对的，例如倘若原提供服务之server要使用其它server所提供之服务，则所扮演之角色即转变为client。从软件角度看，client及server不一定建立在两台分开的机器上，也有可能都在同一台机器上，例如我们在提供网页的服务器上执行浏览器浏览本机所提供的网页，这样server和client就在同一台机器上。</p>
+<p> </p>
+<p>客户（Client）和服务器（Server）用于描述“网络”体系结构和“软件系统”体系结构时，含义不完全一致。</p>
+<p> </p>
+<p> </p>
+<p>Internet（因特网）和internet（互连网）</p>
+<p>大写的“Internet”和小写的“internet”所指的对象是不同的。当我们所说的是上文谈到的那个全球最大的的也就是我们通常所使用的互联网络时，我们就称它为“因特网”或称为“国际互联网”，虽然后一个名称并不规范。在这里，“因特网”是作为专有名词出现的，因而开头字母必须大写。但如果作为普通名词使用，即开头字母小写的“internet”（“interreto”），则泛指由多个计算机网络相互连接而成一个大型网络。按全国科学技术审定委员会的审定，这样的网络系统可以通称为“互联网”。这就是说，因特网和其他类似的由计算机相互连接而成的大型网络系统，都可算是“互联网”，因特网只是互联网中最大的一个。《现代汉语词典》2002年增补本对“互联网”和“因特网”所下的定义分别是“指由若干电子机网络相互连接而成的网络”和“目前全球最大的一个电子计算机互联网，是由美国的ARPA网发展演变而来的”。可供参考。</p>
+<p>美国2002 年出版的《美国国家信息技术标准词典》（A M E R I C A N N A T I O N A L STANDARD DICTIONARY OF INFORMATIONTECHNOLOGY），对于因特网和互联网给出了如下定义：</p>
+<p>Internet: The world wide network connecting users through autonomous networks in industry, education, government, and research. The Internet uses Internet Protocol (IP) for network interconnection and routing, and Transmission Control Protocol (TCP) for end-to-end control. The major Internet services include electronic mail, FTP, telnet, World Wide Web, and electronic bulletin boards (Usenet). Do not confuse an internet (lowercase &ldquo;i&rdquo;) which is a general concept, with the Internet (uppercase &ldquo;I&rdquo;) which is a single internet of global proportions.</p>
+<p>译成中文如下：因特网：是通过产业、教育、政府和科研部门中的自治网络将用户连接起来的世界范围的网络。因特网采用网际协议（IP）进行网络互连和路由选择，采用传输控制协议（TCP）实现端对端控制。因特网的主要业务包括电子邮件、文件传送协议（FTP）、远程登录、万维网和电子公告板。不要把一般概念的互连网（internet的首字母“i”小写）与一个全球规模的因特网（Internet 的首字母“I”大写）相混淆。</p>
+<p>internet: Synonym for&quot;internetwork&rdquo; internetwork. Do not confuse the Internet (with an uppercase &ldquo;I&rdquo;), with an internet (lowercase &ldquo;I&rdquo;). The term internet is very general and does NOT imply global. In fact, two or more interconnected local area networks constitute an internet, even if they are both in the same building and owned by the same organization.</p>
+<p>译成中文如下： 互连网： 是互连网络（internetwork）的同义词。不要把Internet（首字母“I”大写，因特网）与internet（首字母“i”小写，互连网）相混淆。术语互连网是非常普遍的，并不意味着全球。实际上，两个或多个相互连接的局域网可组成一个互连网，即使它们位于同一座建筑物里和属于同一个机构所有。</p>
+<p>internetwork:</p>
+<p>A network of two or moresubnetworks. This network may includebridges,routers,gateways,or combinations thereof.Synonymous with internet.</p>
+<p>译成中文如下：互联网络：是两个或多个子网络构成的一种网络。这种网络可包括网桥、路由器、网关或它们的组合。与internet 是同义词。</p>
+<p> </p>
+<p> </p>
+<p>网络分层模型的各种层的数据格式的名称：packet、Message和Datagram</p>
+<p>一般地（并不绝对），OSI网络分层模型的各种层的数据格式的名称：</p>
+<p>   OSI层　　　　　　            　 数据单元的名称</p>
+<p>　 传输层(transport  4)  　　 　　 SEGMENT（段）或Message（报文;消息）</p>
+<p>　 网络层(network  3)　　　　　 　PACKET（[数据]分组，[数据]包）或Datagram（数据报）</p>
+<p>　 数据链路层(data link  2)　　　　 Frame（帧）</p>
+<p> </p>
+<p>OSI参考模型的各层传输的数据和控制信息具有多种格式，除了物理层(physical)使用BITS（[二进制]位），其它各层，使用的信息格式包括帧、数据包、数据报、段、消息、元素和数据单元。信息交换发生在对等OSI层之间，在源端机中每一层把控制信息附加到数据中，而目的机器的每一层则对接收到的信息进行分析，并从数据中移去控制信息，下面是各信息单元的说明：
+   帧（frame）是一种信息单位，它的起始点和目的点都是数据链路层。
+   分组（packet）也是一种信息单位，它的起始和目的地是网络层。
+   数据报（datagram）通常是指起始点和目的地都使用无连接网络服务的的网络层的信息单元。
+   段（segment）通常是指起始点和目的地都是传输层的信息单元。
+   消息（message）是指起始点和目的地都在网络层以上（经常在应用层）的信息单元。
+   信元（cell）是一种固定长度的信息，它的起始点和目的地都是数据链路层。信元通常用于异步传输模式（ATM）和交换多兆位数据服务（SMDS）网络等交换环境。
+ </p>
+<p> </p>
+<p>节点（Node）和站点（site）</p>
+<p>节点（Node）</p>
+<p>1.是网络中两个或更多线路的一个的公共结合点或公共连接实体。节点有时被一般用于指任何能够访问网络的实体，节点通常与具有唯一 IP 主机地址的逻辑或物理计算机系统对应。也可称为结点或网点。</p>
+<p>2.在计算机网络领域内，ISO(国际标准化组织)把node定义为：A point at which one or more functional units interconnect transmission channels or data circuits(在那里一个或多个操作装置&lt;这里最好不译为：功能单元&gt;和若干条传输信道&lt;有时指计算机的通道&gt;或数据电路互相连接起来的一个地点)。</p>
+<p>站点（site）</p>
+<p>1.A place where a particular type of computer is installed.</p>
+<p>用于安装有某种特定类型计算机的现场或地方。</p>
+<ol start="2">
+<li>指网站。</li>
+</ol>
+<p>3 .地点，场所。</p>
+<p> </p>
+<p>节点（Node），构成网络的一个个要素。通信网络中的计算机和集线器，路由器等一台台的通信机器就相当于节点。</p>
+<p> </p>
+<p>Active Directory中的站点（site）站点就是高速相连的一组计算机。</p>
+<p>站点（site）是指在物理上具有较好的线路连接的能实现较快通信速率的计算机的集合（一般是指一个局域网），站点之间一般是通过慢速连接来实现信息通信（一般是指广域网）。</p>
+<p> </p>
+<p> </p>
+<p>Frequency(频率)和Clock cycle(时钟周期)</p>
+<p>频率，指在一个周期内的重复次数，或每秒的周波数。计量单位为Hz（Hertz），如频率为1000Hz（1kHz）的音频信号每秒便有1000个正弦波的周波。</p>
+<p>The number of repetitions of a complete sequence of values of a periodic function per unit variation of an independent variable. 当自变量变化一个单位时，周期函数取同一完整数序的重复次数。</p>
+<p>The number of complete cycles of a periodic process occurring per unit time. 单位时间内周期过程中发生的次数。</p>
+<p>The number of repetitions per unit time of a complete waveform, as of an electric current. 单位时间内某种完整波形的重复次数，例如电流。</p>
+<p>The ratio of the number of times an event occurs in a series of trials of a chance experiment to the number of trials of the experiment performed. 一系列实验中偶然现象次数与所做的一系列实验的次数的比率。</p>
+<p>时钟周期，是一个时间的量，时钟周期通常为一个机器周期，为计算机硬件运行指令的时间单位。</p>
+<p>频率和周期的关系是互为倒数。更小的时钟周期就意味着更高的工作频率。</p>
+<p>频率用“f”表示，其相应的单位有：Hz（赫hertz）、kHz（千赫kilohertz）、MHz（兆赫megahertz）、GHz（吉赫gigahertz）。其中1GHz=1000MHz，1MHz=1000kHz，1kHz=1000Hz。周期用“t”表示，计算脉冲信号周期的时间单位及相应的换算关系是：s（秒）、ms（毫秒millisecond）、μs（微秒microsecond）、ns（纳秒nanosecond），其中：1s=1000ms，1 ms=1000μs，1μs=1000ns。</p>
+<p> </p>
+<p> </p>
+<p>基带（baseband）和宽[频]带（broadband）</p>
+<p>基带（baseband）</p>
+<p>In communications, the frequency range of the information bearing signals prior to combination with carrier wave by modulation.</p>
+<p>在通信技术中，未经调制使之和载波结合之前，携带信息的信号所占有的频率范围。</p>
+<p>宽[频]带（broadband）</p>
+<p>In communications, a frequency band having a bandwidth greater than a voice-grade channel (4kHz), that divisible into several narrower bands so that different kinds of transmissions such as voice, video, and data transmission can occur at the same time, and therefore capable of higher-speed data transmission.</p>
+<p>在通信技术中，一种比音频信道(4kHz)更宽的频带。它可划分成几条较窄的频带，以使 不同类型的传输，如音频、视频及数据传输，可在其上同时进行，因此具有较高速的数据 传输能力。</p>
+<p> </p>
+<p>基带是一种传输方式。在该方式中，电压脉冲直接加到电缆，并且使用电缆的整个信号频率范围。基带与宽带传输相比较，宽带传输中，来自多条信道的无线信号调制到不同的“载波”频率上，带宽被划分为不同信道，每信道上的频率范围一定。</p>
+<p> </p>
+<p>LocalTalk及以太网都是基带网络，一次仅传输一个信号，电缆上信号电平的改变表示数字值0或者1。使用电缆的整个带宽建立起两个系统间的通信对话，然后两个系统轮流传送，在此期间，共享电缆的其它系统不能传送。</p>
+<p>基带传输系统中的直流信号往往由于电阻、电容等因素而衰减。另外马达、荧光灯等电子设备产生的外部电磁干扰也会加快信号的衰减。传输率越高，信号就越容易被衰减。为此，以太网等建网标准规定了网络电缆类型、电缆屏蔽、电缆距离、传输率以及在大部分环境中提供相对无差错服务的有关细节。</p>
+<p> </p>
+<p> </p>
+<p>信噪比(Signal to Noise Ratio）</p>
+<p>信噪比又称为讯噪比，英文全称是(the Signal to Noise ratio)，通常以S/N表示。一般检测此项指标以重放信号的额定输出功率（S）与无信号输入时系统噪声输出功率（N）的对数比值分贝(dB)来表示。</p>
+<p>信噪比，即SNR（Signal to Noise Ratio）又称为讯噪比，即放大器的输出信号的电压与同时输出的噪声电压的比，常常用分贝数表示。设备的信噪比越高表明它产生的杂音越少。一般来说，信噪比越大，说明混在信号里的噪声越小，声音回放的音质量越高，否则相反。信噪比一般不应该低于 70dB，高保真音箱的信噪比应达到110dB以上。</p>
+<p> </p>
+<p>分贝(decibel，缩写 dB)</p>
+<p>A unit used to express relative difference in power or intensity, usually between two acoustic or electric signals, equal to ten times the common logarithm of the ratio of the two levels.</p>
+<p>分贝：通常表示两个声音信号或电力信号在功率或强度方面的相对差别的单位，相当于两个水平的比率的常用对数的十倍(10 log10S/N)。</p>
+<p> </p>
+<p> </p>
+<p>射频(RF)</p>
+<p>=Radio Frequency 射频， 无线电频率</p>
+<p>表示可以辐射到空间的电磁频率，频率范围从10KHz～30GHz之间。</p>
+<p>射频是指发射频率，因为有些信号本身可能不太适合直接发射出去（频率非法，或信号本身条件不允许）。所以要将信号调制，调制器本身需要一个适合的震荡信号，将原信号加在上面，这个震荡信号叫载波，调制后的载波就包含了原信号的信息，发射出去就叫电波。所以，射频信号就是经过调制的，拥有一定发射频率的电波。</p>
+<p>无线电频率，声音频率与红上频率之间的电磁波频率，可用于无线电和电视发射中。</p>
+<p>无线电频率范围</p>
+<p>A frequency in the range within which radio waves may be transmitted, from about 10 kilocycles per second to about 300,000 megacycles per second. The radio frequency groups are: very low frequency (vlf), 10 to 30 kilohertz; low frequency (lf), 30 to 300 kilohertz; medium frequency (mf), 300 to 3,000 kilohertz; high frequency (hf), 3,000 to 30,000 kilohertz; very high frequency (vhf), 30 to 300 megahertz; ultrahigh frequency (uhf), 300 to 3,000 megahertz; superhigh frequency (shf), 3,000 to 30,000 megahertz; extremely high frequency (ehf), 30,000 to 300,000 megahertz.</p>
+<p>无线电频率范围：无线电波可以被传送的频率范围，从约每秒10千周至约每秒300,000兆周。射频分类为：甚低频(vlf)，10至30千赫；低频(lf)，30至300千赫；中频(mf)，300至3,000千赫；高频(hf)，3,000至30,000千赫；甚高频(vhf)，30至300兆赫；很高频(vhf)，300至3,000兆赫；特高频(shf)，3,000至30,000兆赫；超高频(elf)，30,000至300,000兆赫。</p>
+<p> </p>
+<p> </p>
+<p>carrier wave (载波)</p>
+<p>n.（名词）</p>
+<p>An electromagnetic wave that can be modulated, as in frequency, amplitude, or phase, to transmit speech, music, images, or other signals.</p>
+<p>载波：一种如可在频率、调幅或相位方面被调制以传输语言、音乐、图象或其它信号的电磁波。</p>
+<p> </p>
+<p> </p>
+<p>Synchronization (同步) 与asynchronization (异步)</p>
+<p>synchronous【修】同步</p>
+<ol>
+<li>The process of adjusting the corresponding significant instants of two signals to obtain the desired phase relationship between these instants.</li>
+</ol>
+<p>调整两个信号相应的有效瞬间，以使它们之间满足所需相位关系的过程。</p>
+<ol start="2">
+<li>The processof maintaining common timing and coordination between two or more operations, events or processes.</li>
+</ol>
+<p>使两个或多个操作、事件或过程之间维持共同时基和协调一致的过程。</p>
+<p>asynchronous【修】异步的</p>
+<ol>
+<li>Without regular time relationship;unexpected or unpredictable with respect to the execution of a program&rsquo;s instructions.</li>
+</ol>
+<p>没有规则的时间关系，对程序指令的执行是无法预料或不可预测的。</p>
+<ol start="2">
+<li>Having a variable time interval between successive bits, characters or events. In data transmission, this is limited to a variable time interval between characters, and is often known as start-stop transmission.</li>
+</ol>
+<p>在时间上相邻的两位、两个字符或两个事件间的时间间隔是不规则的。在数据转输中，仅 指相邻字符间的时间间隔不规则。这种传输方式通常称起止式传输。</p>
+<p> </p>
+<p>同步传输和异步传输的含义是什么?</p>
+<p>按传输的数据单元与数据单元之间的时间间隔是固定的还是可变的划分。</p>
+<p>所谓异步传输是指字符与字符(一个字符结束到下一个字符开始)之间的时间间隔是可变的，并不需要严格地限制它们的时间关系。</p>
+<p>所谓同步传输是指数据块与数据块之间的时间间隔是固定的，必须严格地规定它们的时间关系。</p>
+<p> </p>
+<p>1.异步传输</p>
+<p>通常，异步传输是以字符为传输单位，每个字符都要附加 1 位起始位和 1 位停止位，以标记一个字符的开始和结束，并以此实现数据传输同步。所谓异步传输是指字符与字符(一个字符结束到下一个字符开始)之间的时间间隔是可变的，并不需要严格地限制它们的时间关系。起始位对应于二进制值 0，以低电平表示，占用 1 位宽度。停止位对应于二进制值 1，以高电平表示，占用 1~2 位宽度。一个字符占用 5~8位，具体取决于数据所采用的字符集。例如，电报码字符为 5 位、ASCII码字符为 7 位、汉字码则为8 位。此外，还要附加 1 位奇偶校验位，可以选择奇校验或偶校验方式对该字符实施简单的差错控制。发送端与接收端除了采用相同的数据格式(字符的位数、停止位的位数、有无校验位及校验方式等)外，还应当采用相同的传输速率。典型的速率有：9 600 b/s、19.2kb/s、56kb/s等。</p>
+<p>异步传输又称为起止式异步通信方式，其优点是简单、可靠，适用于面向字符的、低速的异步通信场合。例如，计算机与Modem之间的通信就是采用这种方式。它的缺点是通信开销大，每传输一个字符都要额外附加2～3位，通信效率比较低。例如，在使用Modem上网时，普遍感觉速度很慢，除了传输速率低之外，与通信开销大、通信效率低也密切相关。</p>
+<ol start="2">
+<li>同步传输</li>
+</ol>
+<p>通常，同步传输是以数据块为传输单位。每个数据块的头部和尾部都要附加一个特殊的字符或比特序列，标记一个数据块的开始和结束，一般还要附加一个校验序列(如16位或32位CRC校验码)，以便对数据块进行差错控制。所谓同步传输是指数据块与数据块之间的时间间隔是固定的，必须严格地规定它们的时间关系。</p>
+<p> </p>
+<p>时分多路复用技术分成同步和异步两种。</p>
+<p>STDM（同步时分多路复用器）把多路器轮转一周的时间，分成若干时间片（time slice）。所有终端都分别对应一个固定的时间片，分时共享一条传输线。其缺点是以静态方式把信道分配给每个终端，即使某终端并无信息发送。</p>
+<p>ATDM（异步时分多路复用器）有选择地分配时间片，根据终端有无信息发送，信息量大小和优先级别动态分配时间片（这就是为什么ATM有带宽按需分配的优点），当终端有信息发送并申请到时间片时，终端以极高频率周期性地插入53byte的ATM信元，直至数据发送完毕或时间片到。所发送的ATM信所发送的ATM信元根据标记（VPI，VCI）沿不同路径或相同路径路由到目的地址。ATM的核心技术是异步时分多路复用。</p>
+<p>ATM（异步传输模式）技术中“异步”的含义，可随时插入ATM信元。</p>
+<p>ATM采用异步时分复方式（即统计复用），将来自不同信息源的信元汇集到一起，在缓冲器内排队，队列中的信元根据到达的先后按优先等级逐个输出到传输线路上，形成首尾相接的信元流。具有同样标志的信元在传输线上并不对应着某个固定的时隙，也不是按周期出现的。异步时分复用使ATM具有很大的灵活性，任何业务都按实际信息量来占用资源，使网络资源得到最大限度的利用。此外，不论业务源的性质有多么不同（如速率高低、突发性大小、质量和实时性要求如何），网络都按同样的模式来处理，真正做到完全的业务综合。 ATM是异步转移模式的英文缩写。ITU对ATM的定义是：ATM是一种传输模式。在这种传输(转移)模式中，信息被组织成“信元”，来自某用户信息的各个信元不需要周期性地出现。</p>
+<p> </p>
+<p>对于软件上，同步是指一个进程/线程执行一个操作后，等待另一个进程/线程的动作后在继续，如同两个进程按一定规则，你等等我我等等你一起走；异步是说一个进程作了一个操作后，不用等待另一进程的结果就继续向下进行，两个进程的事件上没有同步的关系。 所以socket同步传送，程序返回就知道传完了，异步送和收的动作可能相差很久，需要队列、缓冲区等方式先将数据保留。</p>
+<p> </p>
+<p>Socket编程中，采用同步控制方法，优点： 结构清晰，编程简单，执行一个通讯过程相当于执行一个函数调用，简单易用。通常采用有限等待方式。即：发送一个数据后，一直等待对方回应，直到超时为止。 缺点：在这断时间里，该线程处于阻塞状态，界面失去响应。 采用异步控制方法，优点： 程序效率很高。 缺点：结构不清晰，编程相对复杂，一般需要自已处理发送队列，收到回应后，需要查询发送队列，将处理结果通知发送者（可以采用回调函数方式）。</p>
+<p> </p>
+<p>ODBC2．0访问数据库时，有同步执行模式与异步执行模式之分。</p>
+<p>所谓同步执行模式，是指语句在同步执行模式下，将始终保持对程序流的控制，直至程序结束。例如查询操作，客户机上的应用程序在向服务器发出查询操作的指令后，将一直等待服务器将查询结果返回客户机端后，才继续进行下一步操作。</p>
+<p>所谓异步执行模式，是指语句在异步执行模式下，各语句执行结束的顺序与语句执行开始的顺序并不一定相同。例如查询操作，客户机上的应用程序在向服务器发出了查询操作的指令后，将立刻执行查询语句的下一条语句，而不需要等到服务器将查询结果返回客户机端后，才继续进行下一步操作。</p>
+<p> </p>
+<p> </p>
+<p>占位符（placeholder）</p>
+<p>顾名思义，占位符（placeholder）就是先占住一个固定的位置，等着用实际添加的内容替换它。</p>
+<p>出于安全的原因，用于屏蔽或隐藏另一个字符的字符。例如，当用户键入密码时，在屏幕上会用星号替代每一个被键入的字符。</p>
+<p> </p>
+<p> </p>
+<p>接口（interface）和端口（port）</p>
+<p>Interface  接口</p>
+<p>  A device or equipment making possible interoperation between two systems, for example, a hardware component or a common storage register.  能够使两个系统之间相互运行的一种设备或装置。例如一种硬件部件或一种公共的 存储寄存器。
+2. A shared logical boundary between two software components. An interactive development tool, for example, is a user friendly interface between a system software and an application software.  两种软件之间的一种共享逻辑界面。例如，一个交互开发工具是系统软件和应用软件之间的友好接口。</p>
+<p>Port 端口</p>
+<p>An interface by which data enters or leaves a functional unit.  数据进出某功能部件的一种接口。</p>
+<p>在软件中，端口是一个软件标识，被客户程序或服务进程用来发送和接收信息。一个端口对应一个16比特的数。在建立与特定的主机或服务的连接时用到。服务进程通常使用一个固定的端口，例如，SMTP使用25。</p>
+<p> </p>
+<p>在讲计算机组成原理时，接口指用来连接设备的控制电路，又称为“接口电路”比如说I/O接口。端口是用于存放数据、控制、状态信息的寄存器。可以由CPU的IN或OUT指令来读写的寄存器。</p>
+<p> </p>
+<p>从硬件的层面，端口就是计算机上的物理接口，用于接插其他设备。计算机硬件常见的接口你都可以在机箱背后看到，包括键盘鼠标的圆口SP2接口，打印机的LPT接口（也叫并行接口），还有搂主说的COM接口（串行接口，过去也用来接鼠标，现在个人电脑上用处不大，但是在银行和商场的电脑上广泛用到，通常都用来接一些输入输出设备，比如条码扫描仪等），此外还有音频接口，网卡接口（RJ45口），显示器接口，1394接口，当然还有搂主问的USB接口。USB本质上和COM，LPT一样都是输入输出的接口，但是它提供更高的传输带宽，和更好的扩展性，所以现在基本上大部分外设都是通过USB与计算机联接。</p>
+<p>从软件的层面上，也有端口这个概念。软件的端口是各个软件之间进行数据交换用的，比如WINDOWS就预留了很多端口供不同的软件调用。网络通讯中，面向连接服务和无连接服务的通信协议端口，是一种抽 象的软件结构，包括一些数据结构和I/O（基本输入输出）缓冲区，端口是一个整数，代表着不同服务和应用，或者说用来区分某种类型的应用。</p>
+<p>因特网上最流行的协议是TCP/IP协议，TCP/IP体系结构是分层的。需要说明的是，TCP/IP协议在网络接口层是无连接的（数据包只管往网上发，如何传输和到达以及是否到达由网络设备来管理）。端口是应用层和运输层的接口。应用程序要调用相应的服务，就要使用特定的端口，端口号为16位。一旦谈“端口”，就已经到了传输层。协议里面低于1024的端口都有确切的定义，它们对应着因特网上常见的一些服务。这些常见的服务可以划分为使用TCP端口（面向连接如打电话）和使用UDP端口（无连接如写信）两种。    </p>
+<p>  使用TCP端口常见的有：    </p>
+<p>  　　ftp：定义了文件传输协议，使用21端口。常说某某主机开了   ftp服务便是文件传输服务。下载文件，上传主页，都要用到ftp服务。    </p>
+<p>  　　telnet：你上BBS吗？以前的BBS是纯字符界面的，支持BBS的服务器将23端口打开，对外提供服务。其实Telnet的真正意思是远程登陆：用户可以以自己的身份远程连接到主机上。    </p>
+<p>  　　smtp：定义了简单邮件传送协议。现在很多邮件服务器都用的是这个协议，用于发送邮件。服务器开放的是25端口。    </p>
+<p>  　　http：这可是大家用得最多的协议了——超文本传送协议。上网浏览网页就需要用到它，那么提供网页资源的主机就得打开其80端口以提供服务。我们常说“提供www服务”、“Web服务器”就是这个意思。    </p>
+<p>  　　pop3：和smtp对应，pop3用于接收邮件。通常情况下，pop3协议所用的是110端口。在263等免费邮箱中，几乎都有pop3收信功能。也就是说，只要你有相应的使用pop3协议的程序（例如Foxmail或Outlook），不需要从Web方式登陆进邮箱界面，即可以收信。    </p>
+<p>  　　使用UDP端口常见的有：    </p>
+<p>  　　DNS：域名解析服务。因特网上的每一台计算机都有一个网络地址与之对应，这个地址就是我们常说的IP地址，它以纯数字的形式表示。然而这却不便记忆，于是出现了域名。访问主机的时候只需要知道域名，域名和IP地址之间的变换由DNS服务器来完成。DNS用的是53端口。    </p>
+<p>  　　snmp：简单网络管理协议，使用161端口，是用来管理网络设备的。由于网络设备很多，无连接的服务就体现出其优势。    </p>
+<p>  　　聊天软件Oicq：Oicq的程序既接受服务，又提供服务，这样两个聊天的人才是平等的。oicq用的是无连接的协议，其服务器使用8000端口，侦听是否有信息到来;客户端使用4000端口，向外发送信息。如果上述两个端口正在使用（有很多人同时和几个好友聊天），就顺序往上加。</p>
+<p> </p>
+<p> </p>
+<p>透明的（transparent）</p>
+<p>Pertaining to a process, or procedure, invoked by a user without the latter being aware of its existence.</p>
+<p>用于修饰或说明一种进程或过程，它允许用户调用它，而用户并不用知道它的存在。</p>
+<p> </p>
+<p>日常生活中常说，“处理事情不要有暗箱操作，整个处理流程要公开透明”，这里这个“透明”的含义是： 对相关人员要完全公开。透明，指光线能够通过的，比如玻璃、清水等等。到了近代科学中，为了解释比较抽象的科技概念，将这个词做了一些引申，指从使用者角度来看可以忽略的事物，这些事务多数是一些逻辑概念上的通讯协议。比如，TCP/IP 协议在我们访问一个网站时就可以看成是透明的，GSM/CDMA 协议在我们使用手机时可以看成时透明的，有线电视协议在我们看电视时可以看成是透明的……这样，我们就比较容易理解透明了。</p>
+<p>计算机中提到的“透明”的含义是： 对用户而言，这个处理过程是感觉不到的，不可见的、隐藏的。计算机书籍中其含义正好和日常生活中的相左。</p>
+<p> </p>
+<p> </p>
+<p>Heap (堆)和stack ([堆]栈)</p>
+<p>堆（heap）和栈（stack）是不同的，内存中堆和栈的含义和数据结构中的堆和栈含义也不同。</p>
+<p>在数据结构这门学科中，堆是一种特殊的树形数据结构，通常是指二叉堆。堆的特点是根结点的值最小（或最大），且根结点的两个子树也是一个堆。栈实际上就是满足先进后出的性质的数据结构。</p>
+<p>在编程编程语言中，把内存划分成两种：一种是堆(heap)内存，一种是栈(stack)内存，两者在使用上是有区别的。</p>
+<p> </p>
+<p>stack [堆]栈</p>
+<p>Generally, a block of successive memory locations that are accessible from one end of a lastin/firstout(LIFO) basis. The stack is coordinated with a stack pointer that keeps track of storage and retrieval of each byte or word of information in the stack. A stack may be any block of successive information locations in a read/write memory.   通常情况下，一种连续的存储单元区，从一端按后进先出的原则可对这些单元进行存取。栈和一个栈指针配合工作，栈指针随时指示要存取的每个字或字节信息在栈中的位置。栈可以是读写存储器 中任意的地址连续的存储单元块。</p>
+<p> </p>
+<p>在数据结构这门学科中，指两种数据结构堆（heap）和栈（stack，[堆]栈）：</p>
+<p>堆（heap），一种数据结构，是一种经过排序的树形数据结构，每个结点都有一个值。通常我们所说的堆的数据结构，是指二叉堆。堆的特点是根结点的值最小（或最大），且根结点的两个子树也是一个堆。由于堆的这个特性，常用来实现优先队列，并用于一些图论算法中。</p>
+<p> </p>
+<p>[堆]栈（stack），一种特殊的数据结构，只允许在一端进行操作，按照后进先出（LIFO， Last In First Out）的原理操作。栈使用两种基本操作：推入（push）加入数据和弹出（pop）输出数据，</p>
+<p> </p>
+<p>在程序语言【C/C++】中：</p>
+<p>一个由C/C++编译的程序占用的内存分为以下几个部分</p>
+<p>1、栈区（stack）— 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。 　　</p>
+<p>2、堆区（heap）— 由程序员分配释放， 若程序员不释放，程序结束时可能由OS回收 。注意它与数据结构中的堆是两回事，分配方式倒是类似于链表。 　　</p>
+<p>3、全局区（静态区）（static）— 全局变量和静态变量的存储是放在一块的，初始化的全局变量和静态变量在一块区域， 未初始化的全局变量和未初始化的静态变量在相邻的另一块区域。程序结束后由系统释放。 　　</p>
+<p>4、文字常量区 — 常量字符串就是放在这里的，程序结束后由系统释放 。 　　</p>
+<p>5、程序代码区 — 存放函数体的二进制代码。</p>
+<p> </p>
+<p>stack ([堆]栈):</p>
+<p>由系统自动分配，由编译器自动分配释放。 例如，声明在函数中一个局部变量 int b; 系统自动在栈中为b开辟空间</p>
+<p>heap (堆):</p>
+<p>由程序员分配释放，需要程序员自己申请，并指明大小，在c中malloc函数</p>
+<p>如p1 = (char *)malloc(10);</p>
+<p>在C++中用new运算符</p>
+<p>如p2 = (char *)malloc(10);</p>
+<p>但是注意p1、p2本身是在栈中的。</p>
+<p>栈：只要栈的剩余空间大于所申请空间，系统将为程序提供内存，否则将报异常提示栈溢出。</p>
+<p>堆：首先应该知道操作系统有一个记录空闲内存地址的链表，当系统收到程序的申请时，会遍历该链表，寻找第一个空间大于所申请空间的堆结点，然后将该结点从空闲结点链表中删除，并将该结点的空间分配给程序，另外，对于大多数系统，会在这块内存空间中的首地址处记录本次分配的大小，这样，代码中的delete语句才能正确的释放本内存空间。另外，由于找到的堆结点的大小不一定正好等于申请的大小，系统会自动的将多余的那部分重新放入空闲链表中。</p>
+<p> </p>
+<p>在程序语言【Java】中：</p>
+<p>在Java里 Heap和Stack分别存储数据的不同：</p>
+<p>                         Heap(堆)               Stack(栈)</p>
+<p>      JVM中的功能      内存数据区              内存指令区</p>
+<p>      存储数据         对象实例(1)             基本数据类型，指令代码，</p>
+<p>                                               常量，对象的引用地址(2)</p>
+<p>    Java 的堆是一个运行时数据区，类的(对象从中分配空间。这些对象通过new、newarray、anewarray和multianewarray等指令建立，它们不需要程序代码来显式的释放。堆是由垃圾回收来负责的，堆的优势是可以动态地分配内存大小，生存期也不必事先告诉编译器，因为它是在运行时动态分配内存的，Java的垃圾收集器会自动收走这些不再使用的数据。但缺点是，由于要在运行时动态分配内存，存取速度较慢。</p>
+<p>    栈的优势是，存取速度比堆要快，仅次于寄存器，栈数据可以共享。但缺点是，存在栈中的数据大小与生存期必须是确定的，缺乏灵活性。栈中主要存放一些基本类型的变量（int， short， long， byte， float， double， boolean， char）和对象句柄。</p>
+<p>    可见，垃圾回收GC是针对堆Heap的，而栈因为本身是FILO - first in， last out. 先进后出，能够自动释放。 这样就能明白到new创建的，都是放到堆Heap！</p>
+<p> </p>
+<p> </p>
+<p>Rights 、permissions 、Privileges</p>
+<p>privilege（权限，特权）；permissions（权限，许可）；Right（权限，权利）。在计算机文档中，当用来描述控制资源访问时，有时都译为“权限”，其含义近似，通常不刻意区分，但它们还是有差别的，如：</p>
+<p>Microsoft（微软）操作系统中，权利Rights（用户权利User Rights）：适用于系统级的策略任务，是整体性（系统级别）的定义，如关闭计算机系统，添加设备、数据备份和恢复等。通常权利存放在SAM数据库中。权限permissions（访问权限Access permissions）：适合于具体的对象。它用来规定什么用户以何种方式访问对象，通常与资源一起存放。如授权用户对目录、文件、打印机的访问权限等。</p>
+<p>在Windows操作系统中，权限和权利代表不同的内容。权限(Permission)代表一个用户对文件、文件夹、打印机等系统资源的访问能力；而权利(Right)代表用户对系统进行设置的能力。</p>
+<p>有两种类型的用户权利：特权，如备份文件和目录的权利、是否允许用户安装或加载驱动程序等；另一种是登录权利，如登录到本地系统的权利、从网络访问计算机等。</p>
+<p> </p>
+<p>权限还可分为文件夹共享权限和文件／文件访问权限</p>
+<p>共享权限仅应用于通过网络访问资源的用户，不会应用到在本地登录的用户。本地登录的用户的访问权限，可在NTFS上使用访问控制来设置权限（NTFS文件系统上的文件／文件访问权限），不过在FAT和FAT32格式上的文件就不具有这种配置功能了。而且所设置的共享权限将应用于共享资源中所有的文件和文件夹。</p>
+<p>共享权限的配置是保护FAT和FAT32卷上的网络资源的惟一方法，因为NTFS权限在 FAT或FAT32卷上不可用。但它可指定允许通过网络访问共享资源的最大用户数目，这是 NTFS中的文件／文件夹访问权限所没有的。</p>
+<p> </p>
+<p> </p>
+<p>Control (控件)和Component (组件)</p>
+<p>一般把Control翻译成控件，把Component翻译成组件或构件。</p>
+<p>控件就是具有用户界面的组件。如按钮、列表框、编辑框。</p>
+<p>在软件行话中，组件这个术语指任何可复用的对象或任何可与其它对象交互的代码体。组件不需要显示任何信息或用户界面。组件可能实现科学计算，收集性能数据。</p>
+<p> </p>
+<p>Delphi的书中更习惯使用Component，而VB、VC的书中习惯于使用Control这个词。</p>
+<p>VB中，部件(Component)一般是指控件（Control），一般是ocx文件。其实就是VB其它的控件，使用OCX前需要先注册控件。控件（Control）是由控件部件（control component），即 .ocx 文件提供的对象。一个控件部件（.ocx 文件）可以提供多种类型的控件。控件实例不能单独存在。它必须放在一个容器对象上，例如 Visual Basic 窗体。把控件实例挂接到容器上的过程叫做定位。</p>
+<p> </p>
+<p>Adding a Component to a Visual Basic Project ？</p>
+<p>1.On the Project menu, click Components.</p>
+<p>2.Click to select the check box next to the component you want to add. If the component is not listed, locate the .dll or .ocx file using Browse.</p>
+<p>3.Click OK.</p>
+<p> </p>
+<p>在vs.net中创建用户控件和组件有什么区别？</p>
+<p>用户控件继承自：System.Windows.Forms.UserControl  </p>
+<p>  组件继承自：System.ComponentModel.Component  </p>
+<p>  前者是“可视化继承”，后者更灵活。</p>
+<p> </p>
+<p> </p>
+<p>attribute 和property</p>
+<p>很多文献（包括Windows简体中文版操作系统）都将这个两个词不加区分地翻译为“属性”。 这样不妥当。</p>
+<p>这两个词的混淆由来已久。混淆的主要原因就是大多数中文译本里既把Attribute译为“属性”，也把Property译为“属性”。其实，这两个词所表达的不是一个层面上的东西。</p>
+<p>Property属于面向对象理论范畴。在使用面向对象思想编程的时候，我们常常需要对客观事物进行抽象，再把抽象出来的结果封装成类，类中用来表示事物状态的成员就是Property。比如我要写一个模拟赛车的游戏，那么必不可少的就是对现实汽车的抽象。现实中的汽车身上会带有很多数据，但在游戏中我可能只关心它的长度、宽度、高度、重量、速度等有限的几个数据，同时，我还会把汽车“加速”、“减速”等一些行为也提取出来并用算法模拟——这个过程就是抽象（结果是Car这个类）。显然，Car.Length、Car.Height、Car.Speed等表达的是汽车当前处在一个什么状态，而Car.Accelerate()、Car.Break()表达的是汽车能做什么。因此，Car.Length、Car.Height、Car.Speed就是Property的典型代表，将Property译为“属性”也很贴切。总结一句话就是：Property（属性）是针对对象而言的。</p>
+<p> Attribute则是编程语言文法层面的东西。比如我有两个同类的语法元素A和B，为了表示A与B不完全相同或者A与B在用法上有些区别，这时候我就要针对A和B加一些Attribute了。也就是说，Attribute只于语言层面上的东西相关——与抽象出来的对象没什么关系。因为Attribute是为了表示“区分”的，所以我喜欢把它译为“特征”。C#中的Attribute就是这种应用的典型例子——我们可以为一个类添加Attribute，这个类的类成员中有很多Property——显然Attribute只是用来影响类在程序中的用法而Property则对应着抽象对象身上的性状，它们根本不是一个层面上的东西。</p>
+<p> 习惯上，英文中把标签式语言中表示一个标签特征的“名称-值”对称为Attribute。如果恰好我们又是用一种标签语言在进行面向对象编程，这时候两个概念就有可能混淆在一起了。实际上，使用能够进行面向对象编程的标签式语言只是把标签与对象做了一个映射，同时把标签的Attribute与对象的Property也做了一个映射——针对标签，我们还是叫Attribute，针对对象，我们还是叫Property，仍然不是一个层面上的东西。而且，标签的Attribute与对象的Property也不是完全映射的，往往是一个标签所具有的Attribute多于它所代表的对象的Property。</p>
+<p> 因为XAML是用来在UI上绘制控件的，而控件本身就是面向对象抽象的产物，所以XAML标签的Attribute里有就一大部分是与控件对象的Property互相对应的。当然，这还意味着XAML标签还有一些属性并不对应控件对象的Property。</p>
+<p> </p>
+<p>美国传统词典（双解）解释：</p>
+<p>property&ndash;A characteristic attribute possessed by all members of a class. 固有的属性被某类物质的全体成员所拥有的特色。</p>
+<p>attribute&ndash;A quality or characteristic inherent in or ascribed to someone or something.&rdquo; 品质、属性、特征内在的属性或特征，或归结为某人某物的属性或特征&rdquo;</p>
+<p>就是说，property指“全体”的特性，而attribute指“个体” 的特征。描述控件对象的特性一般用property。</p>
+<p> </p>
+<p>A property is a typed element that represents an attribute of a class.</p>
+<p>property是一个有类型的元素（typed element），它代表了一个类中的一个属性（Attribute）。</p>
+<p> </p>
+<p>在Microsoft（微软）操作系统中定义如下：</p>
+<p>attribute</p>
+<p>用于文件，指出文件是否为只读、隐藏、准备存档（备份）、压缩或加密，以及是否应索引文件内容以便加速文件搜索的信息。</p>
+<p>在 Active Directory 中，是指对象地特征和对象可以包含的信息类型。对于每个对象类别，该架构定义一个类别实例必须具有什么属性以及该类别实例可能具有哪些其他属性。</p>
+<p>Property，Properties</p>
+<p>对象或设备类别的特征或参数。例如，Microsoft Word 文件的属性，包括“大小”、“创建时间”和“字符数”。</p>
+<p> </p>
+<p>是Attribute，还是Property？有时是个麻烦。</p>
+<p>Attribute和Property都可以翻译成“属性”，有的地方用Attribute表示“属性”，有的地方又在用Property，初学者常常在这两个单词间“迷失”，甚至认为二者没有区别，是一样的。可是Attribute不等于Property。二者之间到底有何区别？</p>
+<p>我们从OOA/OOD（Object Oriented Analysis / Object Oriented Design，面向对象分析与设计）说起。在OOA/OOD中的使用Attribute表示属性，指对象（Object）的特征（Feature）。我们在一些编程语言（如C#、Delhpi等）中遇到的“属性”一词，为何是Property，而不是Attribute呢？</p>
+<p>为了理解这一点，我们把C++拽进来看看。OOA/OOD中的Attribute在C++中称为Member Variable（成员变量），慢慢开始明白了吧。C++中的Member Variable在C#中可以继续延用，但有了一个新的称呼：Field（字段）。看一个简单的C#示例：</p>
+<p>public class Student {        // Student类</p>
+<p>private string name;           // C#中称为Field（字段），C++中称为Member Variable（成员变量），OOA/OOD中称为Attribute（属性）</p>
+<p>}</p>
+<p>我们整理出下表，可以看到同样的概念在OOA/OOD、C++和C#中的不同称呼：</p>
+<p>Description</p>
+<p>OOA/OOD</p>
+<p>C++</p>
+<p>.NET(C#) /Delphi</p>
+<p>Feature</p>
+<p>Attribute</p>
+<p>Member Variable</p>
+<p>Field</p>
+<p>OOA/OOD中的方法（Method）是指对象的操作（Operation）。在C++中称为Member Function（成员函数），而在C#中还是叫做Method。在表中加入对方法（Method）的称呼：</p>
+<p>Description</p>
+<p>OOA/OOD</p>
+<p>C++</p>
+<p>.NET(C#) /Delphi</p>
+<p>Feature</p>
+<p>Attribute</p>
+<p>Member Variable</p>
+<p>Field</p>
+<p>Operation</p>
+<p>Method</p>
+<p>Member Function</p>
+<p>Method</p>
+<p>也可以看出，C++中将Attribute称为Member Variable，将Method称为Member Function，其实还是很贴切的。从本质上说，确实是在声明变量、定义函数。后来者（C#等）可能觉得这样的称呼不够OO（Object Oriented，面向对象），于是做了些改变。Method延用OOA/OOD的称呼不用说，但将Attribute称作Field，总觉得欠妥。因为DB（Database，数据库）中有Field的概念，也译作“字段”，实在是容易混淆。</p>
+<p>现在我们可以把OOA/OOD中提到的属性（Attribute）同C#中提到的属性（Property）区分开来。继续上面的示例：</p>
+<p>public class Student {        // Student类</p>
+<p>private string name;           // C#中称为Field（字段），C++中称为Member Variable（成员变量），OOA/OOD中称为Attribute（属性）</p>
+<p>public string Name {           // C#中称为Property（属性）</p>
+<p>get {</p>
+<p>return name;</p>
+<p>}</p>
+<p>set {</p>
+<p>name = value;</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>我们顺便看看private和public：Property本质上是一对get/set方法，可以进行访问控制，因而可以设置为public；而按照OOA/OOD原则，Attribute不能设为public，而要设为private。</p>
+<p>C#中确实也有Attribute，把它译作“特性”似乎更好些。如：</p>
+<p>[WebMethod]</p>
+<p>在不少的.NET/C#书籍中看到有把Attribute译成“属性”的，这样一来，老鸟倒是可以通过语境判断出来不是在说Property，初学者恐怕一下子就跌进云里雾里了。虽然不至于“一个馒头引发的血案”，但“两个属性引发的歧异”，终究不是什么好事情。</p>
+<p>另外，在Web编程中也常见到Attribute和Property混用的情况。比如用VS 2003或2005创建一个ASP.NET应用程序，如果在代码视图添加控件：</p>
+<p>&lt;asp:TextBox id=”txtName” text=”Hello” runat=”server” /&gt;</p>
+<p>此时TextBox控件中的id、text和runat都称为Attribute，这是延用了HTML中对属性（Attribute）的称呼。</p>
+<p>如果是在设计视图中拖放控件，然后在属性（Properties）窗口中设置ID或Text，此时又会将ID或Text称为Property。因为控件在服务器上是作为控件类（Control Class）实现，使得可以用编程的方式来访问控件。那么属性必然是Class中的Property。</p>
+<p>当我们在学习新知识的时候，除了“知其然”，更要“知其所以然”，这样我们才能对概念有深层次的理解。同时，在我们平日里使用术语的时候，一定要准确，否则在交流时遇到不必要的障碍，白白增加交流成本。</p>
+<p> </p>
+<p> </p>
+<p>document和file</p>
+<p>这两个词，大陆和港台地区翻译正好相反：</p>
+<p>file    文件（大陆）    档案/档（港台）</p>
+<p>document   文档（大陆）    文件（港台）</p>
+<p> </p>
+<p>document 文档；文档，经过整理、分类、归档的书面性文件，正式的文书。侧重于公文， 文献。</p>
+<p>1）A medium and the information recorded on it that generally has permanence and that can be read by man or machine.</p>
+<p>一种数据媒体和记录在媒体上的信息的集合体，通常可以永久保存并可供人或机器所阅读。</p>
+<p>2）文件的另一种称呼，一般将WORD，EXCEL等文字编辑软件产生的文件叫做文档。</p>
+<p> </p>
+<p>File 文件；file 是文件，档案（包括书面文件和其它格式的文件.）</p>
+<p>1）一个完整的、有名称的信息集合(数据集合)。</p>
+<p>2）A named set of records stored or processed as a unit.</p>
+<p>一种经过命名可作为一个单位进行存储或处理的若干记录的集合。</p>
+<p>3）以名称在计算机上存储的信息集合。文件通常具有三/四个字母的文件扩展名，用于指示文件类型。</p>
+<p> </p>
+<p>File 要比Document 涵盖的范围大。只有在实际语境里才具有清晰的意义：</p>
+<p>You cannot save a document with the same name as another open document. Try saving with a different file name.</p>
+<p>不能将文件保存为与其他打开的文档同名的文件。请用其他文件名保存。</p>
+<p> </p>
+<p>在Microsoft（微软）操作系统中定义如下：</p>
+<p>Document文档</p>
+<p>任何自包含的工作都是由应用程序创建的，并且（如果保存在磁盘上）给予可以检索的唯一的文件名。</p>
+<p> </p>
+<p>电脑中文件和文档区别</p>
+<p>文件是一个完整的、有名称的信息集合。例如，程序、程序所使用的一组数据或用户创建的文档。文件是基本存储单位，它使计算机能够区分不同的信息组。文件是数据集合，用户可以对这些数据进行检索、更改、删除、保存或发送到一个输出设备（例如，打印机或电子邮件程序）。电脑中文件的定义就很宽泛，凡是存储数据的基本上都可以称为文件，电脑中的文件可以是文档、程序、快捷方式和设备。</p>
+<p>文档是用来存储文字、数据格式的资料，可以赋予文件名保存在磁盘。一般指由文字处理软件产生的文件，如文本文档（.TXT），写字板文档（.rtf），WORD文档（.DOC）。</p>
+<p> </p>
+<p> </p>
+<p>Catalog 、Directory、contents和folder</p>
+<p>Catalog 、Directory这两个词在一般英汉词典中都有“目录”义项，但汉语“目录”有“书刊上列出的篇章名目（多放在正文前）”这一含义，其对应的英语词却是contents。</p>
+<p>directory是指电话簿，商行名录，人名地址录。</p>
+<p>catalog是指图书馆卡片式检索目录，商品等的目录（一览表）。</p>
+<p>A list or itemized display, as of titles, course offerings, or articles for exhibition or sale, usually including descriptive information or illustrations </p>
+<p>一览表：名单或逐条列记的陈列，如题目、课程或者供展览或出售的物品，通常包括描述性的信息或插图。</p>
+<p>card catalog 图书馆里的卡片目录（等于card catalogue）。</p>
+<p> </p>
+<p>在计算机科学中，有下列含义：</p>
+<p>Catalog  编录；分类；目录</p>
+<p>用于“索引服务”，所有索引信息的集合，并存储用于文件系统目录的特殊组的属性。</p>
+<p> </p>
+<p>DBMS编目（DBMS catalog），也有人称为数据字典（data dictionary）或系统目录（system catalog）</p>
+<p>数据库系统中不仅包含数据库本身，还包含数据结构和约束的完整定义或描述。这个定义存储在DBMS编目（DBMS catalog）中，其中包含诸如每个文件的结构、每个数据项的类型和存储格式以及数据的各种约束等信息。存储在此编目中的信息我们称之为元数据（meta-data），元数据描述数据库的结构（描述数据库数据的组织方式，比如一个数据库、表的创建者信息、创建时间信息、所属表空间信息、用户访问权限信息，表的记录总数、列名及其类型等信息）。</p>
+<p> </p>
+<p>作为分析阶段的工具，数据字典（Data Dictionary）是关于数据的信息的集合，也就是对数据流图中包含的所有元素的定义的集合，数据字典通常包括四类条目：数据流、数据项、数据存储、基本加工。数据项是组成数据流和数据存储的最小元素。</p>
+<p> </p>
+<p>Directory 目录，索引簿</p>
+<p>存储在磁盘上的文件名及其它目录的索引，是存储装置中文件的组织结构，也称为文件夹（folder）。
+由相应数据项的标识符和说明构成的一种表或由控制程序使用的一种索引。
+folder 文件夹</p>
+<p>用于图形用户界面中的程序和文件的容器，在屏幕上由一个文件文件夹的图形图像（图标）表示。文件夹是在磁盘上组织程序和文档的一种手段，并且既可包含文件，也可包含其他文件夹。</p>
+<p>目录其实是DOS时代的说法，在WINDOWS下应当称为文件夹。文件夹是目录的形象化说法。</p>
+<p>一个文件夹里面还有一个文件夹，前者就是父目录，后者就是子目录了！</p>
+<p>根目录指每个分区(或光盘、软盘）的最上一级目录，它的特点是它没有父目录了。</p>
+<p> </p>
+<p> </p>
+<p>backup、copy和replication、replica</p>
+<p>backup n.替代物; 备用品。</p>
+<p>copy  n.复制本， 副本；vt. &amp; vi. 复制; 抄写。</p>
+<p>replication  n.复制。</p>
+<p>Replica  n.复制品，  副本。</p>
+<p> </p>
+<p>Backup 备份;［后备品］</p>
+<ol>
+<li>Pertaining to a system, device, file, or facility that can be used in the event of a malfunction or loss of data.</li>
+</ol>
+<p>作为形容词用来修饰系统、装置、文件或设备，表示在发生故障或数据丢失时可替代使用。</p>
+<ol start="2">
+<li>存储在非易失性存储介质上的数据集合，这些数据用来进行原始数据丢失或者不可访问条件下的数据恢复。为了保证恢复时备份的可用性，备份必须一致性状态下通过拷贝原始数据来实现。</li>
+</ol>
+<p> </p>
+<p>copy复制，拷贝</p>
+<p>1.To read data from a source, leaving the source data unchanged, and to write the same data elsewhere in a physical form that may differ from that of the source, e.g., to copy a deck of punched cards onto a magnetic tape. The degree of editing that may be carried out at the same time depends upon the circumstances in which the copying is performed.</p>
+<p>从数据源中读出数据，源数据保持不变，然后将该数据以某一种物理形式写到另一处。该物理 形式和源数据的形式可以不同。例如，将一组穿孔卡片的数据复制到磁带上。复制的同时可 以进行编辑，其程度取决于实现复制的环境。</p>
+<p>2.In word processing, the reproduction of selected recorded text from storage or from a recording medium to another recording medium.  在字(词)处理技术中，从存储器或从某一记录媒体把选定的记录文本复制到另一记录媒体上。</p>
+<ol start="3">
+<li>也称拷贝，指将文件从一处拷贝一份完全一样的到另一处，而原来的一份依然保留。</li>
+</ol>
+<p> </p>
+<p>Replication  [同步]复制</p>
+<p>1.将数据从数据存储区或文件系统复制到多个计算机来同步数据的过程。Active Directory 在给定域的域控制器之间提供目录多主机复制。每个域控制器上目录的副本都是可写的。这就允许对给定域的任意副本进行更新。该复制服务会将这些变化自动从给定的副本(Replica)复制到其他副本。</p>
+<p>2.在数据库中Replication，指保证两个数据库的完全同步的过程。用于分布式数据库。将数据和数据库对象从一个数据库复制和分发到另一个数据库，然后在数据库间进行同步，以维持一致性。</p>
+<ol start="3">
+<li>复制是将一组数据通过网络从一个数据源拷贝到多个数据源的技术。 使数据分布式的存放多个数据备份。也称为同步复制，使数据库两个或更多副本可以交换数据或被复制对象的更新的过程。</li>
+</ol>
+<p> </p>
+<p>replica 副本</p>
+<p>由同步复制（Synchronous Replication）产生的，属于一个副本集并且可与该集合中其他副本同步的一个数据库副本。在一个副本中对复制的表的数据所做的更改会发送并应用到其他副本。</p>
+<p> </p>
+<p>注意，英文replica 和copy都有“复制品”的含义，许多文档将它们都翻译为副本，作为术语是有差别的，备份（backup）的数据库副本（copy）与复制（同步复制 replication）的数据库副本（复本 replica）含义不同，前者形成相互独立的副本（copy），后者形成相关联的副本（复本 replica），副本之间可以同步。replica 有相同的标识符（ID），Copy会有不同的标识符，要进行复制（Replication），必须要有相同的标识符，即Replica ID相同的数据库才能进行复制。</p>
+<p>在分布处理等环境下，要将数据的复制品置于异地的服务器上，并使其处于可用状态。这种过程一般称为 Replication 。为了防止出现故障而进行的数据复制称为备份（ Backup）而不是 Replication 。</p>
+<p> </p>
+<p> </p>
+<p>point-to-point和end-to-end</p>
+<p>End-to-End 简单字面解释为 “端对端”。</p>
+<p>Point-to-Point 简单字面解释为 “点对点”。</p>
+<p> </p>
+<p>End-to-End、Point-to-Point、Peer-to-Peer、Host-to-Host</p>
+<p>如果要翻译成中文， 可能会相同或类似， 重点应该从他要表达的意义去了解：</p>
+<p>End 有末端， 最底层的意思， 例如 End User， End-to-End 是指最末端的两者间。</p>
+<p>Point-to-Point 翻译成 &ldquo;点对点&rdquo; ， 但 Point 则是指某个点， 可以看成网络上任一个装置 (Server， Client ， PC， Gateway &hellip;.)。</p>
+<p>Peer-to-Peer 翻译成 &ldquo;对等&rdquo; ， 但 Peer 有身份对等的意思， 像 Client/Server 是主从式架构， 身分不对等。</p>
+<p>Host 是主机， Host-to-Host 是主机对主机。TCP/IP中的主机对主机层(Host-to-Host Layer)，又称传输层。</p>
+<p> </p>
+<p>主机到主机层（Host-to-Host layer）功能类似OSI模型的传输（Transport）层，它定义了建立应用程序传输服务的协议。它处理问题例如建立可靠的端到端（end-to-end）的通信连接并保证无差错（error-free）的数据传送。它处理数据包的排序和维护数据的完整性。</p>
+<p> </p>
+<p>P2P是peer-to-peer的缩写，peer在英语里有&rdquo;（地位、能力等）同等者&rdquo;、&ldquo;同事&quot;和&quot;伙伴&quot;等意义。P2P一种解释是peer-to-peer。而peer在英语里是“（地位、能力等）同等者”、“同事”和“伙伴”的意思。这样一来，P2P也就可以理解为&quot;伙伴对伙伴&quot;的意思，或称为对等联网。目前人们认为其在加强网络上人的交流、文件交换、分布计算等方面大有前途。而另一种解释是，P2P就是一种思想，有着改变整个互联网基础的潜能的思想。客观讲，单从技术角度而言，P2P并未激发出任何重大的创新，而更多的是改变了人们对因特网的理解与认识。正是由于这个原因，IBM早就宣称P2P不是一个技术概念，而是一个社会和经济现象。</p>
+<p> </p>
+<p>点对点和端对端</p>
+<p>点对点是针对网络中传输的两端设备间的关系而言的。点对点系统指的是发送端把数据传给与它直接相连的设备，这台设备在合适的时候又把数据传给与之直接相连的下一台设备，通过一台一台直接相连的设备，把数据传到接收端。</p>
+<p>点对点传输的优点是发送端设备送出数据后，它的任务已经完成，不需要参与整个传输过程，这样不会浪费发送端设备的资源。另外，即使接收端设备关机或故障，点对点传输也可以采用存储转发技术进行缓冲。点对点传输的缺点是发送端发出数据后，不知道接收端能否收到或何时能收到数据。</p>
+<p>端对端是针对网络中传输的两端设备间的关系而言的。端对端传输指的是在数据传输前，经过各种各样的交换设备，在两端设备问建立一条链路，就象它们是直接相连的一样，链路建立后，发送端就可以发送数据，直至数据发送完毕，接收端确认接收成功。</p>
+<p>端对端传输的优点是链路建立后，发送端知道接收设备一定能收到，而且经过中间交换设备时不需要进行存储转发，因此传输延迟小。</p>
+<p>端对端传输的缺点是直到接收端收到数据为止，发送端的设备一直要参与传输。如果整个传输的延迟很长，那么对发送端的设备造成很大的浪费。端对端传输的另．一个缺点是如果接收设备关机或故障，那么端对端传输不可能实现。</p>
+<p>在一个网络系统的不同分层中，可能用到端对端传输，也可能用到点对点传输。如Internet网，IP及以下各层采用点对点传输，4层以上采用端对端传输。</p>
+<p>路由器中IP软件利用路由表（保存在路由器中）决定数据报发送的下一站，要选择一条路径时，IP软件将目的地址（数据报携带的IP地址）的网络前缀（网络号部分）与路由表中的每一项比较来查到匹配项。</p>
+<p> </p>
+<p>数据传输的可靠性是通过数据链路层和网络层的点对点和传输层的端对端保证的。点对点是基于MAC地址或者IP地址，是指一个设备发数据给另外一个设备，这些设备是指直连设备包括网卡，路由器，交换机。端对端是网络连接，应用程序之间的远程通信。端对端不需要知道底层是如何传输的，是一条逻辑链路。</p>
+<p>端到端与点到点是针对网络中传输的两端设备间的关系而言的。端到端传输指的是在数据传输前，经过各种各样的交换设备，在两端设备问建立一条链路，就像它们是直接相连的一样，链路建立后，发送端就可以发送数据，直至数据发送完毕，接收端确认接收成功。点到点系统指的是发送端把数据传给与它直接相连的设备，这台设备在合适的时候又把数据传给与之直接相连的下一台设备，通过一台一台直接相连的设备，把数据传到接收端。端到端传输的优点是链路建立后，发送端知道接收设备一定能收到，而且经过中间交换设备时不需要进行存储转发，因此传输延迟小。端到端传输的缺点是直到接收端收到数据为止，发送端的设备一直要参与传输。如果整个传输的延迟很长，那么对发送端的设备造成很大的浪费。端到端传输的另．一个缺点是如果接收设备关机或故障，那么端到端传输不可能实现。点到点传输的优点是发送端设备送出数据后，它的任务已经完成，不需要参与整个传输过程，这样不会浪费发送端设备的资源。另外，即使接收端设备关机或故障，点到点传输也可以采用存储转发技术进行缓冲。点到点传输的缺点是发送端发出数据后，不知道接收端能否收到或何时能收到数据。在一个网络系统的不同分层中，可能用到端到端传输，也可能用到点到点传输。如Internet网，IP及以下各层采用点到点传输，IP层以上采用端到端传输。</p>
+<p> </p>
+<p>P2PⅠ模式（Peer-to-Peer，伙伴对伙伴型）</p>
+<p>P2PⅠ应区别于P2PⅡ模式（点对点），虽然P2PⅡ也保持了平等关系，但它缺乏“伙伴关系”的利益共赢。P2PⅠ依据B2B模式进一步理顺平行关系，在确立伙伴关系后所建立的系统对等。在现实中P2PⅠ的耦合松紧度不尽相同，需要内部决策系统参与协调，以策略性决策指令量度并区别内部的与外部的伙伴关系，分门别类地提供对伙伴的配送服务。而作为伙伴的一方，也需要密切配合，以支持系统与业务的统一目标。在内容集成平台的远程异地应用中，依据不同的运营平台和不同的销售策略，或是集成运营商建立异地伙伴的P2PⅠ配送机制，同时兼有内容批发或内容资产增值的附加作用。为保证P2PⅠ的持久性，还需要在信息的兼容性上有所预处理，建立版权保护的销售分帐结算体系，既防止版权流失，又保证传播效率和利益共享，持久维系B2B的内容配送与消费服务。</p>
+<p>E2E模式（End-to-End，端到端型）与P2PⅡ模式（Point-to-Point，点对点型）</p>
+<p>E2E与P2PⅡ是系统模式化的附属模式，虽然二者都是建立在业务系统中，既非单元制的一个设备，也非孤立存在的一个组件，但二者区别很明显，前者是针对某一个特定系统，存在于这个系统的始端到终端，而后者既存在一个系统中，也存在多个系统中，既可能指2个端点间，也可能指2个节点间，还可能指2个系统的接口间，并有混合出现的可能。例如，一个新媒体业务，就是一个E2E的F2F服务，而多个新媒体业务间相间模式的对象服务，就是P2PⅡ模式。由于多种业务和多型模式的存在，P2PⅡ表现形态要比E2E复杂得多，应用也要多得多，问题是跳出实体支路的特征，在业务流程上加以区分。比如新媒体的内容配送，就可能同时存在E2E与P2PⅡ模式，那么，若实现了业务的双向交互，E2E就是主型，若非双向交互业务，则P2PⅡ为主型。又如DMC的内容网是P2PⅡ型，而它的配送网却是E2E型。因此，需要在总体服务目标的指引下，理顺新媒体业务流程，在BPR规范下，有选择地由内向外应用E2E与P2PⅡ的2种模式。</p>
+<p> </p>
+<p> </p>
+<p>passive和active</p>
+<p>passive【修】无源的；被动的；</p>
+<p>In electronics, pertaining to an equipment incapable of amplification or power generation.</p>
+<p>在电子技术中，用来修饰或说明不能进行放大或产生能量的设备。</p>
+<p>active【修】有源的；主动的</p>
+<p> </p>
+<p>无源音箱（Passive Speaker）又称为“被动式音箱”。无源音箱即是我们通常采用的，内部不带功放电路的普通音箱。无源音箱虽不带放大器，但常常带有分频网络和阻抗补偿电路等。</p>
+<p>有源音箱（Active Speaker）又称为“主动式音箱”。通常是指带有功率放大器的音箱，如多媒体电脑音箱、有源超低音箱，以及一些新型的家庭影院有源音箱等。有源音箱由于内置了功放电路，使用者不必考虑与放大器匹配的问题，同时也便于用较低电平的音频信号直接驱动。</p>
+<p> </p>
+<p>主动元器件和被动元器件，单地讲就是需能（电）源的器件叫有源器件，无需能（电）源的器件就是无源器件。有源器件一般用来信号放大、变换等，无源器件用来进行信号传输，或者通过方向性进行“信号放大”。 容、阻、感都是无源器件，又叫被动元器件.无源器件不实施控制并不要求任何输入器件就可完成自身的功能&mdash;-就是不智能。电阻、电容、电感、连接器等都是无源的。而有源器件能控制电压或电流，或在电路中创造转换的动作&ndash;它是智能的。二极管、三极管、IC、晶振、传感器都是有源的。又叫主动元器件。</p>
+<p> </p>
+<p>有源HUB与无源HUB的区别就在于有源HUB能对信号放大或再生，这样它就延长了两台主机间的有效传输距离；无源HUB不对信号做任何的处理，对介质的传输距离没有扩展，并且对信号有一定的影响。连接在这种HUB上的每台计算机，都能收到来自同一HUB上所有其它电脑发出的信号。</p>
+<p> </p>
+<p> </p>
+<p>Connection、link和 join</p>
+<p>辨析：link (up) with，connect with 及 join (…to) 与 adjoin to、 link (up) with = connect with 与……相连接：通常“水域”相连用link (up) with，“车辆 (道路，交通)”相连用connect with、 join (…to) 指直接连接(两个以上的东西) adjoin to 与……毗邻 There the irrigation canal links up with the reservoir. 这条灌溉渠道在那儿与水库连接起来。The trolley bus connects here with a bus for the airfield. 这辆无轨电车在这儿衔接去机场的公共汽车。The new highway has joined our commune to the city. 这条新高速公路把我们的公社与城市连接起来了。The cotton field adjoins to the rice field. 棉田与稻田相接。</p>
+<p>join vt. vi. 表示用（线，绳子，桥梁等）将两个或两个分离的事物或两点联结，联合。侧重把原来不相连接的物紧密地连接在一起，但仍可再分开。也指把分散的人或几个部分的人联合起来，或加入到某团体中去。He joined the two pieces of wood with a nail. 他用钉子将两块木版钉在一起。</p>
+<p>connect: 指两事物在某一点上相连接，但彼此又保持独立。A railway connects Oxford and Reading. 牛津和瑞丁之间有一条铁路相连。 Mr. Y has been connected with this firm since 1950. Y先生从1950年起就一直在此公司做事。</p>
+<p>link&quot;链接&quot;请注意，是&quot;链&quot;接，不是&quot;连&quot;接；link: 指连环式的连接，或用接合物或其它方式连接，还可指一事物与另一事物的联系或关系。The common interest between China and the U.S.A links the two nations. 中美间的共同利益将两国人民紧密相连。</p>
+<p>ralate着重于&quot;关联&rdquo;；relate: 指人与人有亲戚或婚烟关系；也指人或物之间尚存的实际或假想的联系。</p>
+<p>attach着重与&quot;附属与&rdquo; ；attach: 指把局部连接在整体上，小的接在大的上面，活动的接在固定的上面。</p>
+<p>unite&quot;联合&rdquo; ；unite: 指联合、团结、结合在一起，构成一个整体。</p>
+<p> </p>
+<p>connection 连接</p>
+<p>An association established between functional units for conveying information.</p>
+<p>为传送信息在各功能单元之间建立起来的一种联系。</p>
+<p>link链接；链路；</p>
+<ol>
+<li>In computer programming, the part of a computer program, in some casesa single instruction or an address, which passes control and parameters between separate portions of the computer program.</li>
+</ol>
+<p>计算机程序设计中，用于在程序的不同部分之间传递控制权和参数的程序部分，某些情况下，它是一条指令或一个地址。</p>
+<ol start="2">
+<li>In DECnet or SNA network, a communications path between two nodes.</li>
+</ol>
+<p>在DECnet或SNA网络中，两个节点之间的一种通信路径。</p>
+<p>join 联结，连[联]接</p>
+<p>In relational databases, an operator in relational algebra.A join operation on two relations which share a common data item type produces a combined relation with attributes specified in the join operation.</p>
+<p>在关系数据库中，关系代数用的一种运算符。对共享一个公共数据项类型的两种关系， 连接操作产生一种复合的关系，该关系具有连接操作中规定的属性。</p>
+<p> </p>
+<p>连接（connection）表示的是一个客户端需要访问数据库实例时必须建立的一个通讯通道。</p>
+<p>链接（link）是指两个数据库之间的访问，如果数据库A建立了到数据库B的链接，那么数据库A的用户就可以通过这个链接来访问数据库B。</p>
+<p>在网页中，链接（link）指当我们把鼠标放到一个文字上的时候，能够变成小手，而且当我们点一下的时候，能够出现另外一个网页。</p>
+<p> </p>
+<p>联接jion，结合（在一起），联系的比较紧密。 Full Jion(完全联接). 先按右联接比较字段值，再按左联接比较字段值。不列入重复记录.</p>
+<p>链接link，重点是“链”，意即一环扣一环，是多点、多面的相互关联。</p>
+<p>连接connection，主要用线连，形成通路。如宽带连接（Broadband Connection）</p>
+<p> </p>
+<p>说明，join有人翻译为联接，有人翻译为连接，有人翻译为链接，本人倾向采用联接，在Access中一般译为联接。</p>
+<p>link有人翻译为链接，有人翻译为连接，本人倾向采用链接；connection有人翻译为连接，有人翻译为链接，本人倾向采用连接。</p>
+<p>在计算机编程和数据库领域，除非特别强调或作为关键字用，join和link，connection和link可以互换，少见苛意区分。</p>
+<p>在“多对多”关系中，两个表中任意一个表中的记录在另一个表中部具有多个匹配的记录。对于多对多关系的两个表，数据库管理系统不提供直接支持，需要建立一个中间表用以间接地关联这两个表，这个中间表称为联接表（junction table） 或 链接表（linking table），即是说，多对多关系不能直接定义，对这种类型的关系必须添加一个联接表（连接表junction table），转化为两个“一对多”关系，联接表为“多”方。联接表（junction table）尽管可以包含较多的字段，但实际只需要包含多对多关系的两个表中的主键字段，根据“外键”定义，这些在其它表中作为“主键”的字段，在联接表作为“外键”的字段。</p>
+<p>主键（primary key）是被挑选出来一个字段或多个字段，作为表的行的惟一标识。一个表只有一个主关键字。</p>
+<p>在一个关系中是主键，放置在另一个关系中，被称为另一个关系的外键（Foreign Key）。外键用于表示两个关系之间的联系。以另一个关系的外键作为主键的表被称为主表，具有此外键的表被称为主表的从表。</p>
+<p>A junction table, sometimes also known as a &ldquo;Bridge Table&rdquo;, &ldquo;Join Table&rdquo;, &ldquo;Map Table&rdquo;, or &ldquo;Link Table&rdquo;, is a table that contains common fields from two tables. It is on the many side of a one-to-many relationship with the other two tables.</p>
+<p>junction table有时也称为“Bridge Table” ， “Join Table” ， “Map Table” ，或“Link Table” ，是一个包含两个表的公用字段的表，它是与其它两个表构成的“一对多”关系的“多”边。</p>
+<p>公用字段，也称为相关字段，或匹配字段，在两个表中一般相同，也可不同，但要求是相同或相容的数据类型。</p>
+<p> </p>
+<p>在Access数据库中，链接 (link)（表），指在其他程序与数据之间建立连接的操作，使用户既可以在原程序中，又可以在 Access 中查看和编辑数据。</p>
+<p>链接表 (linked table) ，指存储在已打开数据库之外的文件中的表，Access 可通过它访问记录。您可以在链接表中添加、删除和编辑记录，但不能更改其结构。</p>
+<p> </p>
+<p> </p>
+<p>Field和Domain</p>
+<p>Domain（域）：在关系数据库中，一个或多个属性的取值范围 [ 或字段的数据类型 ]。如：大于0小于150的正整数，长度小于25的字符串集合等等。在关系数据库中，Domain（域）是一组约束，用于限制取值，包括数据类型、长度、格式、唯一性、是否为空（null）等，可以通过数据类型和约束（constraint）来定义域。</p>
+<p>Domain还是 Windows 网络操作系统的逻辑组织单元，也是Internet的逻辑组织单元。</p>
+<p> </p>
+<p>Field（字段）：数据模型中数据的最小单位，描述实体的属性。</p>
+<p>在 java 和C#语言类中字段（field）指类的成员变量。表示与对象或类相关联的变量。</p>
+<p>java中的field</p>
+<p>class A{</p>
+<p>private int a; //private field</p>
+<p>protected double b; //protected field</p>
+<p>public String c; //public field</p>
+<p>A d; //default access field</p>
+<p>public static Object e; //public static field</p>
+<p>}</p>
+<p> </p>
+<p>属性( Attribute)：</p>
+<p>关系表中的一个列称为关系 的一个属性，即元组的一个数据项。属性有属性名、属性类型、属性值域和属性值之分。属性名在表中是唯一的。</p>
+<p> </p>
+<p>field，字段；域</p>
+<ol>
+<li>
+<p>In a data base, the smallest unit of data that can be referred to.  在数据库中，可被访问的最小数据单位。</p>
+</li>
+<li>
+<p>在.NET中，表示与对象或类相关联的变量。</p>
+</li>
+</ol>
+<p>domain，域；定义域</p>
+<ol>
+<li>The set of values that an independent variable can have.</li>
+</ol>
+<p>自变量可取值的范围或集合。</p>
+<ol start="2">
+<li>
+<p>在关系数据库中，域（Domain）是属性值的集合，如：大于0小于150的正整数，长度小于25的字符串集合等等。</p>
+</li>
+<li>
+<p>The network resources that are under the control of one or more associated host processors.   在一台或多台相关联的主机控制下的网络资源。</p>
+</li>
+</ol>
+<p> </p>
+<p>Domain域</p>
+<p>Domain是Windows网络中独立运行的单位，域之间相互访问则需要建立信任关系（即Trust Relation）。信任关系是连接在域与域之间的桥梁。</p>
+<p>在Internet上，域名是上网单位和个人在网络上的重要标识。域名（Domain Name），是由一串用点分隔的名字组成的Internet上某一台计算机或计算机组的名称。例如优酷的域名是youku.com。</p>
+<p>构成部分网络并共享一个通用目录数据库的一组计算机。一个域作为一个单元来管理，并且带有共同的规则和过程。每个域有一个唯一的名称。</p>
+<p>Active Directory 域是一个由 Windows 网络的管理员定义的计算机的集合。这些计算机共享公用目录数据库、安全策略以及与其他域的安全关系。Active Directory 域提供了对由该域的管理员维护的集中用户帐户和组帐户的访问。Active Directory 林由一个或多个域组成，每个域都可以跨越一个以上的物理位置。</p>
+<p>DNS 域是 DNS 名称空间中的任意一个树或子树。尽管 DNS 域的名称通常与 Active Directory 域对应，但不要混淆 DNS 域和 Active Directory 域。</p>
+<p> </p>
+<p> </p>
+<p>Relationship和relation</p>
+<p>relation关系；［关系式］</p>
+<ol>
+<li>In assembler programming, the comparison of two expressions to see if the value of one is equal to, less than, or greater than the value of the other.</li>
+</ol>
+<p>在汇编语言程序设计中，对两个表达式进行的一种比较(结果)，看其中一个表达式的值是否等于、小于或大于另一个表达式的值。</p>
+<ol start="2">
+<li>在数据库指表。从本质上说，关系是一个包含行和列的二维表或数组。</li>
+</ol>
+<p>relationship</p>
+<p>关系；联系</p>
+<p>1．实体或属性间的内在关系。在数据库中指不同表之间的数据彼此联系的方法。数据库实体之间的relationship有：一对一、一对多、多对多。</p>
+<ol start="2">
+<li>事物之间相互作用、相互影响的状态，人和人或人和事物之间某种性质的联系</li>
+</ol>
+<p> </p>
+<p>实体(Entity)：客观存在并可相互区别的事物称之为实体。实体可以是具体的人、事、物，也可以是抽象的概念或联系。数据库中表示描述的现实世界中的对象或概念。同型实体的集合称为实体集（Entity Set）。</p>
+<p> </p>
+<p>relationship和relation通常都翻译为关系，但在数据库中两者含义不同。relationship [关系；联系；关联]，在数据库中指不同表之间的数据彼此联系的方法。数据库实体之间的relationship有：一对一、一对多、多对多。relation[关系]，在数据库指表，从本质上说，关系是一个包含行和列的二维表或数组。应根据语境区别理解。</p>
+<p>请注意，在英语国家讲数据库的英语文献中，relation有时指“表”，有时指两表之间的relationship。指两表之间的relationship时也常用link[链接]。</p>
+<p> </p>
+<p> </p>
+<p>引用（reference）、参照[引用]关系（Referencing Relation）、被参照[被引用]关系（Referenced Relation）</p>
+<p>引用（reference）</p>
+<p>①允许一个程序选择另外一个程序的对象，通过设置对那个程序对象库的引用您可以在您的代码中使用它。</p>
+<p>②引用就是某一变量（目标）的一个别名，对引用的操作与对变量直接操作完全一样。</p>
+<p>③用在函数中作为参数，可以改变作为参数变量的值，而普通参数是拷贝值，不改变原参数。</p>
+<p>④在Excel中引用的作用在于标识工作表上的单元格或单元格区域，并指明公式中所使用的数据的位置。通过引用，可以在公式中使用工作表不同部分的数据，或者在多个公式中使用同一单元格的数值。还可以引用同一工作簿不同工作表的单元格、不同工作簿的单元格、甚至其它应用程序中的数据。关于引用有两种表示的方法，即A1 和 R1C1 引用样式。</p>
+<p> </p>
+<p>主键（primary key）是被挑选出来一个列或多个列，作为表的行的惟一标识。一个表只有一个主关键字。[有些人也将“键”称作“码”，都指key]</p>
+<p>外键(foreign key) 是列或列的组合，其值与同一个表或另一个表中的主键或唯一键（指建立了唯一约束(unique)的一列或一组列）相匹配。[列也叫字段]</p>
+<p>两表之间的关系不要求必须使用主表（父表）的主键（primary key），你可以使用主表中的具有唯一约束或唯一索引（唯一值索引）的列来建立关系，但是使用主表的主键是大家都已经接受的常用标准。外键是子表（从表）中的列，不一定和主表的主键列同名，但是，外键列的数据类型必须和主键的数据类型相同或相容。外键的值可以是空（Null），但建议在没有特别原因的情况下，不要让外键为空。主表和子表可以是同一个表，这实际上是表中的一列（的取值）约束同一表中的另一列（的取值），称为自引用完整性，这种情况比较少见。</p>
+<p>参照[引用]关系（Referencing Relation）、子表、从表、外键表（foreign key table）、参照[引用]表（Referencing Table）、相关表（Related Table）、外表（foreign table），这些是同一术语的不同叫法。</p>
+<p>被参照[被引用]关系（Referenced Relation）、父表、主表、主键表（primary key table）、被参照[被引用]表（Referenced Table），这些是同一术语的不同叫法。</p>
+<p>参见下表：</p>
+<p>专业名称</p>
+<p>别称</p>
+<p>ACCESS中叫法</p>
+<p>SQL Server中叫法</p>
+<p>参照[引用]关系（Referencing Relation）</p>
+<p>外键所在的关系</p>
+<p>子表</p>
+<p>从表</p>
+<p>外键表</p>
+<p>参照[引用]表（Referencing Table）</p>
+<p>相关表（related table）[注1]</p>
+<p> </p>
+<p>外键表（foreign key table）</p>
+<p>外表（foreign table）[注2]</p>
+<p>被参照[被引用]关系（Referenced Relation）</p>
+<p> </p>
+<p>父表</p>
+<p>主表</p>
+<p>主键表</p>
+<p>被参照[被引用]表（Referenced Table）</p>
+<p>主表（primary table）</p>
+<p> </p>
+<p>主表（primary table）</p>
+<p>主键表（primary  key table）</p>
+<p>[注1] 相关表（related table）具有多义，如在Access数据库的“编辑关系”对话框中，指的是子表，在ADOX联机帮助部分，RelatedTable 属性 (ADOX)中，却指的是父表。应根据语境区别对待。</p>
+<p>又，在 Microsoft Access SQL 联机帮助部分，如 CONSTRAINT 子句中，外表（foreign table）实际指的是主表，而不是子表，有点另类：</p>
+<p>CONSTRAINT constraint_name</p>
+<p>{PRIMARY KEY (pk_field1[, pk_field2[, &hellip;]]) |</p>
+<p> UNIQUE (unique1[, unique2[, &hellip;]]) |</p>
+<p> NOT NULL (notnull1[, notnull2[, &hellip;]]) |</p>
+<p> FOREIGN KEY [NO INDEX] (ref_field1[, ref_field2[, &hellip;]])</p>
+<p>  REFERENCES foreign_table</p>
+<p>  [(fk_field1[, fk_field2[, &hellip;]])] |</p>
+<p> [ON UPDATE {CASCADE | SET NULL}]</p>
+<p> [ON DELETE {CASCADE | SET NULL}]}</p>
+<p>其中，foreign_table容易让人产生误解的： foreign table——外表，而外表一般指从表，但在此却作主表使用。</p>
+<p>[注2] 外表 (foreign table) 一般指包含外键的表，又叫外键表。</p>
+<p> </p>
+<p>外键其作用是实施参照完整性（referential integrity）：用主表中相关列的值域约束从表的外键取值——[从表中添加或修改记录时，]从表中的外键的取值应在主表的相关列的值的范围内，换句话说，保证不会出现孤儿（orphan）记录，即子记录不会没有父记录。</p>
+<p>注意，主表和子表可以是同一个表，这实际上是表中的一列（的取值）约束同一表中的另一列（的取值），称为自引用完整性。</p>
+<p> </p>
+<p> </p>
+<p>pattern、mode、model和Schema</p>
+<p>pattern</p>
+<p>n.模式；样品；典范</p>
+<p>模式（Pattern）是解决某一类问题的方法论。你把解决某类问题的方法总结归纳到理论高度，那就是模式。就是从不断重复出现的事件中发现和抽象出的规律，是解决问题的经验的总结。只要是一再重复出现的事物，就可能存在某种模式。模式（Pattern）是一种指导，在一个良好的指导下，有助于你完成任务，有助于你作出一个优良的设计方案，达到事半功倍的效果。而且会得到解决问题的最佳办法。</p>
+<p>设计模式（Design pattern）是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。</p>
+<p>Mode 模式；方式</p>
+<p>login security mode 登录安全模式；Mixed Mode 混合模式</p>
+<p>Model 模型；模特儿</p>
+<p>A general, often pictorial, representation of a system under study.
+对正在研究的系统的一种通用表示法。通常用图形表示。</p>
+<p>A schematic description of a system, theory, or phenomenon that accounts for its known or inferred properties and may be used for further study of its characteristics。
+模式，图解：系统、理论或现象的图解性的描述，用来描绘其已知的或推测性质的特性，也可能用于深入研究它们的特点。</p>
+<p>模型(model) 是指对于某个实际问题或客观事物、规律进行抽象后的一种形式化表达方式。 表现为文字、图表、公式，或实体模型。</p>
+<p>模型（Model)是现实世界的抽象。</p>
+<p>数据模型（Data Model）是数据特征的抽象，是数据库管理的教学形式框架。数据模型所描述的内容包括三个部分：数据结构、数据操作、数据约束。</p>
+<p>数据模型一般多指在设计和建立数据库时，对现实世界数据特征的抽象描述。</p>
+<p>数学模型（Mathematical Model），是根据对研究对象所观察到的现象及实践经验，归结成的一套反映其内部因素数量关系的数学公式、逻辑准则和具体算法。用以描述和研究客观现象的运动规律。</p>
+<p>概念数据模型（Conceptual Data Model），常用实体—联系[关系]（Entity-Relationship）模型表示。</p>
+<p>E-R模型也称为E-R图。</p>
+<p>E-R模型的构成成分是实体集（entity set）、属性（attribute）或叫特性（property） 、联系（Relationship），说明如下：</p>
+<p>　　（1）实体集用矩形框表示，矩形框内写上实体名。</p>
+<p>　　（2）实体的属性用椭圆框表示，框内写上属性名，并用无向边与其实体集相连。</p>
+<p>　　（3）联系用菱形框表示，联系以适当的含义命名，名字写在菱形框中，用无向连线将参加联系的实体矩形框分别与菱形框相连，并在连线上标明联系的类型，即1—1、1—M或M—M。</p>
+<p>联系也可以有属性，如“学生”和“课程”两个实体集之间有选课联系，选课联系有一个成绩属性。注意“成绩”属性不是学生的属性，它是与选课直接相联系的，因为只有知道了哪一个学生和哪一门课程才会有成绩。</p>
+<p>一般而言，一个实体集不能既无主键又无外键。在E—R 图中， 处于叶子部位的实体集， 可以定义主键，也可以不定义主键(因为它无子孙)， 但必须要有外键(因为它有父亲)。主键与外键的配对，表示表之间的联结（连接）关系。主码（主键）和外部码（外部键）一起提供了表示关系间联系的手段。在关系的基础上可以实施的数据参照完整性。</p>
+<p>Schema，模式，架构</p>
+<p>The set of statements, expressed in data definition language, that completely describe the structure of a data base.</p>
+<p>一组以数据定义语言来表达的语句集，该语句集完整地描述了数据库的结构。</p>
+<p> </p>
+<p>架构，数据库架构是一个独立于数据库用户的非重复命名空间，您可以将架构视为对象的容器。一个对象只能属于一个架构。</p>
+<p> </p>
+<p>模式（schema）是数据库中全体数据的逻辑结构和特征的描述，它仅仅涉及到型(type)的描述，不涉及到具体的值。 模式的一个具体值称为模式的一个实例（instance）。 同一个模式可以有很多实例。模式是相对稳定的，而实例是相对变动的。模式反映的是数据的结构及其关系，而实例反映的是数据库某一时刻的状态。</p>
+<p>模式（schema）：</p>
+<p>A  complete logical view of the database.</p>
+<p>一个数据库完整的逻辑视图。</p>
+<p>All database objects owned by a single database user.</p>
+<p>一个数据库用户所拥有的所有数据库对象。</p>
+<p> </p>
+<p>Relational Schema（关系模式），带有关系约束（constraint，限制， 约束）的一组关系。</p>
+<p> </p>
+<p>Data schema</p>
+<p>数据模式， 数据架构</p>
+<p>A data schema , especially a data subschema in a relational data system</p>
+<p>关系数据系统中的数据模式，特别是子模式。</p>
+<p> </p>
+<p>由模式可以延伸出内模式，外模式，外模式对应于各个用户的视图，内模式是模式在计算机中的内部实现。</p>
+<p>模式相当于数据结构中的逻辑结构描述，内模式相当于数据结构的物理实现。</p>
+<p> </p>
+<p>数据库系统的三级模式是对数据的三个抽象级别，它把数据的具体组织留给DBMS管理，使用户能逻辑地抽象地处理数据，而不必关心数据在计算机中的具体表示方式与存储方式。</p>
+<p>逻辑模式，简称模式(Schema) ；外模式(External Schema)，也称子模式( Subschema)或用户模式；内模式(Internal Schema) 。</p>
+<p> </p>
+<p>数据库的模式(Schema)以某一种数据模型（Data model）为基础，统一综合地考虑了所有用户的需求，并将这些需求有机地结合成一个逻辑整体。模式实际上是数据库数据在逻辑级上的视图。数据模型，从概念层次对系统特征的描述，数据模式是结合DBMS对数据模型的进一步描述，定义模式时不仅要定义数据的逻辑结构，例如数据记录由哪些数据项构成，数据项的名字、类型、取值范围等，而且要定义数据之间的联系，定义与数据有关的安全性、完整性要求，但仅仅涉及到型(Type)的描述，不涉及到具体的值(Value)。DBMS提供数据定义语言(DDL)，来严格地定义模式(Schema)。</p>
+<p> </p>
+<p>SQL Server中的schema（模式，架构），是形成单个命名空间的数据库实体的集合。命名空间是一个集合，其中每个元素的名称都是唯一的。在这里，我们可以将架构看成一个存放数据库中对象的一个容器。数据库对象（表、视图、存储过程，触发器等）按照一定的标准，存放在不同的架构里。一个对象只能属于一个架构。</p>
+<p>数据库就是一个数据的大仓库，而里面创建了很多schema，分别放着不同的数据库对象（包括表），而不同的schema有不同的权限，于是，不同的用户就有不同的访问权限来访问某个schema里的数据库对象。</p>
+<p>用户和schema（构架）的关系是多对多的——一个架构可以对应多个用户，一个用户也可以对应多个架构。</p>
+<p>数据库（database）和schema（架构）关系是一对多的关系。</p>
+<p> </p>
+<p>在数据模型（Data model）</p>
+<p>模型，特别是具体模型，人们并不陌生。一张地图，一组建筑设计沙盘， 一架精致的航模飞机都是具体的模型。一眼望去，就会使人联想到真实生活中的事物。模型是现实世界特征的模拟和抽象。数据模型(Data Model)也是一种模型，它是现实世界数据特征的抽象。在数据库中，数据模型指关于怎样组织数据、怎样用数据组织映射企业信息结构的一种描述。</p>
+<p>根据模型应用的不同目的，可以将这些模型划分为两类，它们分属于两个不同的层次。第一类模型是概念模型，贴近现实世界，也称信息模型，它是按用户的观点来对数据和信息建模，主要用于数据库设计。另一类模型是数据模型，贴近及其世界，由数据库管理系统（DBMS）支持，主要包括网状模型、 层次模型、关系模型等，它是按计算机系统的观点对数据建模，主要用于DBMS的实现。</p>
+<p>在数据模型中有“型” (Type)和“值”(Value)的概念。型是指对某一类数据的结构和属性的说明，值是型的一个具体赋值。例如：学生记录定义 为(学号，姓名，性别，系别，年龄，籍贯〉这样的记录型，而(900201，李 明，男，计算机，22，江苏)则是该记录型的一个记录值。</p>
+<p>Type（型；类型），作为一个集体或种类的人或事物的共通点——共同拥有的总体特征或结构。</p>
+<p> </p>
+<p>关系数据库的型，也称为关系数据库模式，是对关系数据库的描述，包括若干域的定义，及在这些域上定义的若干关系模式。</p>
+<p>关系模式是对关系的描述，一般表示为：关系名称（属性1，属性2，属性3&hellip;，属性n）。</p>
+<p>关系模型要求关系必须是规范化的。</p>
+<p> </p>
+<p>模式(Schema)是数据库中全体数据的逻辑结构和特征的描述，它仅仅涉及到型的描述，不涉及到具体的值。模式的一个具体值称为模式的一个实例 (Instance)。同一个模式可以有很多实例。模式是相对稳定的，而实例是相对变动的，因为数据库中的数据是在不断更新的。模式反映的是数据的结构及其联系，而实例反映的是数据库某一时刻的状态。</p>
+<p>模式也称逻辑模式，是数据库中全体数据的逻辑结构和特征的描述，是所有用户的公共数据视图。它是数据库系统模式结构的中间层，既不涉及数据的物理存储细节和硬件环境，也与具体的应用程序，与所使用的应用开发工具及 高级程序设计语言(如C，COBOL，FORTRAN)无关。</p>
+<p>模式实际上是数据库数据在逻辑级上的视图。一个数据库只有一个模式。数据库模式以某一种数据模型为基础，统一综合地考虑了所有用户的需求，并将这些需求有机地结合成一个逻辑整体。定义模式时不仅要定义数据的逻辑结构，例如数据记录由哪些数据项构成，数据项的名字、类型、取值范围等，而且要定义数据之间的联系，定义与数据有关的安全性、完整性要求。</p>
+<p> </p>
+<p>关系数据库中，关系模式(Relation Schema)是型(Type)，关系是值。关系是关系模式在某一时刻的状态或内容。关系模式是静态的、稳定的， 而关系是动态的、随时间不断变化的，因为关系操作在不断地更新着数据库中的数据。但在实际当中，人们常常把关系模式和关系都称为关系，这不难从上下文中加以区别。</p>
+<p>关系可以有三种类型：基本关系(通常又称为基本表或基表)、查询表和视图表。基本表是实际存在的表，它是实际存储数据的逻辑表示。查询表是查询结果对应的表。视图表是由基本表或其他视图表导出的表，是虚表，不对应实际存储的数据。</p>
+<p>视图是从一个或儿个基本表导出的表。它本身不独立存储在数据库中，即数据库中只存放视图的定义而不存放视图对应的数据，这些数据仍存放在导出视图的基本表中，因此视图是一个虚表。视图在概念上与基本表等同，用户可以在视图上再定义视图。</p>
+<p>关系的描述称为关系模式(Relation Schema)。关系模式是对关系的描述，它可以形式化地表示为:</p>
+<p>R (U， D， dom， F)</p>
+<p>其中R为关系名，U为组成该关系的属性名集合，D为属性组U中属性所来自的域，dom为属性向域的映象集合，F为属性间数据的依赖关系集合。 属性向域的映象，即说明它们分别出自哪个域。</p>
+<p>关系模式通常可以简记为 R (U) 或R (A1，A2，…， An)</p>
+<p>其中R为关系名， A1， A2，…， An为属性名。而域名及属性向域的映象常常 直接说明为属性的类型、长度。</p>
+<p>关系数据库中，关系模式是型，关系是值。关系是关系模式在某一时刻的状态或内容。关系模式是静态的、稳定的， 而关系是动态的、随时间不断变化的，因为关系操作在不断地更新着数据库中的数据。但在实际当中，人们常常把关系模式和关系都称为关系，这不难从上下文中加以区别。</p>
+<p> </p>
+<p>数据库设计中心是如何设计数据的逻辑结构，关系数据库设计时，数据建模设计常用实现技术是实体/联系模型（E-R模型），在此基础上确定需要哪些关系模式（有些文献称为关系变量），以及关系模式中应含有哪些属性和关系模式之间的联系等。规范化主要用来验证设计结果——关系模式是否存在异常。数据建模（有时称为语义建模）是数据库设计的一个蓝图。现实情况不是如此简单，至今，数据库设计尽管有一些科学理论可以应用，但远非成熟和全面，这使数据库设计更像一门艺术而非一门科学。</p>
+<p>另外，数据库理论和技术中，存在许多不一致的术语，这从侧面反应了数据库领域发展现状远非理想和成熟。</p>
+<p> </p>
+<p> </p>
+<p>实体(Entity)、实体集(Entity Set)、实体类型(Entity Type)和实体实例(Entity instance)</p>
+<p>学习数据库知识时，应了解，现实中，人们时常混用下面这些术语（每一行作为同义词使用）：</p>
+<p>关系理论中称谓</p>
+<p>概念模型（如E-R模型）中的称谓</p>
+<p>ISO SQL标准或一般表格中称谓</p>
+<p>传统称谓（源自传统的数据处理）</p>
+<p>关系（Relation）</p>
+<p>实体集（Entity Set） 或 实体（Entity）[注]</p>
+<p>表（Table）</p>
+<p>文件（File）</p>
+<p>属性（Attribute）</p>
+<p>属性（Attribute）</p>
+<p>列（Column）</p>
+<p>字段（Field）</p>
+<p>元组（Tuple）</p>
+<p>实体（Entity）或 实体实例（Entity instance） [注]</p>
+<p>行（Row）</p>
+<p>记录（Record）</p>
+<p>[注]一些文献中的“实体”（Entity）含有集合义等同于另一些文献中的“实体集”（Entity Set），含有个体义的“实体”称为“实体实例”（Entity instance）。实体实例（Entity instance）是实体类型的一个实例，对应于数据表中的一个记录。</p>
+<p> </p>
+<p>关系的描述称为关系模式（Relation Schema）。关系模式通常可以简记为:R(A1, A2, …, An)。其中R为关系名，A1, A2, …, An为属性名。</p>
+<p>关系（Relation）是笛卡尔积的有限子集，形象地说是一个二维表，表的每行对应一个元组（Tuple），表的每列对应一个域。由于域（domain）可以相同，为了加以区分，必须对每列起一个名字，称为属性(Attribute)。规范化的关系简称为范式(Normal Form)。</p>
+<p>实体集（Entity Set）是具体相同类型及相同性质实体的集合。可以用实体类型来刻画实体集。实体类型（实体型Entity Type）是实体集中每个实体所具有的共同性质的集合，例如“患者”实体类型为：患者｛门诊号，姓名，性别，年龄，…｝，用实体名及其属性名集合来抽象和刻画同类实体。“患者”实体（或 实体实例）为（201301020005，李牧，男，28，…）。</p>
+<p> </p>
+<p> </p>
+<p>快照(Snapshot) 和动态集(Dynaset)</p>
+<p>　  记录集(set)本身是从指定数据库中检索到的数据的集合。它可以包括完整的数据库表，也可以包括表的行和列的子集。这些行和列通过在记录集中定义的数据库查询进行检索。数据库查询是用结构化查询语言 (SQL) 编写的。而 SQL 是一种简单的、可用来在数据库中检索、添加和删除数据的语言。注： Microsoft ASP.NET 将记录集称为“数据集”。</p>
+<p>记录集主要分为快照(Snapshot) 和动态集(Dynaset)两种，这两种记录集的不同表现在它们对别的应用改变数据源记录采取了不同的处理方法。记录集（Recordset）是通过数据库查询从数据库中提取的信息的子集（在 ASP.NET 中，记录集称为数据集）。数据库查询由搜索条件组成，后者定义记录集中包含的内容。</p>
+<p> </p>
+<p>快照型记录集提供了对数据的静态视图。快照是个很形象的术语，就好象对数据源的某些记录照了一张照片一样。当别的用户改变了记录时（包括修改、添加和删除），快照中的记录不受影响，也就是说，快照不反映别的用户对数据源记录的改变。直到调用了Requery重新查询后，快照才会反映变化。对于象产生报告或执行计算这样的不希望中途变动的工作，快照是很有用的。需要指出的是，快照的这种静态特性是相对于别的用户而言的，它会正确反映由本身用户对记录的修改和删除，但对于新添加的记录直到调用Requery后才能反映到快照中。动态集提供了数据的动态视图，当别的用户修改或删除了记录集中的记录时，会在动态集中反映出来：当滚动到修改过的记录时对其所作的修改会立即反映到动态集中，当记录被删除时，会跳过记录集中的删除部分。对于其它用户添加的记录，直到调用Requery时，才会在动态集中反映出来。本身应用程序对记录的修改、添加和删除会反映在动态集中。当数据必须反应动态变化的时侯，使用动态集是最适合的。例如，在一个火车票联网售票系统中，显然应该用动态集随时反映出共享数据的变化。</p>
+<p> </p>
+<p> </p>
+<p>类（Class）与类型（Type）</p>
+<p> </p>
+<p>1: 类型的概念</p>
+<p>类型刻划了一组值及其上可施行的操作，可理解为值集和操作集构成的二元组。</p>
+<p>类型的概念与值的概念相对立，前者是程序中的概念，后者则是程序运行时的概念，两者通过标识值的语言成分（例如，变量、表达式等）联系起来。</p>
+<p>比如变量v说明为具有类型T，类型T所刻划的值集为{v1，v2，…vn，…}，则变量v运行时能取且只能取某个vi为值。由此可见，类型规定了具有该类型的变量或表达式的取值范围。</p>
+<p>2: 类与类型</p>
+<p>A: 共性</p>
+<p>在对象式语言中，“值”为对象（或对象指引，但本质上仍为对象）。所以，对象式语言中的类型刻划了一组对象及其上可施行的操作。类型所刻划的对象称为类型的实例。类也刻划了一组对象。</p>
+<p>两者的共性在于二者均刻划了一组对象及其上的操作（在前面关于类的讨论中，并未强调类刻划对象上的操作这一事实），所以，既可以说对象是类型的实例，也可以 说对象是类的实例，类型和类在与对象的关系上是相同的。不过，类型欲刻划一组对象及其上的操作，必须借助于类，因为类是达到这种目的的唯一设施。由此可 见，类型是以类为基础的，是通过类来定义的，这体现了二者的联系。</p>
+<p>B: 区别</p>
+<p>◇作用不同</p>
+<p>类是程序的构造单位，是描述一组对象及其上操作的唯一语言成分，故其作用主要是具体描述这组对象，提供运行时创建这些对象的“模板”。例如，基于类间的继承关系的派生类定义设施就反映了类在描述对象方面的作用。</p>
+<p>类型则是标志变量或表达式取值范围的一种语言成分，其作用主要是对这些变量或表达式运行时的取值进行约束。例如，对赋值语句左部的变量和右部的表达式的类型匹配检查就反映了类型的约束作用。</p>
+<p>◇与对象联系的紧密程序不同</p>
+<p>类描述对象的具体形式和其上可施行的具体操作，且强调所描述的一组对象的共性，因而，与具体对象联系较密切，而与对象集的大小则联系较少。</p>
+<p>类型强调所描述的一组对象的范围和可施行操作的范围，与对象集的大小联系较密切，而与其中具体对象则联系较少。</p>
+<p>◇并不是所有类都可直接作为类型使用</p>
+<p>类是类型的基础，类型靠类来定义，有些类可直接作为类型来使用，在这种意义下，我们也可称这些类是类型。</p>
+<p>但是，也有一些类不能直接作为类型来使用，这是因为，从类型的约束作用来看，类型强调所刻划的对象的确定性，即对象范围的确定性。因此，只有所描述的对象的范围确定的类才可直接用作类型。</p>
+<p> </p>
+<p>《Java编程思想》第二版中文版 22页（相应英文版33页）</p>
+<p>虽然我们在面向对象程序设计过程中，实际所做的是建立新的数据型别(data type)，但是几乎所有面向对象的程序语言都使用class这个关键词来表示type，所以当你看到型别(type)一词时，请想成是类class，反之亦然。   </p>
+<p>某些人对此还是有所区别，他们认为type决定了接口，而class则是接口的一个特定实现品。</p>
+<p> </p>
+<p>《设计模式》（Design pattern）中文版 第10页</p>
+<p> 对象声明的每一个操作指定操作名、作为参数的对象和返回值，这就是所谓的操作的型构( signature )。对象操作所定义的所有操作型构的集合被称为该对象的接口( interface )。对象接口描述了该对象所能接受的全部请求的集合，任何匹配对象接口中型构的请求都可以发送给该对象。</p>
+<p> 类型(type) 是用来标识特定接口的一个名字。如果一个对象接受“ Window”接口所定义的所有操作请求，那么我们就说该对象具有“ Window”类型。一个对象可以有许多类型，并且不同的对象可以共享同一个类型。对象接口的某部分可以用某个类型来刻画，而其他部分则可用其他类型刻画。两个类型相同的对象只需要共享它们的部分接口。接口可以包含其他接口作为子集。当一个类型的接口包含另一个类型的接口时，我们就说它是另一个类型的子类型( subtype )，另一个类型称之为它的超类型( supertype )。我们常说子类型继承了它的超类型的接口。</p>
+<p> </p>
+<p> </p>
+<p>Empty、null</p>
+<p>Empty，专用于 Variant 变量，表示未赋值。Variant 变量是合并了多种数据类型的组合变量。Empty 表示全部清空的状态。</p>
+<p>Null，常见的有三种情况：</p>
+<p>1 与指针有关的变量。</p>
+<p>当指针值为 0 时，就是 Null。例如一个字符串，实际上由指针和缓冲区组成，当指针是 0 的时候，就是还没有分配缓冲区，此时它就是 Null。</p>
+<p>2 数据库字段</p>
+<p>未赋值的状态就是 Null。</p>
+<p>3 对象变量</p>
+<p>未实例化的状态就是 Null。这个其实有点类似指针的情况。</p>
+<p> </p>
+<p>Empty 和 Null 都不是真实的值，而是状态。所以判断它们时，用 If x Is Null Then 或 If IsNull(x) Then 的形式，而不可 If x = Null Then。</p>
+<p> </p>
+<p>Empty 和 Null 的一个区别是，包含 Empty 的变量参加运算时，被当作 0 或空字符串来处理。而 Null 将使结果也成为 Null， Null 通过表达式“传播”；如果表达式的部分之值为   Null，那么整个表达式的值也为 Null。</p>
+<p> </p>
+<p>Null 值与零长度字符串的区别</p>
+<p>本主题中的信息仅适用于 Microsoft Access 数据库 (.mdb)。</p>
+<p>Null 表示未设置数据，不需要输入任何内容。</p>
+<p>&quot;&rdquo; 表示有数据，数据为一个零长度字符串，输入零长度字符串的方法是键入两个彼此之间没有空格的双引号 (&quot;&quot;)。</p>
+<p>“必填字段”（Required）属性设置为“是”， 表示不允许 NULL</p>
+<p>“允许空字符串”（Allow zero length）属性设置“是” ，表示允许 &ldquo;&quot;（零长度字符串，空字符串）</p>
+<p> </p>
+<p>关于null值的进一步说明：</p>
+<p>null值是sql语言，乃至整个关系模型中最诡异的东西之一。它是什么？它代表一切不可知的，未知的，未定义的东西。它不是0，更不是空格或空字符串。它不是信息，因为它不代表任何信息；但它也是信息，它告诉我们这里没有信息。</p>
+<p>一般情况下我们查询空值或者非空值的时候，用的是is null/is not null，而很少用=/&lt;&gt;。若想用=/&lt;&gt;时，需要注意什么?</p>
+<p>在SQL2000中Null值的比较运算有两种规则。一种是ANSI SQL（SQL-92）规定的Null值的比较取值结果都为False，既Null=Null取值也是False。另一种不准循ANSI SQL标准，即Null=Null为True。</p>
+<p>以一张表T的查询为例。表T存在下面的数据：</p>
+<p>RowId Data</p>
+<hr>
+<p>1 &lsquo;test&rsquo;</p>
+<p>2 Null</p>
+<p>3 &lsquo;test1&rsquo;</p>
+<p> </p>
+<p>按照ANSI SQL标准，下面的两个查询（Query）都不返回任何行：</p>
+<p>查询1：select * from T where Data=null</p>
+<p>查询2：select * from T where Data&lt;&gt;null</p>
+<p>而按照非ANSI SQL标准，查询1将返回第二行，查询2返回1、3行。</p>
+<p>ANSI SQL标准中取得Null值的行需要用下面的查询：</p>
+<p>select * from T where Data is null</p>
+<p>反之则用is not null。由此可见非ANSI SQL标准中Data=Null等同于Data Is Null，Data&lt;&gt;Null等同于Data Is Not Null。</p>
+<p>控制采用那一种规则，需要使用命令SET ANSI_NULLS [ON/OFF]。ON值采用ANSI SQL标准，OFF值采用非标准模式。另外SET ANSI_DEFAULTS [ON/OFF]命令也可以实现标准的切换，只是这个命令控制的是一组符合SQL-92标准的设置，其中就包括Null值的标准。</p>
+<p> </p>
+<p>null 与任何值运算都为null，如：</p>
+<p>10 + NULL = NULL</p>
+<p> </p>
+<p> </p>
+<p>模式（modal）和无模式（modeless）</p>
+<p>显示一个模式（模态，modal）窗体时，除非我们将模式窗体关闭才会使得其他窗体处于活动状态。而无模式（非模态，modeless）的窗体显示的时候允许切换到其他活动的窗体。</p>
+<p>模式对话框不返回的话是无法切换到调用窗口的，无模式的可以。对话框一般是模式（modal）的。</p>
+<p>对话框（或窗口）一般分为两种类型：模态（modal）与非模态（modeless）类型。所谓模态对话框（或窗口），就是指除非关闭，否则用户的鼠标焦点或者输入光标将一直停留在其上的对话框（或窗口）。非模态对话框（或窗口）则不会强制此种特性，用户可以在当前对话框（或窗口）和其他对话框（或窗口）间进行切换。</p>
+<p> </p>
+<p> </p>
+<p>早绑定（Early binding）和 晚绑定（Late Binding）</p>
+<p>绑定的英文词是BINDING，其含义1）是将两个或多个实体强制性的关联在一起。2）在编程语言中，指在对象和其类型间建立关联的过程。</p>
+<p>在编程语言中，分为早绑定（Early binding）和 晚绑定（Late Binding）</p>
+<p>早绑定   是指在对象实例化之前，定义对象的属性和方法，这样编译器或解释程序就能够提前转换机器代码。</p>
+<p>晚绑定   是指在编译器或者解释程序在运行前，，不知道对象的类型，在程序运行的时候才检查对象是否支持运行的方法和属性。</p>
+<p>一般来说，早绑定的效率更好一些，晚绑定更灵活。</p>
+<p>早绑定（Early  binding）是指我们的代码通过直接调用对象的方法来直接与对象进行交互。由于编译器事先知道对象的数据类型，它可以直接编译出调用对象方法的代码。早绑定还允许 IDE通过使用智能感知（IntelliSense）来帮助我们进行开发工作；它还能够使编译器确保我们所调用的 方法确实存在，以及我们确实提供了恰当的参数值。</p>
+<p>晚绑定（Late  Binding）是指我们的代码在运行时动态地与对象进行交互。这提供了很大的灵活性，因为我们的代码不必知道它所交互的对象的具体类型，只要这个对象提供了我们需要调 用的方法就可以了。由于IDE和编译器无法知道对象的具体类型，也就无法进行智能感知和编译期间语法检查；但是，相较而言，却得到了空前的灵活性。</p>
+<p> </p>
+<p>有人说C#和Java是早绑定的，javascript，python是迟绑定的，其实这个说法并不全对， 一方面，C#和Java是强类型的，在变量声明的时候就说明了类型，从这里来讲当然是早绑定的，于是我们才能在IDE中享受代码提示带来的方便，因为集成开发环境(IDE)通过你的申明就能知道你的对象是什么类型，具有什么方法和属性，然后提示给你，同时编译的时候也可以帮你检查许多类型转换的错误。另一方面，无论C#和Java在实现他们很重要的一个功能：多态的时候，都是用晚绑定，比如你的父类中定义了virtual的方法，那么这个方法可能会在你的子类中重载，具体你用什么子类，是变量申明时所不知道的，在C++编译器会在编译的时候为这些类加上一个指针，指针指向一个虚表，虚表中存在着真实的函数，这个是就是一个晚绑定了。</p>
+<p> </p>
+<p> </p>
+<p>焦点（Focus）和插入点（Insertion point）</p>
+<p>焦点（Focus），平行光透过放大镜后的光线的汇聚点，延伸为：热门的就是焦点，众心所向之事物人物也是焦点。</p>
+<p>在编程语言中，具有输入焦点的，如果是窗口，其标题（title）就是蓝色的，不然就是灰色的 。如果是输入框（如文本框），就是有光标在闪烁的那个，也就是可以马上输入文字的那个。如果是按钮就是有虚框的那个，你按下回车，就相当于按了这个按钮。</p>
+<p>如何判断窗体中某个控件是否获得焦点？</p>
+<p>在VBA、VB、vb.net中通过 窗体对象.ActiveControl.name来判断，ActiveControl就是获得焦点的控件。</p>
+<p> </p>
+<p>插入点（Insertion point）是新的文字、表格或图形等对象的插入位置，显示为一条闪烁的竖条&quot;∣&rdquo;。光标位置是鼠标指向的当前位置。插入点是录入者选择确定的位置。在光标当前位置单击一下就会显示一条闪烁的竖条&quot;∣&rdquo;，这就是插入点。</p>
+<p> </p>
+<p> </p>
+<p>半导体中名词“wafer”“chip”“die”（dice）</p>
+<p>wafer是指晶圆；</p>
+<p>chip指wafer加工分离后的单个芯片；翻译为芯片。</p>
+<p>dice是die的复数名词，都是指wafer上的每一个工作单元，翻译为晶粒、晶元、芯片。</p>
+<p>简单地说，wafer加工成die(dice)，分离成单元以后成为chip。有时不刻意区分Chip和Die。</p>
+<p> </p>
+<p>Wafer 晶圆；圆片；大晶片；半导体薄片。是半导体组件“晶粒”或“芯片”的基材，从拉伸长出的高纯度硅元素晶柱 (Crystal Ingot)上，所切下之圆形薄片称为“晶圆”（Wafer）。经过特殊工艺技术，在各自独立的“晶粒”(Die)或“芯片”(Chip)上完成其各种微型组件及微细线路，再以钻石刀逐一切割成电路体系完整的芯片 (Chip)或晶粒(Die)单位。将晶圆切割（Dicing）而得单独芯片后，并续使晶粒在定架中心完成焊装(Die Bond)后，再经接脚打线、封装、弯脚成型即可得到常见的 IC 。</p>
+<p>在一个圆片（Wafer）上可制作几百～几千个相互独立的电路，每个电路即为一个小芯片(die)。将半导体大圆片分割而成的小片。它可有一个或多个电路，但作为一个单位封装而成。</p>
+<p>半导体技术中chip和die含义差不多，都指内嵌有集成电路的小型半导体薄片，但chip有时特指封装好的芯片。die就是IC（集成电路）未封装前的裸片，把die焊在框架上，再在die上面焊接上金线后形成IC裸芯片，再拿去封装就成为芯片。</p>
+<p> </p>
+<p>Integrated Circuit(IC) 集成电路</p>
+<p>是一种半导体电子设备，在多层次的同一薄片基材上(硅材)，布置许多微小的电子组件——上千至数百万的微小的电阻、电容、半导体、二极管、晶体管，以及各种微小的互连(Interconnection)导体线路等等，所集合而成的综合性主动零件。简称为 I.C。</p>
+<p>印刷电路板（printed circuit board）</p>
+<p>印刷电路板是以绝缘材料辅以导体配线所形成的结构性元件。在制成最终产品时，其上会安装集成电路、电晶体、二极管、被动元件（如：电阻、电容、连接器等）及其他各种各样的电子零件。以导线连通，可以形成电子讯号连结及应有机能。因此，印制电路板是一种提供元件连结的平台，用以承接联系零件的基础。</p>
+<p> </p>
+<p> </p>
+<p>超线程（Hyper-Threading）和多核（MultiCore）</p>
+<p>CPU（中央处理单元，Central Processing Unit），简称为处理器（processor），它负责整个系统指令的执行，数学与逻辑的运算，数据的存储与传送，以及对内对外输入与输出的控制。CPU就是中央处理器，一般说的处理器是指它， 但处理器还有GPU等，能执行独立的计算能力的都算处理器。</p>
+<p>“超线程（Hyper-Threading，简称“HT”）”技术。超线程技术就是利用特殊的硬件指令，把两个逻辑内核模拟成两个物理芯片，让单个处理器都能使用线程级并行计算，进而兼容多线程操作系统和软件，减少了CPU的闲置时间，提高的CPU的运行效率。采用超线程及时可在同一时间里，应用程序可以使用芯片的不同部分。虽然单线程芯片在任一时刻只能够对一条指令进行操作。而超线程技术可以使芯片同时进行多线程处理，使芯片性能得到提升。超线程的P4处理器需要多加入一个Logical CPU Pointer（逻辑处理单元），因此新一代的P4 HT的die的面积比以往的P4增大了5%。而其余部分如ALU（整数运算单元）、FPU（浮点运算单元）、L2 Cache（二级缓存）则保持不变，这些部分是被分享的。虽然采用超线程技术能同时执行两个线程，但它并不象两个真正的CPU那样，每个CPU都具有独立的资源。当两个线程都同时需要某一个资源时，其中一个要暂时停止，并让出资源，直到这些资源闲置后才能继续。因此超线程的性能并不等于两颗CPU的性能。</p>
+<p>英特尔P4 超线程有两个运行模式，Single Task Mode（单任务模式）及Multi Task Mode（多任务模式），当程序不支持Multi-Processing（多处理器作业）时，系统会停止其中一个逻辑CPU的运行，把资源集中于单个逻辑CPU中，让单线程程序不会因其中一个逻辑CPU闲置而减低性能，但由于被停止运行的逻辑CPU还是会等待工作，占用一定的资源，因此Hyper-Threading CPU运行Single Task Mode程序模式时，有可能达不到不带超线程功能的CPU性能，但性能差距不会太大。也就是说，当运行单线程运用软件时，超线程技术甚至会降低系统性能，尤其在多线程操作系统运行单线程软件时容易出现此问题。</p>
+<p> </p>
+<p>多核（MultiCore）</p>
+<p>早在十多年前，IBM、Sun与HP就已经设计出了双核处理器，比如IBM于2001年推出的基于双核的POWER4处理器和Sun的UltraSPARC芯片，不过由于RISC架构的服务器价格高、应用面窄，没有引起广泛的注意。直到Intel和AMD相继推出自己的双核处理器后，X86领域才算是有了自己的多核架构。</p>
+<p>多核与单核的区别在于，前者可以让程序真正地“同时”执行，而不是多个进程轮流使用CPU，从而给用户造成“多个程序正在同时执行”的假象。为了充分发挥每一个核的效用，应用程序需要多个线程同时运行来保持CPU核的忙碌。要在多核系统上构建良好的应用程序，需要方便地、相对便宜地创建线程，这非常重要。如果创建线程的开销比线程完成工作的开销还要大，那么并发将变得毫无意义。</p>
+<p>多核处理器指两个或多个独立运行的内核集成于同一个处理器上面</p>
+<p>双核处理器 =一个处理器上包含2个内核</p>
+<p>多核处理器 = 一个处理器上包含2个或多个内核</p>
+<p> </p>
+<p>Dual Core</p>
+<p>This term refers to integrated circuit (IC) chips that contain two complete physical computer processors (cores) in the same IC package. Typically, this means that two identical processors are manufactured so they reside side-by-side on the same die. It is also possible to (vertically) stack two separate processor die and place them in the same IC package. Each of the physical processor cores has its own resources (architectural state, registers, execution units, etc.). The multiple cores on-die may or may not share several layers of the on-die cache.</p>
+<p>双核心</p>
+<p>这个词是指集成电路（ IC ）芯片，包含两个完整的物理计算机处理器（核心）在同一IC封装。通常情况下，这意味着两个相同的处理器并排制作在同一晶粒（die），也可能两个单独的处理器晶元（垂直）叠放在同一个IC封装。每个物理处理器核心都有自己的资源（架构状态architectural state，寄存器registers， 执行单元execution units等） 。多核心芯片可能会或不会共享数级晶粒内缓存。</p>
+<p> </p>
+<p>Chip multiprocessing is a soon-to-be commercialized technique in CPU design that combines two or more processor cores on a single piece of silicon (called a die) to enhance computing performance over servers with single or multiple discrete CPUs． It also known as“on-chip multiprocessing”or“multiple-processor system-on-a-chip．”</p>
+<p>芯片多处理是CPU设计中即将商品化的技术，它把两个或更多的处理器内核做在一个硅片（称作die）上，以增强计算性能，使之超过拥有单个或多个分立CPU的服务器。它也称为“芯片上多处理”或“单芯片多处理器系统”。</p>
+<p> </p>
+<p>当前市场上的大多数操作系统，包括   Windows、Linux、及UNIX 操作系统的最新版本，都支持多处理器，且将多核系统作为多处理器系统处理。</p>
+<p> </p>
+<p>对于应用开发人员而言，为利用多核处理器编写应用的方法等同于为当前的多处理器系统编写应用的方法。</p>
+<p>超线程（HT）技术以模拟两个处理器（创建两个虚拟处理器）为基础。采用超线程（HT）技术意味着程序员必须明白，尽管两个线程可立即运行，并且每个线程都能访问所有硬件，但实际上只有一组计算资源可以利用。为了从超线程（HT）技术中获得最大优势，分配给每个线程的任务要尽可能不同，以确保尽可能减少处理器资源上的冲突。</p>
+<p> </p>
+<p> </p>
+<p>并发（concurrent）、并行（parallel）、分布(distributed)  </p>
+<p>并发与并行是两个既相似而又不相同的概念：并发性，又称共行性，是指能处理多个同时性活动的能力；并行是指同时发生的两个并发事件，具有并发的含义，而并发则不一定并行，也亦是说并发事件之间不一定要同一时刻发生。</p>
+<p>在程序设计中，因并发和并行程序设计技术基本相同，不刻意区分并发和并行。</p>
+<p> </p>
+<p>并发(concurrent)的实质是一个物理CPU（也可以多个物理CPU）在若干道程序之间多路复用，并发性是对有限物理资源强制实行多用户共享。实现并发技术的关键之一是如何对系统内的多个活动（进程）进行切换。在单个cpu上，并发实际上在同一时间间隔内交替运行，是宏观上的同时执行。</p>
+<p>并行(parallel)指的是两个或两个以上的事件或活动在同一时刻发生。在多道程序环境下，并行使多个活动（进程）同一时刻可在不同CPU上同时执行。</p>
+<p> </p>
+<p>“并行”是指无论从微观还是宏观，二者都是一起执行的，就好像两个人各拿一把铁锨在挖坑，一小时后，每人一个大坑。“并发”在微观上不是同时执行的，只是把时间分成若干段，使多个进程快速交替的执行，从宏观外来看，好像是这些进程都在执行，这就好像两个人用同一把铁锨，轮流挖坑，一小时后，两个人各挖一个小一点的坑，要想挖两个大一点得坑，一定会用两个小时。从以上本质不难看出，“并发”执行，在多个进程存在资源冲突时，并没有从根本提高执行效率。</p>
+<p> </p>
+<p>并行(parallel)、并发(concurrent)和分布(distributed)，它们近似相通的地方是，都是描述计算机硬件和软件组成的系统体系结构，以达到同一时间处理多项任务的目的。不同的则是它们的实现方法及其原因。</p>
+<p>并行（Parallel），或曰并行代码，或曰并行系统都是讨论有关如何使用现有系统，通过任务分片（breaking into pieces）技术使得所有的任务都可以同时运行，以期提高运行速度。所以假设你要执行某项复杂的任务：将执行A，B和C三个过程。A和B为C的运行分别进行准备，但是A，B之间不会相互干预。现在你可以先执行A，直到它执行完毕，然后执行B，等待B执行完毕，然后再去执行C。或者你有多余的CPU，你可以同时执行A和B，当它们执行完毕以后，执行C。当你编写一个在同一时间内运行多个程序片段以达到提升运行速度的程序时，你所做的就是并行。</p>
+<p>并发(Concurrency)讨论关于系统存在多个子部分，其中每个部分设计的明确目的是为能够响应在同一时间内发生的事件，并不是为了提高运行速度，但却是系统功能不可或缺的一部分。科技博客(ScienceBlogs)的服务器端系统(The backend system)处理着大量的并发，因为它被设计为能支持成千上万的访问者同时阅读网页内容，也允许我们同时撰写和发布新文章而不会影响服务器系统的正常运行。如果对于系统来说在同一时间内支持大量事件同时发生是必须的功能，它所做的就是并发。</p>
+<p>分布(Distribution)讨论关于由多个物理设备通过网络连接组成的系统。它是一项基础性研究，目的在于研究如何组织构建依据需要拆分后位于各个不同实际位置，不同通信限定条件物理设备的系统。如果你有一个特别设计来在大量不同的物理硬件上同时运行各自程序的系统，但是它们某些情况下也是单独的系统，这就是分布式系统。</p>
+<p> </p>
+<p> </p>
+<p>仿真 emulation 模拟 simulation</p>
+<p>模拟(Simulation)：用机器语言程序解释另一机器的机器指令实现软件移植的方法称为模拟。进行模拟工作的机器称为宿主机(Host Machine)，被模拟的机器称为虚拟机(Virtual Machine)</p>
+<p> </p>
+<p>仿真(Emulation)：用微程序直接解释另一机器的机器指令实现软件移植的方法称为仿真。进行仿真工作的机器称为宿主机(Host Machine)，被仿真的机器则称为目标机(Target Machine)。</p>
+<p> </p>
+<p>模拟（Simulation）即选取一个物理的或抽象的系统的某些行为特征，用另一系统来表示它们的过程。模拟技术的高级阶段称为仿真（Emulation）、系统仿真，即用一数据处理系统来全部或部分地模拟某一数据处理系统，以致于模仿的系统能想被模仿的系统一样接受同样的数据、执行同样的程序、获得同样的结果。</p>
+<p>模拟(Emulation)是试图模仿一个设备的内部设计；仿真(Simulation)是试图模仿一个设备的功能。</p>
+<p> </p>
+<p>simulation是模拟出原系统的一个抽象模型，而不需要真的去做真实系统要做的事情。因此它其实不具备真实系统的功能，只是当某一功能执行时，通常不必输出功能执行的结果，只是在simulator中记录下由此引发的状态变化。因此它通常用于设计初期的模型验证。如，飞行模拟器或电子电路模拟器simulators</p>
+<p>emulation则更进一步，要真正地去做所有真实系统能做的事情，只不过做的“过程”不同，它一般用于处理兼容性问题和在资源有限的条件下完成系统原型的实现。</p>
+<p> </p>
+<p> </p>
+<p>caption、title、Heading、Header</p>
+<p>caption、Title与Heading，都具有“标题”意思：caption一般指（附于插图、漫画或海报上的）标题或简短说明 ；Title一般指整体的，如书名文章名；Heading一般指组成部分的，如章节的标题。</p>
+<p> </p>
+<p>title（标题）：1)在计算机文档中，一个窗口的最上面条形区域——标题栏(title bar)——上的文字。标题栏(title bar)位于一个窗口（window）的顶部条形区域，最右边是控制框（control box），最左边有“最小化 最大化 关闭 ”按钮。2)ACCESS数据库的窗体、报表、数据访问页（DAP）中标题栏(title bar)之下页眉（page header ）之上的占位符，它实际是一个标签（label）控件，可以在此输入标题（title）文字。ACCESS数据库的数据访问页（DAP）技术现已被放弃。</p>
+<p>标题栏(title bar)位于一个窗口（window）的顶部条形区域，最右边是控制框（control box），最左边有“最小化 最大化 关闭 ”按钮。</p>
+<p>caption：在VB、VBA里，许多控件对象具有Caption 属性，用以在控件上显示的内容。命令按钮（commandbutton）控件，你可以在caption上给它赋值&quot;按钮&rdquo;，它将显示出&quot;按钮&quot;两个字。ACCESS数据库中Field对象的caption属性（也就是标题）属性是用来设置数据字段的标题的，在正常的数据库设计中为了保持维护的便利性，许多开发者都将字段名（name）与标题（caption）做了分别设置，标题往往比字段名更友好，更能说明字段的用途。ACCESS数据库的窗体、报表caption属性用于设置窗体、报表的标题，即出现在标题栏(title bar)中。</p>
+<p>Header：1. 页眉，文字处理或打印要出现在页的顶部的文本。如Report Header 报表页眉；Page Header 页眉。2. 标头，一种信息结构之前，标识所遵循，如通讯、 磁盘上的文件、 一组在数据库或可执行程序中的记录中的字节的块的信息。 3.一个或多个行在程序中标识和描述人读者程序、 功能或遵循的程序。</p>
+<p> </p>
+<p>其它含义</p>
+<p>caption，说明；（电影或电视的）字幕 ；(法律文件等的)提要、说明。</p>
+<p>title，职称、职务 ；头衔。</p>
+<p>Heading，（航空、航海）方向；（采矿）坑道; 导坑， 导洞。</p>
+<p> </p>
+<p> </p>
+<p>Detail</p>
+<p>Detail 细目， 细节。在Access中文版联机帮助中，有时翻译为主体，有时翻译为详细、细节。</p>
+<p>Detail section 主体节，细节部分。在Access中文版联机帮助中，翻译为主体节，指用于包含窗体或报表的主要部分。该节通常包含绑定到记录源中字段的控件，但也可能包含未绑定控件，如标识字段内容的标签。</p>
+<p> </p>
+<p>label和tab</p>
+<p>label：标签。</p>
+<p>Tab：1、选项卡 ；标签 。2、制表符，在键盘上是制表符键（跳格键）。</p>
+<p> </p>
+<p>label(标签)控件用于显示文本，是设计应用程序界面时经常要用到的控件之一，主要是用于显示其他控件名称，显示说明性文本、描述程序运行状态或标识程序运行的结果信息等等，响应程序的事件或跟踪程序运行的结果。它的文本是可以由程序代码改变的，但程序运行后不接受焦点，不能由用户改变。</p>
+<p> </p>
+<p>Tab control（Tab控件），使用Tab控件能够将程序中的窗口或对话框的同一区域定义为多页（page），可以将其他控件放在页上。如果用过选项卡式（Tabbed Dialog）对话框，对此就有一定感性认识。</p>
+<p> </p>
+<p> </p>
+<p>item和project</p>
+<p>item和project都可翻译为“项目”</p>
+<p>project工程、项目，指围绕着一个明确的目标或目的相互关联的活动；而item一般指分类或条款中的一项。</p>
+<p>item指的是产品或条款方面所指的项目，(可分类或列举的)项目，比如，价格条款的第一个项目(即第一点)是什么。 把一些东西分类，每一类就是一个item。</p>
+<p>project，1）项目是一个特殊的将被完成的有限任务，它是在一定时间内，满足一系列特定目标的多项相关工作的总称。2）在编程开发集成环境中，指模块的集合，在VB或VBA中翻译为工程。</p>
+<p> </p>
+<p>Access Projects （Access 项目）是一种 Access 数据文件(.adp文件)，它能通过 OLE DB 组件访问 Microsoft SQL Server 数据库。使用 Access 项目，可以像创建文件服务器应用程序那样，轻松地创建一个客户/服务器应用程序。</p>
+<p>OLE DB：对多种类型的数据源（包括关系数据、邮件文件、纯文本和电子表格）提供有效的网络和 Internet 访问的组件数据库结构。</p>
+<p> </p>
+<p>Visual Studio .NET 提供了两个容器：解决方案（solution）和项目（Project：工程，项目）。查看和管理这些容器及其关联项的界面是解决方案资源管理器（solution explorer），它作为集成开发环境(IDE) 的一部分提供。</p>
+<p>一个解决方案由一个或多个项目（Project）组成。每个项目容器通常包含多个项（应用程序所需的引用、数据连接、文件夹和文件），有很多项是系统生成的。</p>
+<p>项目（Project），通俗的说，一个项目可以就是你开发的一个软件。</p>
+<p> </p>
+<p> </p>
+<p>standard 和criterion 、Criteria</p>
+<p>都含“衡量人或事物的标准”的意思。</p>
+<p>[辨析] standard: 标准，指法定的或一般公认的标准。规定的（或一致同意）的标准，规格。</p>
+<p>criterion: (批评、判断等的)标准、准则，用以判断验证其他事物。俗称规范。</p>
+<p>Criteria：criterion的复数，条件 准则。</p>
+<p> </p>
+<p>standard的英语解释是a  test  or  measure  for  qualities  or  for  the  required  degree  of  excellence.</p>
+<p>一种质量或等级检验、衡量标准。</p>
+<p>criterion的英语解释是principle  by  which  sth.is  measured  for  value（衡量某事物价值的原则）；an  established  rule  or  principle,on  which  a  judgment  is  based（一种确立的规定或原则，据以做出判断）。</p>
+<p>由此可见：前者指法定或一般公认的质量标准，后者指判断其他事物的标准。例句：</p>
+<p>Practice  is  the  criterion  by  which  truth  is  tested.（实践是检验真理的标准。）
+②This  product  is  not  up  to  the  standard.（该产品不符合标准。）</p>
+<p> </p>
+<p> </p>
+<p>Orthogonality（正交性）</p>
+<p>　　“正交性”是从几何学中借来的术语。如果两条直线相交成直角，它们就是正交的，比如图中的坐标轴。用向量术语说，这两条直线互不依赖。沿着某一条直线移动，你投影到另一条直线上的位置不变。</p>
+<p>　　</p>
+<p>在计算技术中，该术语用于表示某种不相依赖性或是解耦性。如果两个或更多事物中的一个发生变化，不会影响其他事物，这些事物就是正交的。在设计良好的系统中，数据库代码与用户界面是正交的：你可以改动界面，而不影响数据库；更换数据库，而不用改动界面。</p>
+<p> </p>
+<p>正交性是有助于使复杂设计也能紧凑的最重要特性之一。在纯粹的正交设计中，任何操作均无副作用；每一个动作（无论是API调用、宏调用还是语言运算）只改变一件事，不会影响其它。</p>
+<p> </p>
+<p> </p>
+<p>标量(scalar)和向［矢］量（vector）</p>
+<p>标量(scalar)</p>
+<p>1、一种由单一的值来表征的(物理)量；不能再细分的单一值。</p>
+<p>2、一个完全由其大小决定而没有方向的数量，如质量、长度或速度等。</p>
+<p>3、 用于修饰或说明某种仅取单值的数据项，相反意义的“数组”则要取多个数据项。</p>
+<p>向［矢］量（vector）</p>
+<ol>
+<li>
+<p>通常由标量的一组有序集合表示的量。 如数组。一种存储结构。“中断向量表”连续存储的一组存储单元。</p>
+</li>
+<li>
+<p>一种具有大小和方向的量。一般来说，在物理学中称作矢量，在数学中称作向量。运算需要遵循矢量运算法则。</p>
+</li>
+<li>
+<p>“矢量图”，它的特点是放大后图像不会失真。矢量图形是计算机图形学中用点、直线或者多边形等基于数学方程的几何图元表示图像。矢量图形与位图使用像素表示图像的方法有所不同。</p>
+</li>
+</ol>
+<p> </p>
+<p> </p>
+<p>literal</p>
+<p>a. 逐字的， 字面上的， 文字的， 字母的</p>
+<p>【计】 文字; 直接量; 字面量。</p>
+<p>literal 就是字面的（照字面本义的）、文字的 意思。也就是说，某个数值就是他本身，不能变的意思。</p>
+<p>也就是“字面常量”（literal constant：字面常量、文字常数）。字面常量 包括：整形常量，字符型常量，字符串常量。</p>
+<p>比如，字面上3.0是一个双精度浮点数，&ldquo;a&quot;是一个字符。</p>
+<p> </p>
+<p>不要将字面常量和符号常量混淆。符号常量指用名称表示的常量（有名常量）。在C语言中可用#define和const定义符号常量。如const int a = 10; 就定义了一个代表字面常量10的符号常量a。</p>
+<p>c语言定义常量：</p>
+<p>使用#define定义常量，格式：#define常量名 值</p>
+<p>使用const定义常量，格式：const 类型名 常量名=值；</p>
+<p> </p>
+<p>Graphics（图形）、image（图像）、Picture（图片、图画）</p>
+<p> </p>
+<p>Graphics（图形）是指由外部轮廓线条构成的矢量图。即由计算机绘制的直线、圆、矩形、曲线、图表等；而image（图像）是是由像素点阵构成的位图。</p>
+<p>一、存储方式的区别：图形存储的是画图的函数；图像存储的则是像素的位置信息和颜色信息以及灰度信息，描述信息文件存储量较大。</p>
+<p>二、缩放的区别：图形在进行缩放时不会失真，可以适应不同的分辨率；图像放大时会失真，可以看到整个图像是由很多像素组合而成的。</p>
+<p>三、处理方式的区别：对图形，我们可以旋转、扭曲、拉伸等等；而对图像，我们可以进行对比度增强、边缘检测等等。</p>
+<p>四、算法的区别：对图形，我们可以用几何算法来处理；对图像，我们可以用滤波、统计的算法。</p>
+<p>五、适用场合</p>
+<p>图形：描述轮廓不很复杂，色彩不是很丰富的对象，如：几何图形、工程图纸、CAD、3D造型软件等。</p>
+<p>图像：表现含有大量细节（如明暗变化、场景复杂、轮廓色彩丰富）的对象，如：照片、绘图等，通过图像软件可进行复杂图像的处理以得到更清晰的图像或产生特殊效果。</p>
+<p>六、编辑处理</p>
+<p>图形：通常用Draw程序编辑，产生矢量图形，可对矢量图形及图元独立进行移动、缩放、旋转和扭曲等变换。主要参数是描述图元的位置、维数和形状的指令和参数。</p>
+<p>图像：用图像处理软件（Paint、Brush、Photoshop等）对输入的图像进行编辑处理，主要是对位图文件及相应的调色板文件进行常规性的加工和编辑。但不能对某一部分控制变换。由于位图占用存储空间较大，一般要进行数据压缩。</p>
+<p> </p>
+<p>VB的PictureBox控件和Image控件</p>
+<p>Picture（图片框）和Image（图像框）是Visual Basic中用来显示图形的两种基本控件，用于在窗体指定位置显示图形信息，它们支持多种格式的图形文件，包括位图文件(<em>.bmp，</em>.dib)、图标文件(<em>.ico)、光标文件(</em>.cur)、图元文件(<em>.wmf，</em>.emf)，还有Internet 上流行的压缩位图格式的JPEG文件和GIF文件。</p>
+<p>图片框和图像框在窗体上显示的方式基本相同，都可以装入图形文件。其主要区别是：image控件是一个轻量级的控件，占用系统资源很少，不能作为父控件，而且不能通过Print方法接受文本；PictureBox 控件包含了 Image 控件不具有的功能，例如：作为其它控件的容器的功能和支持图形方法（如绘图，打印）的功能。</p>
+<p> </p>
+<p>具体而然：</p>
+<p>图片框（Picture）和图像框（Image）都有属性Picture属性，设计时与运行时可读可写。设计时，在属性窗口为picture属性指定图形文件或把一个图片粘贴到图片框或图像框上；运行时，加载图片的方法较多：使用LoadPicture函数指定图片文件名；对象间图片属性的相互复制；从剪贴板对象获取图片（Clipboard）；使用LoadResPicture函数，通过指定工程中.res资源文件中某一图片的资源号ID获得图片。</p>
+<p> </p>
+<p>(1)图像框适用于静态图像，不具有绘图功能；图片框具有图像框控件所没有的画图属性和图形方法（Print、Line、Circle、Cls）。</p>
+<p>(2)图片框具有容器功能；而图像框不具有。</p>
+<p>(3)图像框具有Stretch属性，可以改变图像控件中图像的纵横比；而图片框中图像比例不可改变。</p>
+<p>(4)图片框具有AutoSize属性；而图像框没有。</p>
+<p>(5)图片框有AutoRedraw属性，决定是否重画由图形方法产生的图形，而图像框不具有。图片框的AutoRedraw属性默认值为False，这时由图形方法产生的图形为临时图形。临时图形可以被其他窗体覆盖后擦除，也可以使用Cls方法擦除，在其窗体变小或隐藏后图形得不到恢复。AutoRedraw属性设置为Ture后，由图形方法产生的图形或文本为持久图形。持久图形能在以上各种情况下自动重绘输出，也不能用Cls方法擦除，要擦除持久图形需重新设置BackColor属性。</p>
+<p> </p>
+<p> </p>
+<p>别名（alias）</p>
+<p>（1）在 SQL的语句中紧跟在AS后的标识符， 其作用是标识“列”的新名。</p>
+<p>（2）在VB或VBA的 Declare 语句中紧跟在Alias后的标识符，其作用是用于标识“API函数”的原名。</p>
+<p> </p>
+<p>SQL，可以为列名称和表名称指定别名（Alias）。别名使SQL更易阅读或书写。</p>
+<p>使用表名称别名</p>
+<p>假设我们有两个表分别是：&ldquo;Persons&rdquo; 和 &ldquo;Product_Orders&rdquo;。我们分别为它们指定别名 &ldquo;p&rdquo; 和 &ldquo;po&rdquo;。</p>
+<p>现在，我们希望列出 &ldquo;John Adams&rdquo; 的所有定单。</p>
+<p>我们可以使用下面的 SELECT 语句：</p>
+<p>SELECT po.OrderID, p.LastName, p.FirstName</p>
+<p>FROM Persons AS p, Product_Orders AS po</p>
+<p>WHERE p.LastName='Adams&rsquo; AND p.FirstName='John&rsquo;</p>
+<p>不使用别名的 SELECT 语句：</p>
+<p>SELECT Product_Orders.OrderID, Persons.LastName, Persons.FirstName</p>
+<p>FROM Persons, Product_Orders</p>
+<p>WHERE Persons.LastName='Adams&rsquo; AND Persons.FirstName='John&rsquo;</p>
+<p> </p>
+<p>使用列名别名</p>
+<p>表 Persons:</p>
+<p>Id</p>
+<p>LastName</p>
+<p>FirstName</p>
+<p>Address</p>
+<p>City</p>
+<p>1</p>
+<p>Adams</p>
+<p>John</p>
+<p>Oxford Street</p>
+<p>London</p>
+<p>2</p>
+<p>Bush</p>
+<p>George</p>
+<p>Fifth Avenue</p>
+<p>New York</p>
+<p>3</p>
+<p>Carter</p>
+<p>Thomas</p>
+<p>Changan Street</p>
+<p>Beijing</p>
+<p> </p>
+<p>SQL:</p>
+<p>SELECT LastName AS Family, FirstName AS Name</p>
+<p>FROM Persons</p>
+<p>结果：</p>
+<p>Family</p>
+<p>Name</p>
+<p>Adams</p>
+<p>John</p>
+<p>Bush</p>
+<p>George</p>
+<p>Carter</p>
+<p>Thomas</p>
+<p> </p>
+<p>VB的 Declare 语句中，Alias关键字被用于记录DLL 函数的原型，可以使用其他名称重命名函数。</p>
+<p>Declare 语句格式</p>
+<p>Private | Public Declare Function | Sub name1  Lib &ldquo;libName&rdquo; [ Alias  &ldquo;name2&rdquo; ] ( ByVal 参数1  As 数据类型 ,  ByVal 参数2  As 数据类型 ) As 数据类型</p>
+<p>当DLL中的例程（过程或函数）名不符合VB或VBA中的规定，不能直接使用时，或想用一个简短的名字，就需要使用Alias  &ldquo;name2&rdquo;。</p>
+<p>如果使用 Alias 关键字，Alias 关键字的后面是DLL中的例程（过程或函数）的真实名称，而Function|Sub 关键字后面的名称，也就是你根据需要命名的名称，能作为调用名使用。如果没有使用Alias 关键字，Function|Sub 关键字的后面是是DLL中的例程（过程或函数）真实名称，作为调用名使用。</p>
+<p>对于Declare 语句的Alias许多资料对此讲述模糊不明，请仔细理解之。</p>
+<p> </p>
+<p> </p>
+<p>斜杠/和反斜杠\</p>
+<p>在Unix/Linux操作系统的路径，网址、Url地址分隔采用正斜杠“/”，比如/home/hutaow。</p>
+<p>DOS操作系统的命令，采用反斜杠\ 作为路径分隔符，斜杆/ 作为DOS命令提示符的参数标志。在Windows操作系统中，路径分隔采用反斜杠\（也可用斜杆/），比如C:\Windows\System。</p>
+<p>通用命名约定 (UNC)：一种对文件的命名约定，它提供了独立于机器的文件定位方式。UNC 名称使用 \server\share\path\filename 这一语法格式，而不是指定驱动器符和路径。</p>
+<p>统一资源定位符 (URL)：一种地址，指定协议（如 HTTP 或 FTP）以及文件、目录、HTML 页、图像、程序等目标在本地或网络计算机上的位置，格式scheme://server/path/resource。</p>
+<p>程序设计语言如C、C#等中，算术运算符/用来取商，表示除法，如5/2=2.5 ，反斜杠（\）和紧跟着它的那个字符构成转义字符，如 \n（表示换行）等。</p>
+<p> </p>
+<p>人工智能（AI、Artificial Intelligence）、机器学习（machine learning）和深度学习（deep learning）</p>
+<p>三者的关系如图：</p>
+<p>人工智能是最早出现的，也是最大、最外侧的部分；其次是机器学习，稍晚一点；最内侧，是深度学习，当今人工智能大爆炸的核心驱动。</p>
+<p> </p>
+<p>人工智能（Artificial Intelligence），英文缩写为AI。它是研究、开发用于模拟、延伸和扩展人的智能的理论、方法、技术及应用系统的一门新的技术科学。</p>
+<p>人工智能是计算机科学的一个分支，它企图了解智能的实质，并生产出一种新的能以人类智能相似的方式做出反应的智能机器，该领域的研究包括语音识别、图像识别、机器人、自然语言处理、智能搜索和专家系统等。</p>
+<p>人工智能可以对人的意识、思维进行模拟。人工智能不是人的智能，但能像人那样思考，有可能超过人的智能。</p>
+<p> </p>
+<p>机器学习（Machine Learning）是指用某些算法指导计算机利用已知数据得出适当的模型，并利用此模型对新的情境给出判断的过程。</p>
+<p>机器学习的思想并不复杂，它仅仅是对人类生活中学习过程的一个模拟。而在这整个过程中，最关键的是数据。</p>
+<p>任何通过数据训练的学习算法的相关研究都属于机器学习，包括很多已经发展多年的技术，比如线性回归（Linear Regression）、K均值（K-means，基于原型的目标函数聚类方法）、决策树（Decision Trees，运用概率分析的一种图解法）、随机森林（Random Forest，运用概率分析的一种图解法）、PCA（Principal Component Analysis，主成分分析）、SVM（Support Vector Machine，支持向量机）以及ANN（Artificial Neural Networks，人工神经网络）。</p>
+<p> </p>
+<p>深度学习（Deep Learning）的概念源于人工神经网络的研究。含多隐层的多层感知器就是一种深度学习结构。深度学习通过组合低层特征形成更加抽象的高层表示属性类别或特征，以发现数据的分布式特征表示。</p>
+<p>深度学习是机器学习研究中的一个新的领域，其动机在于建立、模拟人脑进行分析学习的神经网络，它模仿人脑的机制来解释数据，例如图像、声音和文本。
+————————————————
+版权声明：本文为CSDN博主「学习开发爱好者」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/cnds123/java/article/details/100595126</p>
+
+    </article>
+
+
+    
+
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+
+<section id="articleNext" class="section nartrow">
+    <h3 class="footer-next-heading">More articles from JunhaoXue‘s Blog</h3>
+    <div class="footer-spacer"></div>
+    <div class="next-articles-grid" numberOfArticles={numberOfArticles}>
+        <div class="post-row">
+            
+                <a href="/post/product-manager/" class="article-link"
+                 id="article-link-bigger">
+                    <div>
+                        <div class="image-container">
+                            <img src="/images/management.png" class="article-image" />
+                        </div>
+                        <div>
+                            <h2 class="article-title">
+                                Product Manager
+                            </h2>
+                            <p class="article-excerpt">
+                                Guide to emoji usage in Hugo
+                            </p>
+                            <div class="article-metadata">
+                                April 4, 2020 · 0 min read
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            
+                <a href="/post/economics/" class="article-link"
+                >
+                    <div>
+                        <div class="image-container">
+                            <img src="/images/economics.png" class="article-image" />
+                        </div>
+                        <div>
+                            <h2 class="article-title">
+                                Economics
+                            </h2>
+                            <p class="article-excerpt">
+                                Lorem Ipsum Dolor Si Amet
+                            </p>
+                            <div class="article-metadata">
+                                April 4, 2020 · 0 min read
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+</section>
+
+</section>
+
+
+ <script src="/js/progressBar.js"></script>
+
+        
+        <div class="footer-gradient"></div>
+    <div class="section narrow">
+      <div class="footer-hr"></div>
+      <div class="footer-container">
+        <div class="footer-text">
+          © 2020 JunhaoXue‘s Blog
+        </div>
+        <div class="social-icon-outer">
+    <div class="social-icon-container">
+        
+    </div>
+</div>
+    </div>
+</div>
+
+    </div>
+
+    
+    <script src="/js/prism.js"></script>
+</body>
+
+</html>

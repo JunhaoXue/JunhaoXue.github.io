@@ -46,6 +46,55 @@
     </item>
     
     <item>
+      <title>Common Sence</title>
+      <link>http://www.xuejunhao.com/post/common-sense/</link>
+      <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.xuejunhao.com/post/common-sense/</guid>
+      <description>计算机科学中具有特殊含义或易误解混淆的术语辨析 这是我以前收集整理的文档，参考了一些网上的公开资料。这次发到这里，是因为可以随时修改。不足之处，敬请指正，以便修正，以免误导他人。
+ 术语的统一需要一个过程。计算机科学中有些术语不具一致性，容易引起混淆。有几方面原因：一是计算机科学相对年轻发展活跃，不可能有周全单一的理论解释所有的方面，不同国家地区、不同组织在开发和技术发展的过程中，使用了各种不同的术语，或多词一意，或一词多义，甚至同一行业中不同人采用的术语也有如此现象。二是翻译差异更加剧此种现象，不论是汉语和英语，有些词本身语义宽泛，一词多义多词一义比较普遍，并且汉语词语和英语词语显然难以一一对应，这就造成有些术语在不同文档资料甚至同一文档资料中不一致。技术不会是静态的，而是不断发展变化着，术语混乱甚至矛盾难以避免。要切贴地理解术语的意义，需要根据专业范围、语境场合、作者的意图综合理解，而不要孤立的对待。我在学习的过程中，受其困惑颇深，故试着辨析总结。这次发到这里，希望对学习者特别是初学者提供有益的一点帮助。
+  ——目录——
+ program、subroutine、procedure和method
+process和procedure
+进程(process)和线程(thread)
+argument 和parameter
+interactive（交互式）
+form（窗体；表单）
+操作系统安装（The operating system installation）的方式
+兼容（compatibility、Compatible）
+Blog和Bloger
+主机(Host)和终端(Terminal)
+Local（局部的，本地的）
+client和server Internet（因特网）和internet（互连网）
+网络分层模型的各种层的数据格式的名称：packet、Message和Datagram
+节点（Node）和站点（site）
+Frequency(频率)和Clock cycle(时钟周期)
+基带（baseband）和宽[频]带（broadband）
+信噪比(Signal to Noise Ratio）
+射频(RF)
+carrier wave（载波）
+Synchronization (同步) 与asynchronization (异步)
+占位符（placeholder）
+接口（interface）和端口（port）
+透明的（transparent）
+Heap (堆)和stack ([堆]栈)
+Rights、permissions、Privileges
+Control (控件)和Component (组件)
+attribute 和property
+document和file
+Catalog 、Directory、contents 和folder
+backup、copy和 replication、replica
+point-to-point和end-to-end
+passive和active
+Connection、link和 join
+Field和Domain
+Relationship和relation
+引用（reference）、参照[引用]关系（Referencing Relation）、被参照[被引用]关系（Referenced Relation）
+pattern、mode、model和Schema
+实体(Entity)、实体集(Entity Set)、实体类型(Entity Type)和实体实例(Entity instance)</description>
+    </item>
+    
+    <item>
       <title>Product Manager</title>
       <link>http://www.xuejunhao.com/post/product-manager/</link>
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
@@ -97,12 +146,26 @@ CentOS 7 安装 Nginx 安装各种依赖 #gcc安装，nginx源码编译需要 yu
     </item>
     
     <item>
-      <title>Transaction Record</title>
+      <title>I&#39;m a farmer</title>
       <link>http://www.xuejunhao.com/post/transactionrecord/</link>
       <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>http://www.xuejunhao.com/post/transactionrecord/</guid>
-      <description>交割单 2020-04-29 中国电影600977 信息：江西电影院开业。美国德州电影院开业。华谊兄弟募资23亿。
+      <description>我是一个农民 我是一个农民，我的工作是种菜。
+我种很多菜，韭菜、小白菜、黄花菜，每一种菜都有它的美味。
+通常一个季节我只种一种菜，因为我记不住，也看不过来，稍有分神，菜就可能会死掉。
+我的工作就是选择合适的季节种下，然后耐心等着长好了收获。
+种菜，不能拔苗助长，要静待其自然生长。种菜，不能想着守株待兔，不能想着天上掉馅饼，如果有，也只是运气好，人有幸运的时候，自然也就有倒霉的时候。
+有些农民，听别人说小白菜好卖钱，就把地里刚栽的小韭菜拔了种白菜。后来又听说黄花菜好卖，又赶紧换成黄花菜，最后费时费力不讨好，竹篮打水一场空。
+有些农民，迷信太重，总是将简单的事情搞得神神秘秘、甚至充满着妖魔鬼怪的传说，自己不敢动手去做，也努力劝别人不要做。每劝说一个，总会露出先知的得意神情。
+所有的恐惧，都来自于得失的计较。
+作为农民，要做的很简单：内心虔诚，静待花开。
+交割单 2020-04-29 中国电影 600977 信息：昨天晚上国家电影局开了个会，表示要扶持电影行业。但具体政策还没出。今天也是五一假期前最后一个交易日，大盘很强势，也有受此带动的影响。
+走势：竞价阶段，开盘竞价涨1%，9：25分后再涨1%，开盘价为12.80元，涨幅+2.15%。横盘震荡15分钟，拉升2%。阴跌2分钟，9:56，再次拉升2%至13.24元，涨幅5.38。随后股价维持在13元以上阴跌至中午收盘，中午收盘和下午开盘快拉至13.30元每股，再次阴跌至14:00，再次拉升至13.30元每股。全天成交额3.22亿，较以往放大4倍，收盘价13.26元每股，涨幅+5.83%。
+分析：高开后横盘震荡推测为主力诱使短线玩家（持股不坚定）者出局。随后快速拉升，不给买入机会，高点买入今天被套。观察拉升：阴跌=1:6，长期的阴跌消耗投资者信心，快拉诱使投资者追高站岗。中午拉升继续引诱投资者做T，但T的幅度微乎其微，几乎无盈利空间。由此推断做T卖出后不会当天买入，今天买入的投资者追高。由于继续没有明显利好消息，当前拉升仅仅为了震荡和提高持仓成本。由于成交额
+预测：五一开盘急跌，随后快速拉升，不给买入机会，维持在13元以上横盘震荡。
+附：2020-04-30 中国电影K线图
+2020-04-29 中国电影600977 信息：江西电影院开业。美国德州电影院开业。华谊兄弟募资23亿。
 走势：竞价阶段，打压至12.35元，跌幅-0.5%，随后拉升至12.40元开盘。开盘快速冲高，每次拉升1%。两次拉升1%后缓慢走低0.7%，随后再次拉升至12.67元左右，阴跌至12.53元，走势似乎向下，随后，快速拉升2%至12.70元，随后缓慢走高至12.82元。随后横盘震荡，下午随大盘阴跌，尾盘大单打掉12.45元1500手大单，随后维持在12.50元左右震荡，收盘时主力大单吃进1310手。收盘价为12.53元，全天成交量放大至1.98亿。
 分析：受相关复工气氛影响，开盘冲高。但利好消息无实锤，因此不具有价格支撑能力。主力顺势洗盘，打击持股者信心。同样为了后面便于拉升，因此收盘微涨。昨日预测走势与今天不符，但结果相同。近期行情以震荡为主，推测仍然为震荡上升趋势。洗盘力度可能会进一步挑战投资者心理防线，要么压着不涨，要么走过山车。
 预测：为了让今天高抛做T的投资者下车，同时消耗持股者耐心，开盘快速冲高（引一波追涨，提高持仓成本），回落，维持震荡，收跌1%以内（之前被套的继续套牢，没有耐心的出局）。
@@ -115,7 +178,8 @@ CentOS 7 安装 Nginx 安装各种依赖 #gcc安装，nginx源码编译需要 yu
 2020-04-27 中国电影 600977 背景：19年年报和2020一季报公布，一季报亏损2.2亿元人民币。
 走势：开盘竞价无异动，12.28元，涨幅0%。开盘价为12.33元。开盘后，异动拉升，大单持续吃进，每次突破后横盘3-5分钟。开盘20分钟，成交金额6600万，较往日成交量明显放大。10:00强势吃掉12.80元2500手大单，随后突破到12.86。随后横盘震荡，价格维持在12.65-12.75之间。下午略有回调，收盘价为12.54元，成交额1.82亿。
 分析：利空出尽。由于暂无利好消息支撑，因此估计市场价格仍会维持在12.60-13.70之间。
-持仓：不变。</description>
+持仓：不变。
+四民月令  利空出尽就是利好。 多看，少动。 预测怎样去预测。 低吸富三代。  </description>
     </item>
     
     <item>
@@ -143,6 +207,16 @@ CentOS 7 安装 Nginx 安装各种依赖 #gcc安装，nginx源码编译需要 yu
       
       <guid>http://www.xuejunhao.com/post/mathematics/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Networks</title>
+      <link>http://www.xuejunhao.com/post/networks/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.xuejunhao.com/post/networks/</guid>
+      <description>Networks Defination 1、 Wireless ad hoc network 中文释义 无线自组网络(Wireless Ad-Hoc Network)是一个由几个到几十个节点组成的、采用无线通信方式的、动态组网的多跳的移动性对等网络。其目的是通过动态路由和移动管理技术传输具有服务质量要求的语音流。通常节点具有持续的能量供给不需要固定设备支持，各节点自行组网。通信时，由其他用户节点进行数据的转发。这种网络形式突破了传统无线网络地理局限性，能够更加快速、便捷、高效地部署，适用于现场无网络，需要快速建网、便捷安装的场景，如地震救援、火灾救援、林区通信、安保通信等。
+英文释义 A wireless ad hoc network (WANET) or Mobile ad hoc network (MANET) is a decentralized type of wireless network. The network is ad hoc because it does not rely on a pre-existing infrastructure, such as routers in wired networks or access points in managed (infrastructure) wireless networks. Instead, each node participates in routing by forwarding data for other nodes, so the determination of which nodes forward data is made dynamically on the basis of network connectivity and the routing algorithm in use.</description>
     </item>
     
     <item>
