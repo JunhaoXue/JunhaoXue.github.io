@@ -4,17 +4,27 @@
   
   <url>
     <loc>http://www.xuejunhao.com/</loc>
-    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xuejunhao.com/post/</loc>
-    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xuejunhao.com/post/self-introduction/</loc>
-    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.xuejunhao.com/post/uast-cse/</loc>
+    <lastmod>2020-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.xuejunhao.com/post/gameindustry/</loc>
+    <lastmod>2020-08-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -38,18 +48,13 @@
   </url>
   
   <url>
+    <loc>http://www.xuejunhao.com/post/manegement/</loc>
+    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.xuejunhao.com/post/economics/</loc>
     <lastmod>2020-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.xuejunhao.com/post/nginx/</loc>
-    <lastmod>2020-04-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.xuejunhao.com/post/vue/</loc>
-    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -65,21 +70,6 @@
   <url>
     <loc>http://www.xuejunhao.com/post/history/</loc>
     <lastmod>2020-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.xuejunhao.com/post/softwaremeasurement/</loc>
-    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.xuejunhao.com/post/mathematics/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.xuejunhao.com/post/networks/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
